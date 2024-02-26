@@ -1,12 +1,14 @@
 import * as React from "react";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { projectsQuery } from "@/sanity/lib/queries";
+import { projectPostsQuery, projectsQuery } from "@/sanity/lib/queries";
 import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
+import Posts from "@/components/posts";
+import PreviewPosts from "@/components/preview-posts";
 import PreviewProjects from "@/components/preview-projects";
 import PreviewProvider from "@/components/preview-provider";
 import Projects from "@/components/projects";
@@ -19,26 +21,24 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const projects = await sanityFetch<SanityDocument[]>({
-    query: projectsQuery,
+  // const projects = await sanityFetch<SanityDocument[]>({
+  //   query: projectsQuery,
+  // });
+  const posts = await sanityFetch<SanityDocument[]>({
+    query: projectPostsQuery,
+    params: { projectSlug: "masita" },
   });
+
   const isDraftMode = draftMode().isEnabled;
   const Content = () => (
     <div className="mb-16 xl:mb-24">
-      {/* <H3 className="w-full md:w-[500px] mb-8">
-        I&apos;m Luc, a front-end developer based in The Netherlands.
-      </H3>
-      <P className="w-full md:w-[500px] text-lg">
-        I focus on designing and building modern and detailed websites and apps.
-        This is my portfolio for semester 6 of my IT & Media Design study at the
-        Fontys University of Applied Sciences.
-      </P> */}
       <H3 className="w-full md:w-[500px] mb-8">Welcome to my portfolio.</H3>
       <P className="w-full md:w-[500px] text-lg">
-        This is my portfolio for semester 6 of my IT & Media Design study at the
-        Fontys University of Applied Sciences. <br /> <br />
-        Click on one of the projects below or read the full process of this
-        semester <A href="/reading-guide">here</A>.
+        This is my graduation portfolio that documents the process of my
+        graduation internship at Moonly Software, for my IT & Media Design study
+        at the Fontys University of Applied Sciences. <br /> <br />
+        Click on one of the project items below or read the full process of this
+        internship <A href="/reading-guide">here</A>.
       </P>
     </div>
   );
@@ -48,7 +48,8 @@ export default async function Home() {
         <FadeUp>
           <Content />
           <PreviewProvider token={token}>
-            <PreviewProjects projects={projects} />
+            {/* <PreviewProjects projects={projects} /> */}
+            <PreviewPosts posts={posts} />
           </PreviewProvider>
         </FadeUp>
       </Container>
@@ -58,7 +59,8 @@ export default async function Home() {
     <Container>
       <FadeUp>
         <Content />
-        <Projects projects={projects} />
+        {/* <Projects projects={projects} /> */}
+        <Posts posts={posts} />
       </FadeUp>
     </Container>
   );

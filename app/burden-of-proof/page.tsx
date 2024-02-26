@@ -26,7 +26,7 @@ export default function BurdenOfProofPage() {
       </div>
       <div className="mb-8 xl:mb-16">
         <H1 className="mb-4">Burden of proof</H1>
-        <Lead>A collection of everything I did during the semester.</Lead>
+        <Lead>A collection of everything I did during this internship.</Lead>
       </div>
     </>
   );
