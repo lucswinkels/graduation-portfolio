@@ -40,7 +40,7 @@ export default function Posts({
   const filteredPosts = posts.filter((post) => {
     return (
       selectedLearningOutcome === "all-learning-outcomes" ||
-      post.learningOutcomes.some(
+      post?.learningOutcomes?.some(
         (outcome: any) => outcome.slug.current === selectedLearningOutcome
       )
     );
