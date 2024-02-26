@@ -1,18 +1,20 @@
-# Portfolio S6
+# Graduation portfolio
 
 ![Logo](/public/logo/banner.png)
 
-My portfolio for semester 6 of advanced media design @ FHICT.
+This is my portfolio for my graduation internship @ Moonly Software during my IT & Media Design study at the Fontys University of Applied Sciences.
 
 Built using [Next.js](https://nextjs.org/) with [shadcn/ui](https://ui.shadcn.com/).
 
 Content written using [Sanity CMS](https://www.sanity.io/).
 
-Live demo available [here](https://semester6.lucswinkels.com)
+Live demo available [here](https://graduation.lucswinkels.com)
 
 ## Local installation
 
 Download all files or clone the repository.
+
+Install node.js if you haven't already.
 
 Run `npm i` to install all dependencies.
 
