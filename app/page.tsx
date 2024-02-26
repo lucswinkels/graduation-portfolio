@@ -25,20 +25,13 @@ export default async function Home() {
   const isDraftMode = draftMode().isEnabled;
   const Content = () => (
     <div className="mb-16 xl:mb-24">
-      {/* <H3 className="w-full md:w-[500px] mb-8">
-        I&apos;m Luc, a front-end developer based in The Netherlands.
-      </H3>
-      <P className="w-full md:w-[500px] text-lg">
-        I focus on designing and building modern and detailed websites and apps.
-        This is my portfolio for semester 6 of my IT & Media Design study at the
-        Fontys University of Applied Sciences.
-      </P> */}
       <H3 className="w-full md:w-[500px] mb-8">Welcome to my portfolio.</H3>
       <P className="w-full md:w-[500px] text-lg">
-        This is my portfolio for semester 6 of my IT & Media Design study at the
-        Fontys University of Applied Sciences. <br /> <br />
-        Click on one of the projects below or read the full process of this
-        semester <A href="/reading-guide">here</A>.
+        This is my graduation portfolio that documents the process of my
+        graduation internship at Moonly Software, for my IT & Media Design study
+        at the Fontys University of Applied Sciences. <br /> <br />
+        Click on one of the project items below or read the full process of this
+        internship <A href="/reading-guide">here</A>.
       </P>
     </div>
   );

@@ -38,22 +38,22 @@ export function Navbar() {
       title: "Reading guide",
       href: "/reading-guide",
     },
-    {
-      title: "Burden of proof",
-      href: "/burden-of-proof",
-    },
-    {
-      title: "Individual project",
-      href: "/projects/individual-project",
-    },
-    {
-      title: "Group project",
-      href: "/projects/group-project",
-    },
-    {
-      title: "International project",
-      href: "/projects/international-project",
-    },
+    // {
+    //   title: "Burden of proof",
+    //   href: "/burden-of-proof",
+    // },
+    // {
+    //   title: "Individual project",
+    //   href: "/projects/individual-project",
+    // },
+    // {
+    //   title: "Group project",
+    //   href: "/projects/group-project",
+    // },
+    // {
+    //   title: "International project",
+    //   href: "/projects/international-project",
+    // },
   ];
 
   const closeMobileMenu = () => {
@@ -94,30 +94,30 @@ export function Navbar() {
         title: "Reading guide",
         href: "/reading-guide",
       },
-      {
-        icon: <Table className={IconStyles} />,
-        title: "Burden of proof",
-        href: "/burden-of-proof",
-      },
-      {
-        icon: <User className={IconStyles} />,
-        title: "Individual project",
-        href: "/projects/individual-project",
-      },
-      {
-        icon: <Users className={IconStyles} />,
-        title: "Group project",
-        href: "/projects/group-project",
-      },
-      {
-        icon: <Globe className={IconStyles} />,
-        title: "International project",
-        href: "/projects/international-project",
-      },
+      // {
+      //   icon: <Table className={IconStyles} />,
+      //   title: "Burden of proof",
+      //   href: "/burden-of-proof",
+      // },
+      // {
+      //   icon: <User className={IconStyles} />,
+      //   title: "Individual project",
+      //   href: "/projects/individual-project",
+      // },
+      // {
+      //   icon: <Users className={IconStyles} />,
+      //   title: "Group project",
+      //   href: "/projects/group-project",
+      // },
+      // {
+      //   icon: <Globe className={IconStyles} />,
+      //   title: "International project",
+      //   href: "/projects/international-project",
+      // },
       {
         icon: <Github className={IconStyles} />,
         title: "Source code (GitHub)",
-        href: "https://github.com/lucswinkels/portfolio-s6",
+        href: "https://github.com/lucswinkels/graduation-portfolio",
         external: true,
       },
     ];
@@ -186,7 +186,7 @@ export function Navbar() {
               <NavigationMenuItem>
                 <Button variant="ghost" size="icon">
                   <a
-                    href="https://github.com/lucswinkels/portfolio-s6"
+                    href="https://github.com/lucswinkels/graduation-portfolio"
                     target="_blank"
                   >
                     <Github className="size-[1.2rem]" />

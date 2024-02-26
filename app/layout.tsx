@@ -10,18 +10,18 @@ import BackToTop from "@/components/back-to-top";
 
 const inter = Inter({ subsets: ["latin"] });
 
-const domain = "https://semester6.lucswinkels.com";
+const domain = "https://graduation.lucswinkels.com";
 
 export const metadata: Metadata = {
   title: {
     template: "%s // Portfolio S6",
     default: "Portfolio S6",
   },
-  description: "My portfolio for semester 6 of advanced media design at FHICT.",
+  description: "My portfolio for my graduation internship at Moonly Software.",
   openGraph: {
     title: "Portfolio S6",
     description:
-      "My portfolio for semester 6 of advanced media design at FHICT.",
+      "My portfolio for my graduation internship at Moonly Software.",
     url: domain,
     siteName: "Portfolio S6",
     images: [
