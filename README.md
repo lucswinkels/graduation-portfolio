@@ -8,7 +8,7 @@ Built using [Next.js](https://nextjs.org/) with [shadcn/ui](https://ui.shadcn.co
 
 Content written using [Sanity CMS](https://www.sanity.io/).
 
-A Live demo is available [here](https://graduation.lucswinkels.com).
+A Live demo is available [here](https://graduation.lucswinkels.com). 
 
 ## Local installation
 
