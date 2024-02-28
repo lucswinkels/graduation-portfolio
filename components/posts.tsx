@@ -109,6 +109,7 @@ export default function Posts({
                 description={post.description}
                 categories={post.categories}
                 href={post.slug.current}
+                project={post.project}
               />
             ))
           ) : (
