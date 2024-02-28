@@ -82,6 +82,7 @@ export default function ReadingGuide() {
     <Container>
       <FadeUp>
         <Content />
+        <BurdenOfProof />
       </FadeUp>
     </Container>
   );
