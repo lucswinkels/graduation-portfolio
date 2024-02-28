@@ -17,7 +17,7 @@ import { H3 } from "@/components/typography/h3";
 import { P } from "@/components/typography/p";
 
 export const metadata: Metadata = {
-  title: "Home // Portfolio S6",
+  title: "Home // Portfolio Luc Swinkels",
 };
 
 export default async function Home() {
@@ -32,8 +32,10 @@ export default async function Home() {
   const isDraftMode = draftMode().isEnabled;
   const Content = () => (
     <div className="mb-16 xl:mb-24">
-      <H3 className="w-full md:w-[500px] mb-8">Welcome to my portfolio.</H3>
-      <P className="w-full md:w-[500px] text-lg">
+      <H3 className="w-full md:w-[500px] lg:w-[650px] mb-8">
+        Welcome to my portfolio.
+      </H3>
+      <P className="w-full md:w-[500px] lg:w-[650px] text-lg text-balance">
         This is my graduation portfolio that documents the process of my
         graduation internship at Moonly Software, for my IT & Media Design study
         at the Fontys University of Applied Sciences. <br /> <br />

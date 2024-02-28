@@ -32,7 +32,7 @@ export default function Post({ post }: { post: SanityDocument }) {
   const ImageComponent = ({ value }: any) => {
     const { width, height } = getImageDimensions(value);
     return (
-      <div className="my-16">
+      <div className="my-16 flex justify-center flex-col w-max max-w-full">
         <Image
           src={builder.image(value).width(width).height(height).url()}
           alt={value.alt}
@@ -41,7 +41,7 @@ export default function Post({ post }: { post: SanityDocument }) {
           loading="lazy"
           className="rounded-lg border mb-2"
         />
-        <MutedText className="m-0 italic">{value.alt}</MutedText>
+        <MutedText className="mx-auto mt-0 italic">{value.alt}</MutedText>
       </div>
     );
   };
