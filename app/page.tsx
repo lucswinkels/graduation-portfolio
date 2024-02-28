@@ -17,7 +17,7 @@ import { H3 } from "@/components/typography/h3";
 import { P } from "@/components/typography/p";
 
 export const metadata: Metadata = {
-  title: "Home // Portfolio S6",
+  title: "Home // Portfolio Luc Swinkels",
 };
 
 export default async function Home() {
