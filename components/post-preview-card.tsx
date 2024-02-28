@@ -22,7 +22,7 @@ import { Badge } from "./ui/badge";
 const builder = imageUrlBuilder(client);
 export function PostPreviewCard({ ...props }) {
   return (
-    <Link href={`/projects/${props.href}`} className="group">
+    <Link href={`/${props.href}`} className="group">
       <motion.div
         key={props.slug}
         initial="hidden"
