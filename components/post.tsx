@@ -81,14 +81,14 @@ export default function Post({ post }: { post: SanityDocument }) {
         {post.categories || post.researchMethods ? (
           <div className="flex gap-2 xl:gap-4 flex-wrap mt-8">
             {post.categories &&
-              post.categories.map((category: any) => (
+              post.categories.map((category: string) => (
                 <Badge variant="secondary" key={category}>
                   {category}
                 </Badge>
               ))}
             {post.researchMethods &&
-              post.researchMethods.map((method: any) => (
-                <Badge variant="secondary" key={method}>
+              post.researchMethods.map((method: { title: string }) => (
+                <Badge variant="secondary" key={method.title}>
                   {method.title}
                 </Badge>
               ))}
@@ -105,6 +105,16 @@ export default function Post({ post }: { post: SanityDocument }) {
         />
         <div className="prose dark:prose-invert max-w-full">
           <PortableText value={post.body} components={components} />
+        </div>
+        <div>
+          {post.learningOutcomes.map(
+            (outcome: { title: string; description: string }) => () => {
+              <div key={outcome.title}>
+                <H3>{outcome.title}</H3>
+                <P>{outcome.description}</P>
+              </div>;
+            }
+          )}
         </div>
       </Container>
     </FadeUp>
