@@ -16,7 +16,10 @@ export default function Projects({
 }) {
   return (
     <div
-      className={cn("grid xl:grid-cols-3 md:grid-cols-2 gap-8 mt-8", className)}
+      className={cn(
+        "grid 2xl:grid-cols-3 md:grid-cols-2 gap-8 mt-8",
+        className
+      )}
     >
       {projects.map((project) => (
         <ProjectPreviewCard

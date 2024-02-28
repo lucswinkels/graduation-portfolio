@@ -94,7 +94,7 @@ export default function Posts({
       </div>
       <div
         className={cn(
-          "grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 gap-8 mt-8",
+          "grid 2xl:grid-cols-3 md:grid-cols-2 gap-8 mt-8",
           className
         )}
       >
