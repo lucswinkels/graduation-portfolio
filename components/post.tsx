@@ -106,16 +106,6 @@ export default function Post({ post }: { post: SanityDocument }) {
         <div className="prose dark:prose-invert max-w-full">
           <PortableText value={post.body} components={components} />
         </div>
-        <div>
-          {post.learningOutcomes.map(
-            (outcome: { title: string; description: string }) => () => {
-              <div key={outcome.title}>
-                <H3>{outcome.title}</H3>
-                <P>{outcome.description}</P>
-              </div>;
-            }
-          )}
-        </div>
       </Container>
     </FadeUp>
   ) : (
