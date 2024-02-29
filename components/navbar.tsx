@@ -100,7 +100,7 @@ export function Navbar() {
 
     return (
       <div
-        className={`lg:hidden px-6 md:px-[10%] font-medium flex-col fixed top-20 left-0 z-40 w-full bg-background h-[calc(100vh-5rem)] ${
+        className={`lg:hidden px-6 md:px-[15%] font-medium flex-col fixed top-20 left-0 z-40 w-full bg-background h-[calc(100vh-5rem)] ${
           mobileMenuVisibility ? "flex" : "hidden"
         } `}
       >
