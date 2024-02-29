@@ -14,16 +14,16 @@ const domain = "https://graduation.lucswinkels.com";
 
 export const metadata: Metadata = {
   title: {
-    template: "%s // Portfolio Luc Swinkels",
-    default: "Portfolio",
+    template: "%s // Portfolio | Luc Swinkels",
+    default: "Portfolio | Luc Swinkels",
   },
   description: "My portfolio for my graduation internship at Moonly Software.",
   openGraph: {
-    title: "Portfolio Luc Swinkels",
+    title: "Portfolio | Luc Swinkels",
     description:
       "My portfolio for my graduation internship at Moonly Software.",
     url: domain,
-    siteName: "Portfolio Luc Swinkels",
+    siteName: "Portfolio | Luc Swinkels",
     images: [
       {
         url: `${domain}/img/logo/banner.png`,
