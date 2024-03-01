@@ -2,12 +2,17 @@
 
 import Link from "next/link";
 
-type Props = {
+import { cn } from "@/lib/utils";
+
+export function Logo({
+  onClick,
+  className,
+}: {
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
-};
-export function Logo(props: Props) {
+  className?: string;
+}) {
   return (
-    <Link href="/" className="size-8" onClick={props.onClick}>
+    <Link href="/" className={cn("size-8", className)} onClick={onClick}>
       <svg
         id="logo"
         data-name="logo"

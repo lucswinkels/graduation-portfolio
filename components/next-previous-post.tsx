@@ -23,7 +23,7 @@ export default function NextPreviousPost({
 }) {
   return (
     <div className="mt-32">
-      <H4 className="mb-4">More content to check out</H4>
+      <H4 className="mb-4">But wait.. there&apos;s more!</H4>
       <Card>
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <Link
