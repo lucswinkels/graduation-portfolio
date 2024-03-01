@@ -6,6 +6,7 @@ import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityDocument } from "next-sanity";
 
+import { CardPattern } from "./card-pattern";
 import { H3 } from "./typography/h3";
 import { H4 } from "./typography/h4";
 import { P } from "./typography/p";
@@ -22,49 +23,55 @@ export default function NextPreviousPost({
 }) {
   return (
     <div className="mt-32">
-      <H4 className="mb-4">Want to keep browsing?</H4>
+      <H4 className="mb-4">But wait.. there&apos;s more!</H4>
       <Card>
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <Link
             href={`/${previousPost.slug.current}`}
-            className="group lg:basis-1/2 basis-full w-full p-8 hover:bg-accent border-b lg:border-b-0 lg:border-r transition-colors"
+            className="group lg:basis-1/2 basis-full w-full p-8 border-b lg:border-b-0 lg:border-r transition-colors relative overflow-hidden"
           >
-            <Image
-              src={builder
-                .image(previousPost.mainImage)
-                .width(200)
-                .height(200)
-                .url()}
-              className="border shadow-lg rounded-xl mb-8"
-              width={200}
-              height={200}
-              quality={100}
-              alt={previousPost.mainImage.alt}
-            />
-            <div className="flex flex-col gap-1 lg:gap-2 transition-transform group-hover:translate-x-2">
-              <P className="text-muted-foreground">Previous post</P>
-              <H3 className="line-clamp-1">{previousPost.title}</H3>
+            <CardPattern />
+            <div className="relative z-20">
+              <Image
+                src={builder
+                  .image(previousPost.mainImage)
+                  .width(1000)
+                  .height(1000)
+                  .url()}
+                className="border shadow-lg rounded-xl mb-8"
+                width={200}
+                height={200}
+                quality={100}
+                alt={previousPost.mainImage.alt}
+              />
+              <div className="flex flex-col gap-1 lg:gap-2 transition-transform">
+                <P className="text-muted-foreground">Previous post</P>
+                <H3 className="line-clamp-1">{previousPost.title}</H3>
+              </div>
             </div>
           </Link>
           <Link
             href={`/${nextPost.slug.current}`}
-            className="group lg:basis-1/2 basis-full w-full p-8 hover:bg-accent transition-colors"
+            className="group lg:basis-1/2 basis-full w-full p-8 transition-colors relative overflow-hidden"
           >
-            <Image
-              src={builder
-                .image(nextPost.mainImage)
-                .width(200)
-                .height(200)
-                .url()}
-              className="border shadow-lg rounded-xl mb-8"
-              width={200}
-              height={200}
-              quality={100}
-              alt={nextPost.mainImage.alt}
-            />
-            <div className="flex flex-col gap-1 lg:gap-2 transition-transform group-hover:translate-x-2">
-              <P className="text-muted-foreground">Next post</P>
-              <H3 className="line-clamp-1">{nextPost.title}</H3>
+            <CardPattern />
+            <div className="relative z-20">
+              <Image
+                src={builder
+                  .image(nextPost.mainImage)
+                  .width(1000)
+                  .height(1000)
+                  .url()}
+                className="border shadow-lg rounded-xl mb-8"
+                width={200}
+                height={200}
+                quality={100}
+                alt={nextPost.mainImage.alt}
+              />
+              <div className="flex flex-col gap-1 lg:gap-2 transition-transform">
+                <P className="text-muted-foreground">Next post</P>
+                <H3 className="line-clamp-1">{nextPost.title}</H3>
+              </div>
             </div>
           </Link>
         </div>

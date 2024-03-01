@@ -1,6 +1,8 @@
 "use client";
 
-export function CardPattern() {
+import { cn } from "@/lib/utils";
+
+export function CardPattern({ className }: { className?: string }) {
   return (
     <svg
       width="1920"
@@ -8,7 +10,10 @@ export function CardPattern() {
       viewBox="0 0 1920 1080"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="w-full group-hover:opacity-10 opacity-5 h-full scale-[1.5] absolute top-0 left-0 z-10 group-hover:scale-[2] transition-all"
+      className={cn(
+        "w-full group-hover:opacity-10 opacity-5 h-full scale-[1.5] absolute top-0 left-0 z-10 group-hover:scale-[2] transition-all",
+        className
+      )}
     >
       <path
         className="fill-current"

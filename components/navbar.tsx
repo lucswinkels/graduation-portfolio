@@ -143,7 +143,7 @@ export function Navbar() {
                 {navItems.map((item, i) => (
                   <NavigationMenuItem key={i}>
                     <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="text-sm font-medium leading-none hover:underline underline-offset-4">
+                      <NavigationMenuLink className="text-sm font-medium leading-none hover:border-foreground border-b transition-colors border-transparent pb-0.5">
                         {item.title}
                       </NavigationMenuLink>
                     </Link>
