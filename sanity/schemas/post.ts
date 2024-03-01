@@ -36,9 +36,6 @@ export default defineType({
           name: "alt",
           type: "text",
           title: "Alternative text",
-          options: {
-            isHighlighted: true,
-          },
           validation: (Rule) =>
             Rule.error("You have to fill out the alternative text.").required(),
         },
