@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SanityDocument } from "next-sanity";
 
 import { H3 } from "./typography/h3";
+import { H4 } from "./typography/h4";
 import { P } from "./typography/p";
 import { Card } from "./ui/card";
 
@@ -14,30 +15,31 @@ export default function NextPreviousPost({
   nextPost: SanityDocument;
   previousPost: SanityDocument;
 }) {
-  console.log("NEXT POST:", nextPost);
-  console.log("PREVIOUS POST:", previousPost);
   return (
-    <Card className="mt-16 xl:mt-32">
-      <div className="flex flex-col lg:flex-row justify-between items-center">
-        <Link
-          href={`/${previousPost.slug.current}`}
-          className="group lg:basis-1/2 basis-full align-end text-start lg:text-end w-full p-8 hover:bg-accent border-b lg:border-b-0 lg:border-r transition-colors"
-        >
-          <div className="flex flex-col gap-1 lg:gap-2 transition-transform group-hover:translate-x-2 lg:group-hover:-translate-x-2">
-            <P>Previous post</P>
-            <H3 className="line-clamp-1">{previousPost.title}</H3>
-          </div>
-        </Link>
-        <Link
-          href={`/${nextPost.slug.current}`}
-          className="group lg:basis-1/2 basis-full align-start w-full p-8 hover:bg-accent transition-colors"
-        >
-          <div className="flex flex-col gap-1 lg:gap-2 transition-transform group-hover:translate-x-2">
-            <P>Next post</P>
-            <H3 className="line-clamp-1">{nextPost.title}</H3>
-          </div>
-        </Link>
-      </div>
-    </Card>
+    <div className="mt-16 xl:mt-32">
+      <H4 className="mb-4">Want to keep browsing?</H4>
+      <Card>
+        <div className="flex flex-col lg:flex-row justify-between items-center">
+          <Link
+            href={`/${previousPost.slug.current}`}
+            className="group lg:basis-1/2 basis-full w-full p-8 hover:bg-accent border-b lg:border-b-0 lg:border-r transition-colors"
+          >
+            <div className="flex flex-col gap-1 lg:gap-2 transition-transform group-hover:translate-x-2">
+              <P className="text-muted-foreground">Previous post</P>
+              <H3 className="line-clamp-1">{previousPost.title}</H3>
+            </div>
+          </Link>
+          <Link
+            href={`/${nextPost.slug.current}`}
+            className="group lg:basis-1/2 basis-full w-full p-8 hover:bg-accent transition-colors"
+          >
+            <div className="flex flex-col gap-1 lg:gap-2 transition-transform group-hover:translate-x-2">
+              <P className="text-muted-foreground">Next post</P>
+              <H3 className="line-clamp-1">{nextPost.title}</H3>
+            </div>
+          </Link>
+        </div>
+      </Card>
+    </div>
   );
 }
