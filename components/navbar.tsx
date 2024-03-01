@@ -7,13 +7,10 @@ import {
   Book,
   ExternalLink,
   Github,
-  Globe,
   Home,
   Menu,
   Palette,
   Table,
-  User,
-  Users,
   X,
 } from "lucide-react";
 

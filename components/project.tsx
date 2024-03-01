@@ -3,10 +3,9 @@ import { draftMode } from "next/headers";
 import Link from "next/link";
 import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
-import { ChevronRight, ExternalLink } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { SanityDocument } from "next-sanity";
 
-import { slugify } from "@/lib/utils";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import PreviewProvider from "@/components/preview-provider";

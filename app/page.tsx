@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Metadata } from "next";
 import { draftMode } from "next/headers";
-import { projectPostsQuery, projectsQuery } from "@/sanity/lib/queries";
+import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
@@ -9,9 +9,7 @@ import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import Posts from "@/components/posts";
 import PreviewPosts from "@/components/preview-posts";
-import PreviewProjects from "@/components/preview-projects";
 import PreviewProvider from "@/components/preview-provider";
-import Projects from "@/components/projects";
 import { A } from "@/components/typography/a";
 import { H3 } from "@/components/typography/h3";
 import { P } from "@/components/typography/p";
@@ -21,9 +19,6 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  // const projects = await sanityFetch<SanityDocument[]>({
-  //   query: projectsQuery,
-  // });
   const posts = await sanityFetch<SanityDocument[]>({
     query: projectPostsQuery,
     params: { projectSlug: "masita" },
@@ -50,7 +45,6 @@ export default async function Home() {
         <FadeUp>
           <Content />
           <PreviewProvider token={token}>
-            {/* <PreviewProjects projects={projects} /> */}
             <PreviewPosts posts={posts} />
           </PreviewProvider>
         </FadeUp>
@@ -61,7 +55,6 @@ export default async function Home() {
     <Container>
       <FadeUp>
         <Content />
-        {/* <Projects projects={projects} /> */}
         <Posts posts={posts} />
       </FadeUp>
     </Container>

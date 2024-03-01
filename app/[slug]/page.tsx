@@ -1,4 +1,3 @@
-import { Metadata } from "next";
 import { draftMode } from "next/headers";
 import { client } from "@/sanity/lib/client";
 import { postPathsQuery, postQuery } from "@/sanity/lib/queries";
