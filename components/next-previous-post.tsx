@@ -16,7 +16,7 @@ export default function NextPreviousPost({
   previousPost: SanityDocument;
 }) {
   return (
-    <div className="mt-16 xl:mt-32">
+    <div className="mt-32">
       <H4 className="mb-4">Want to keep browsing?</H4>
       <Card>
         <div className="flex flex-col lg:flex-row justify-between items-center">
