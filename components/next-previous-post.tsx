@@ -35,8 +35,8 @@ export default function NextPreviousPost({
               <Image
                 src={builder
                   .image(previousPost.mainImage)
-                  .width(200)
-                  .height(200)
+                  .width(1000)
+                  .height(1000)
                   .url()}
                 className="border shadow-lg rounded-xl mb-8"
                 width={200}
@@ -59,8 +59,8 @@ export default function NextPreviousPost({
               <Image
                 src={builder
                   .image(nextPost.mainImage)
-                  .width(200)
-                  .height(200)
+                  .width(1000)
+                  .height(1000)
                   .url()}
                 className="border shadow-lg rounded-xl mb-8"
                 width={200}
