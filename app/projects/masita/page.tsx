@@ -12,9 +12,11 @@ export const metadata: Metadata = {
 
 export default async function Masita() {
   const slug = "masita";
+
   const project = await sanityFetch<SanityDocument>({
     query: projectQuery,
     params: { slug },
   });
+
   return <Project project={project} />;
 }

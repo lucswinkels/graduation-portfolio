@@ -34,8 +34,13 @@ export default defineType({
       fields: [
         {
           name: "alt",
-          type: "string",
-          title: "Alternative Text",
+          type: "text",
+          title: "Alternative text",
+          options: {
+            isHighlighted: true,
+          },
+          validation: (Rule) =>
+            Rule.error("You have to fill out the alternative text.").required(),
         },
       ],
     }),
@@ -67,6 +72,17 @@ export default defineType({
       name: "body",
       title: "Body",
       type: "blockContent",
+    }),
+    defineField({
+      name: "publishedAt",
+      title: "Published at",
+      type: "datetime",
+      options: {
+        dateFormat: "YYYY-MM-DD",
+        timeFormat: "HH:mm",
+      },
+      validation: (Rule) => Rule.required(),
+      initialValue: () => new Date().toISOString(),
     }),
   ],
 

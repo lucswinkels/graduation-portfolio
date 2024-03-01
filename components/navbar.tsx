@@ -7,13 +7,10 @@ import {
   Book,
   ExternalLink,
   Github,
-  Globe,
   Home,
   Menu,
   Palette,
   Table,
-  User,
-  Users,
   X,
 } from "lucide-react";
 
@@ -108,26 +105,25 @@ export function Navbar() {
           <Link
             href={item.href}
             key={i}
-            className={cn("dark:text-muted-foreground", MobileMenuItemStyles)}
+            className={MobileMenuItemStyles}
             onClick={handleMenuVisibility}
           >
             {item.icon}
             {item.title}
-            {item.external && (
-              <ExternalLink className="size-4 ml-2 dark:text-foreground" />
-            )}
+            {item.external && <ExternalLink className="size-4 ml-2" />}
           </Link>
         ))}
         <div className={cn("justify-between", MobileMenuItemStyles)}>
           <div className="flex">
             <Palette className={IconStyles} />
-            <p className="dark:text-muted-foreground">Theme</p>
+            <p>Theme</p>
           </div>
           <ModeToggle variant="outline" />
         </div>
       </div>
     );
   };
+
   return (
     <>
       <MobileMenu />
@@ -147,7 +143,7 @@ export function Navbar() {
                 {navItems.map((item, i) => (
                   <NavigationMenuItem key={i}>
                     <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="text-sm font-medium hover:text-foreground transition-colors leading-none text-muted-foreground/90">
+                      <NavigationMenuLink className="text-sm font-medium leading-none hover:underline underline-offset-4">
                         {item.title}
                       </NavigationMenuLink>
                     </Link>

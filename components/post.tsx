@@ -14,6 +14,7 @@ import NotFoundPage from "@/app/not-found";
 
 import FadeUp from "./animation/fade-up";
 import Container from "./container";
+import NextPreviousPost from "./next-previous-post";
 import { Blockquote } from "./typography/blockquote";
 import { H1 } from "./typography/h1";
 import { H2 } from "./typography/h2";
@@ -27,7 +28,15 @@ import { Badge } from "./ui/badge";
 
 const builder = imageUrlBuilder(client);
 
-export default function Post({ post }: { post: SanityDocument }) {
+export default function Post({
+  post,
+  previousPost,
+  nextPost,
+}: {
+  post: SanityDocument;
+  previousPost: SanityDocument;
+  nextPost: SanityDocument;
+}) {
   //TODO: Fix typing
   const ImageComponent = ({ value }: any) => {
     const { width, height } = getImageDimensions(value);
@@ -103,9 +112,10 @@ export default function Post({ post }: { post: SanityDocument }) {
           alt={post.mainImage.alt}
           priority
         />
-        <div className="prose dark:prose-invert max-w-full">
+        <div className="prose prose-p:text-foreground dark:prose-invert max-w-full">
           <PortableText value={post.body} components={components} />
         </div>
+        <NextPreviousPost previousPost={previousPost} nextPost={nextPost} />
       </Container>
     </FadeUp>
   ) : (
