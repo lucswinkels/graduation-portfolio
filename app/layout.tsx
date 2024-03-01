@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { Navbar } from "@/components/navbar";
@@ -53,6 +54,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <SpeedInsights />
+        <Analytics />
         <ThemeProvider attribute="class" enableSystem>
           <Navbar />
           <div className="py-[calc(5rem+10vh)] xl:py-[calc(5rem+15vh)]">
