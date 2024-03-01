@@ -1,18 +1,15 @@
 import * as React from "react";
-import { draftMode } from "next/headers";
 import Link from "next/link";
 import { projectPostsQuery } from "@/sanity/lib/queries";
-import { sanityFetch, token } from "@/sanity/lib/sanityFetch";
+import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { ChevronRight } from "lucide-react";
 import { SanityDocument } from "next-sanity";
 
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
-import PreviewProvider from "@/components/preview-provider";
 import { H1 } from "@/components/typography/h1";
 
 import Posts from "./posts";
-import PreviewPosts from "./preview-posts";
 import { Lead } from "./typography/lead";
 import { SmallText } from "./typography/small-text";
 import { Button } from "./ui/button";
@@ -26,7 +23,6 @@ export default async function Project({
     query: projectPostsQuery,
     params: { projectSlug: project.slug.current },
   });
-  const isDraftMode = draftMode().isEnabled;
 
   const Content = () => (
     <>
@@ -49,18 +45,6 @@ export default async function Project({
     </>
   );
 
-  if (isDraftMode && token) {
-    return (
-      <Container>
-        <FadeUp>
-          <Content />
-          <PreviewProvider token={token}>
-            <PreviewPosts posts={posts} />
-          </PreviewProvider>
-        </FadeUp>
-      </Container>
-    );
-  }
   return (
     <Container>
       <FadeUp>
