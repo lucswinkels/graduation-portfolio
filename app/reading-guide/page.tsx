@@ -4,7 +4,6 @@ import Link from "next/link";
 import { ChevronRight, ExternalLink } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import FadeUp from "@/components/animation/fade-up";
 import BurdenOfProof from "@/components/burden-of-proof";
 import Container from "@/components/container";
@@ -160,6 +159,7 @@ export default function ReadingGuide() {
       </div>
     </>
   );
+
   return (
     <Container>
       <FadeUp>

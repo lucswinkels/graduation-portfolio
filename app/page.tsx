@@ -20,6 +20,7 @@ export default async function Home() {
     query: projectPostsQuery,
     params: { projectSlug: "masita" },
   });
+
   const Content = () => (
     <div className="mb-16 xl:mb-24">
       <H3 className="w-full md:w-[500px] lg:w-[650px] mb-8">
@@ -34,6 +35,7 @@ export default async function Home() {
       </P>
     </div>
   );
+
   return (
     <Container>
       <FadeUp>

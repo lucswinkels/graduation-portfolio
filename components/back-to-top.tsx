@@ -32,6 +32,7 @@ export default function BackToTop() {
       window.addEventListener("scroll", handleBackToTopVisibility);
     };
   }, []);
+
   return (
     <TooltipProvider>
       <Tooltip>

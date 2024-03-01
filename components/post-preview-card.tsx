@@ -13,6 +13,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { CardPattern } from "./card-pattern";
 
 const builder = imageUrlBuilder(client);
+
 export function PostPreviewCard({ ...props }) {
   return (
     <Link href={`/${props.href}`} className="group">

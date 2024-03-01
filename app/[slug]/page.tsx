@@ -26,17 +26,21 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }: { params: any }) {
   const post = await sanityFetch<SanityDocument>({ query: postQuery, params });
+
   let previousPost = await sanityFetch<SanityDocument>({
     query: previousPostQuery,
     params: { currentPostPublishedAt: post.publishedAt },
   });
+
   if (!previousPost) {
     previousPost = await sanityFetch<SanityDocument>({ query: lastPostQuery });
   }
+
   let nextPost = await sanityFetch<SanityDocument>({
     query: nextPostQuery,
     params: { currentPostPublishedAt: post.publishedAt },
   });
+
   if (!nextPost) {
     nextPost = await sanityFetch<SanityDocument>({ query: firstPostQuery });
   }
