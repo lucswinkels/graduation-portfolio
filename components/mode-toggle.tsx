@@ -1,9 +1,10 @@
 "use client";
 
 import * as React from "react";
-import { Moon, Sun } from "lucide-react";
+import { Check, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
+import { cn } from "@/lib/utils";
 import { Button, ButtonProps } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -13,8 +14,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function ModeToggle(props: ButtonProps) {
-  const { setTheme } = useTheme();
-
+  const { theme, setTheme } = useTheme();
+  const themeOptions = ["light", "dark", "system"];
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -25,15 +26,19 @@ export function ModeToggle(props: ButtonProps) {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Light
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Dark
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          System
-        </DropdownMenuItem>
+        {themeOptions.map((option) => (
+          <DropdownMenuItem
+            key={option}
+            onClick={() => setTheme(option)}
+            className={cn(
+              `capitalize bg-background flex items-center justify-between ${
+                theme === option && "bg-accent"
+              }`
+            )}
+          >
+            {option} {theme === option && <Check className="size-4" />}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

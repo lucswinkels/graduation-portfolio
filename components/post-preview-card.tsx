@@ -26,9 +26,9 @@ export function PostPreviewCard({ ...props }) {
       >
         <Card
           {...props}
-          className="group-hover:-translate-y-2 transition-transform relative bg-background"
+          className="group-hover:-translate-y-2 transition-all relative bg-background hover:bg-accent-subtle"
         >
-          <CardPattern />
+          {/* <CardPattern /> */}
           <div className="flex flex-row items-center p-6 justify-between relative z-20">
             <div>
               <span className="text-muted-foreground">{props.project}</span>
@@ -42,7 +42,7 @@ export function PostPreviewCard({ ...props }) {
           <CardContent className="pt-2 pl-8 pb-0 pr-0 relative z-20">
             <Image
               src={builder.image(props.image).width(1920).height(1080).url()}
-              className="border-l border-t shadow-xl rounded-tl-xl"
+              className="border-l border-t shadow-lg rounded-tl-xl"
               width={1920}
               height={1080}
               quality={100}
