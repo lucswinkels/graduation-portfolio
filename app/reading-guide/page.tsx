@@ -125,7 +125,7 @@ export default function ReadingGuide() {
           <P>
             To start off, I wrote a <A href="/project-plan">project plan</A>{" "}
             documenting the project&apos;s goals, problem statement, scope and
-            time plan. In ths project plan, I also defined the main research
+            time plan. In this project plan, I also defined the main research
             question and which sub questions are needed to support it:
           </P>
           <H3>Main research question</H3>
