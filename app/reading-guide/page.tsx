@@ -75,7 +75,9 @@ export default function ReadingGuide() {
             integrations, they did not function properly, leading to more and
             more cracks in the system. Whenever an external integration was
             updated, the entire order process behind the store would come to a
-            halt.
+            halt. These technical problems alongside a lack of priority from the
+            owner due to upcoming ownership changes, meant the webshop kept
+            declining.
           </P>
           <P>
             Ultimately, Masita chose to cease operations, and the webshop was
@@ -119,13 +121,61 @@ export default function ReadingGuide() {
             tests, then develop these validated designs into a working prototype
             by using the earlier researched technologies.
           </P>
+          <H3>Full assignment</H3>
+          <P>
+            Moonly and Masita have decided to collaborate on a new B2B and B2C
+            store so that Masita can resume selling their products. Since it was
+            important for Masita to start selling to businesses first, a B2B
+            store is currently in development. In the future, a B2C store will
+            also need to be developed.
+          </P>
+          <P>
+            For the B2C store, Masita has provided several requirements. There
+            must be the ability to sell printed shirts, customers must be able
+            to manage orders, and it should be possible to sell products through
+            external stores. The B2C store should have similar styling to the
+            already in development B2B store, as it is based on Masita’s
+            branding. The lay-out, however, can be changed freely to cater
+            towards individual customers instead of businesses.
+          </P>
+          <P>
+            Since Moonly wants to avoid the same pitfalls and problems
+            encountered with the Magento store when developing this new store,
+            we want to first conduct research into the best solution for
+            developing this new store. This research should not only consider
+            Masita&apos;s various requirements but also focus on how the B2C
+            shop can encourage customers to start ordering from Masita again.
+            While the B2B shop primarily focuses on functionality for retailers,
+            the B2C shop needs to be optimised for UX and conversion to help
+            Masita regain its position in the market.
+          </P>
+          <P>
+            Additionally, the results of this research are intended to be
+            translated into a proof of concept/prototype of a B2C store so that
+            Moonly can develop a new B2C shop with a validated foundation.
+          </P>
+          <P>
+            To validate the designs and/or prototypes, user tests should be
+            set-up that can be done in-house, or through personal connections
+            and social media channels as the target audience is not very niche.
+            In this case, the target audience is anyone who wants to buy clothes
+            for working out. While there is access to user databases with
+            previous Masita customers, this project does not yet include global
+            testing for the prototype.
+          </P>
+          <P>
+            The research will be conducted with Moonly as the client and has
+            been initiated by Moonly in preparation for developing the B2C shop.
+            Masita is not the client in this case (though they may be a
+            stakeholder).
+          </P>
         </div>
         <div id="process" className="scroll-mt-32">
           <H2>Process</H2>
           <P>
             To start off, I wrote a <A href="/project-plan">project plan</A>{" "}
             documenting the project&apos;s goals, problem statement, scope and
-            time plan. In ths project plan, I also defined the main research
+            time plan. In this project plan, I also defined the main research
             question and which sub questions are needed to support it:
           </P>
           <H3>Main research question</H3>
