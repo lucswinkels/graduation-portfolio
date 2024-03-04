@@ -57,11 +57,11 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
         <ThemeProvider attribute="class" enableSystem>
-          {/* <Navbar /> */}
+          <Navbar />
           <div className="py-[calc(5rem+10vh)] xl:py-[calc(5rem+15vh)]">
             {children}
           </div>
-          {/* <BackToTop /> */}
+          <BackToTop />
           {/* <Footer /> */}
         </ThemeProvider>
       </body>
