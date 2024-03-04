@@ -23,7 +23,7 @@ export default function NextPreviousPost({
 }) {
   return (
     <div className="mt-32">
-      <H4 className="mb-4">But wait.. there&apos;s more!</H4>
+      <H4 className="mb-4">Want to see more?</H4>
       <Card>
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <Link
@@ -38,14 +38,14 @@ export default function NextPreviousPost({
                   .width(1000)
                   .height(1000)
                   .url()}
-                className="border shadow-lg rounded-xl mb-8"
+                className="border shadow-lg rounded-lg mb-8"
                 width={200}
                 height={200}
                 quality={100}
                 alt={previousPost.mainImage.alt}
               />
               <div className="flex flex-col gap-1 lg:gap-2 transition-transform">
-                <P className="text-muted-foreground">Previous post</P>
+                <P className="text-muted-foreground">Previous</P>
                 <H3 className="line-clamp-1">{previousPost.title}</H3>
               </div>
             </div>
@@ -69,7 +69,7 @@ export default function NextPreviousPost({
                 alt={nextPost.mainImage.alt}
               />
               <div className="flex flex-col gap-1 lg:gap-2 transition-transform">
-                <P className="text-muted-foreground">Next post</P>
+                <P className="text-muted-foreground">Next</P>
                 <H3 className="line-clamp-1">{nextPost.title}</H3>
               </div>
             </div>

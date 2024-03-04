@@ -48,7 +48,7 @@ export default function Post({
           width={width}
           height={height}
           loading="lazy"
-          className="rounded-lg border mb-2"
+          className="rounded-lg border mb-2 shadow-lg"
         />
         <MutedText className="mx-auto mt-0 italic">{value.alt}</MutedText>
       </div>
@@ -105,7 +105,7 @@ export default function Post({
         ) : null}
         <Image
           src={builder.image(post.mainImage).width(1024).height(1024).url()}
-          className="rounded-lg my-16"
+          className="rounded-lg my-16 shadow-lg"
           quality={100}
           width={512}
           height={512}
