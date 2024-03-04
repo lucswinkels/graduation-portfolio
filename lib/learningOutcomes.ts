@@ -18,13 +18,13 @@ export const learningOutcomes = [
       "You explore the organisational context of your project, make business, sustainable and ethical considerations and manage all aspects of the execution of the project.",
   },
   {
-    title: "4: Investigative problem solving",
+    title: "4: Investigative Problem Solving",
     slug: "4-investigative-problem-solving",
     description:
       "You take a critical look at your project from different perspectives, identify problems, find an effective approach for solving them and arrive at appropriate solutions.",
   },
   {
-    title: "5: Personal leadership",
+    title: "5: Personal Leadership",
     slug: "5-personal-leadership",
     description:
       "You show an entrepreneurial attitude in both your project and personal development, you pay attention to your own learning ability and keep in mind what kind of IT professional and/or what type of positions you aspire to.",
