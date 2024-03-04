@@ -4,6 +4,7 @@ import * as React from "react";
 import { Check, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
+import { cn } from "@/lib/utils";
 import { Button, ButtonProps } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -27,19 +28,31 @@ export function ModeToggle(props: ButtonProps) {
       <DropdownMenuContent align="end">
         <DropdownMenuItem
           onClick={() => setTheme("light")}
-          className="flex items-center justify-between"
+          className={cn(
+            `bg-background flex items-center justify-between ${
+              theme === "light" && "bg-accent"
+            }`
+          )}
         >
           Light {theme === "light" && <Check className="size-4" />}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
-          className="flex items-center justify-between"
+          className={cn(
+            `bg-background flex items-center justify-between ${
+              theme === "dark" && "bg-accent"
+            }`
+          )}
         >
           Dark {theme === "dark" && <Check className="size-4" />}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
-          className="flex items-center justify-between"
+          className={cn(
+            `bg-background flex items-center justify-between ${
+              theme === "system" && "bg-accent"
+            }`
+          )}
         >
           System {theme === "system" && <Check className="size-4" />}
         </DropdownMenuItem>
