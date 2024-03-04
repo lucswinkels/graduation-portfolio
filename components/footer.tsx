@@ -27,7 +27,7 @@ export default function Footer() {
   ];
   return (
     <>
-      <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent border-t relative overflow-hidden">
+      <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t relative overflow-hidden">
         {/* <CardPattern className="opacity-5" /> */}
         <Container className="relative z-20">
           <div className="flex flex-col lg:flex-row justify-between lg:items-center gap-8">

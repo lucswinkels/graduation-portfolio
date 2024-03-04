@@ -28,7 +28,7 @@ export default function NextPreviousPost({
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <Link
             href={`/${previousPost.slug.current}`}
-            className="bg-background hover:bg-accent lg:basis-1/2 basis-full w-full p-8 border-b lg:border-b-0 lg:border-r transition-colors relative overflow-hidden"
+            className="bg-background hover:bg-accent-subtle lg:basis-1/2 basis-full w-full p-8 border-b lg:border-b-0 lg:border-r transition-colors relative overflow-hidden"
           >
             {/* <CardPattern /> */}
             <div className="relative z-20">
@@ -52,7 +52,7 @@ export default function NextPreviousPost({
           </Link>
           <Link
             href={`/${nextPost.slug.current}`}
-            className="lg:basis-1/2 basis-full w-full p-8 transition-colors relative overflow-hidden bg-background hover:bg-accent"
+            className="lg:basis-1/2 basis-full w-full p-8 transition-colors relative overflow-hidden bg-background hover:bg-accent-subtle"
           >
             {/* <CardPattern /> */}
             <div className="relative z-20">

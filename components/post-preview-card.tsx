@@ -26,7 +26,7 @@ export function PostPreviewCard({ ...props }) {
       >
         <Card
           {...props}
-          className="group-hover:-translate-y-2 transition-all relative bg-background hover:bg-accent"
+          className="group-hover:-translate-y-2 transition-all relative bg-background hover:bg-accent-subtle"
         >
           {/* <CardPattern /> */}
           <div className="flex flex-row items-center p-6 justify-between relative z-20">
