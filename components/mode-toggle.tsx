@@ -15,7 +15,7 @@ import {
 
 export function ModeToggle(props: ButtonProps) {
   const { theme, setTheme } = useTheme();
-
+  const themeOptions = ["light", "dark", "system"];
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -26,36 +26,19 @@ export function ModeToggle(props: ButtonProps) {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem
-          onClick={() => setTheme("light")}
-          className={cn(
-            `bg-background flex items-center justify-between ${
-              theme === "light" && "bg-accent"
-            }`
-          )}
-        >
-          Light {theme === "light" && <Check className="size-4" />}
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => setTheme("dark")}
-          className={cn(
-            `bg-background flex items-center justify-between ${
-              theme === "dark" && "bg-accent"
-            }`
-          )}
-        >
-          Dark {theme === "dark" && <Check className="size-4" />}
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          onClick={() => setTheme("system")}
-          className={cn(
-            `bg-background flex items-center justify-between ${
-              theme === "system" && "bg-accent"
-            }`
-          )}
-        >
-          System {theme === "system" && <Check className="size-4" />}
-        </DropdownMenuItem>
+        {themeOptions.map((option) => (
+          <DropdownMenuItem
+            key={option}
+            onClick={() => setTheme(option)}
+            className={cn(
+              `capitalize bg-background flex items-center justify-between ${
+                theme === option && "bg-accent"
+              }`
+            )}
+          >
+            {option} {theme === option && <Check className="size-4" />}
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );
