@@ -4,7 +4,6 @@ import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
-import { Skeleton } from "@/components/ui/skeleton";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import Posts from "@/components/posts";
@@ -21,7 +20,6 @@ export default async function Home() {
     query: projectPostsQuery,
     params: { projectSlug: "masita" },
   });
-
   const Content = () => (
     <div className="mb-16 xl:mb-24">
       <H3 className="w-full md:w-[500px] lg:w-[650px] mb-8">
@@ -36,16 +34,11 @@ export default async function Home() {
       </P>
     </div>
   );
-
   return (
     <Container>
       <FadeUp>
         <Content />
-        <React.Suspense
-          fallback={<Skeleton className="w-[100px] h-[100px] rounded-xl" />}
-        >
-          <Posts posts={posts} />
-        </React.Suspense>
+        <Posts posts={posts} />
       </FadeUp>
     </Container>
   );
