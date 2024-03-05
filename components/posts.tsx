@@ -25,6 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
+import { Skeleton } from "./ui/skeleton";
 
 export default function Posts({
   posts = [],
@@ -101,16 +102,23 @@ export default function Posts({
         <AnimatePresence>
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => (
-              <PostPreviewCard
+              <React.Suspense
                 key={post._id}
-                title={post.title}
-                slug={post.slug.current}
-                image={post.mainImage}
-                description={post.description}
-                categories={post.categories}
-                href={post.slug.current}
-                project={post.project}
-              />
+                fallback={
+                  <Skeleton className="w-[100px] h-[100px] rounded-xl" />
+                }
+              >
+                <PostPreviewCard
+                  key={post._id}
+                  title={post.title}
+                  slug={post.slug.current}
+                  image={post.mainImage}
+                  description={post.description}
+                  categories={post.categories}
+                  href={post.slug.current}
+                  project={post.project}
+                />
+              </React.Suspense>
             ))
           ) : (
             <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>

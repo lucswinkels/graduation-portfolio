@@ -4,6 +4,7 @@ import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
+import { Skeleton } from "@/components/ui/skeleton";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import Posts from "@/components/posts";
@@ -40,7 +41,11 @@ export default async function Home() {
     <Container>
       <FadeUp>
         <Content />
-        <Posts posts={posts} />
+        <React.Suspense
+          fallback={<Skeleton className="w-[100px] h-[100px] rounded-xl" />}
+        >
+          <Posts posts={posts} />
+        </React.Suspense>
       </FadeUp>
     </Container>
   );
