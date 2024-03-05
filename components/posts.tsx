@@ -38,6 +38,9 @@ export default function Posts({
     "all-learning-outcomes"
   );
 
+  if (!posts) {
+    return <Skeleton className="w-[100px] h-[100px] rounded-xl" />;
+  }
   const filteredPosts = posts.filter((post) => {
     return (
       selectedLearningOutcome === "all-learning-outcomes" ||
