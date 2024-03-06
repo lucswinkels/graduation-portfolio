@@ -1,4 +1,4 @@
-import { Image, RectangleHorizontal, Video } from "lucide-react";
+import { Code2, Image, RectangleHorizontal, Video } from "lucide-react";
 import { defineArrayMember, defineType } from "sanity";
 
 export default defineType({
@@ -92,6 +92,7 @@ export default defineType({
       type: "code",
       name: "code",
       title: "Code block",
+      icon: Code2,
       options: {
         language: "typescript",
         languageAlternatives: [
