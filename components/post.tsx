@@ -7,6 +7,7 @@ import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
 import { SanityDocument } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
+import { SanityAsset } from "@sanity/image-url/lib/types/types";
 import { ChevronRight } from "lucide-react";
 
 import { slugify } from "@/lib/utils";
@@ -37,8 +38,7 @@ export default function Post({
   previousPost: SanityDocument;
   nextPost: SanityDocument;
 }) {
-  //TODO: Fix typing
-  const ImageComponent = ({ value }: any) => {
+  const ImageComponent = ({ value }: SanityAsset) => {
     const { width, height } = getImageDimensions(value);
     return (
       <div className="my-16 flex justify-center flex-col w-max max-w-full">
@@ -55,18 +55,20 @@ export default function Post({
     );
   };
 
-  const VideoComponent = ({ value }: any) => {
-    const str = value.asset._ref;
-    const parts = str.split("-");
-    const assetId = parts[1];
+  const VideoComponent = ({ value }: SanityAsset) => {
+    const asset = value.asset._ref;
+    // Returns "type-assetId-fileType"
+    const assetParts = asset.split("-");
+    const assetId = assetParts[1];
+    const assetFileType = assetParts[2];
     return (
       <video
-        className="my-16 w-max max-w-full rounded-lg border shadow-lg"
+        className="my-16 w-max h-auto max-h-[80dvh] max-w-full rounded-lg border shadow-lg"
         autoPlay
         loop
         controls
         muted
-        src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.mp4`}
+        src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
       ></video>
     );
   };
@@ -74,7 +76,7 @@ export default function Post({
   const components = {
     types: {
       image: ImageComponent,
-      file: VideoComponent,
+      video: VideoComponent,
     },
     block: {
       normal: ({ children }: any) => <P>{children}</P>,
@@ -129,7 +131,7 @@ export default function Post({
           alt={post.mainImage.alt}
           priority
         />
-        <div className="prose prose-p:text-foreground dark:prose-invert max-w-full">
+        <div className="prose prose-p:text-foreground dark:prose-li:text-foreground dark:prose-invert max-w-full">
           <PortableText value={post.body} components={components} />
         </div>
         <NextPreviousPost previousPost={previousPost} nextPost={nextPost} />
