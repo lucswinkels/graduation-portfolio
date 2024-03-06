@@ -1,3 +1,4 @@
+import { Image, RectangleHorizontal, Video } from "lucide-react";
 import { defineArrayMember, defineType } from "sanity";
 
 export default defineType({
@@ -42,6 +43,7 @@ export default defineType({
       type: "object",
       name: "button",
       title: "Button",
+      icon: RectangleHorizontal,
       fields: [
         {
           title: "Text",
@@ -60,6 +62,7 @@ export default defineType({
       name: "image",
       title: "Image",
       options: { hotspot: true },
+      icon: Image,
       fields: [
         {
           name: "alt",
@@ -74,6 +77,7 @@ export default defineType({
       type: "file",
       name: "video",
       title: "Video",
+      icon: Video,
       fields: [
         {
           name: "alt",
