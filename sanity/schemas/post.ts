@@ -34,7 +34,7 @@ export default defineType({
       fields: [
         {
           name: "alt",
-          type: "text",
+          type: "string",
           title: "Alternative text",
           validation: (Rule) =>
             Rule.error("You have to fill out the alternative text.").required(),

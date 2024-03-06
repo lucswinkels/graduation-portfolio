@@ -62,12 +62,30 @@ export default defineType({
     // as a block type.
     defineArrayMember({
       type: "image",
+      name: "image",
+      title: "Image",
       options: { hotspot: true },
       fields: [
         {
           name: "alt",
           type: "string",
-          title: "Alternative Text",
+          title: "Alternative text",
+          validation: (Rule) =>
+            Rule.error("You have to fill out the alternative text.").required(),
+        },
+      ],
+    }),
+    defineArrayMember({
+      type: "file",
+      name: "video",
+      title: "Video",
+      fields: [
+        {
+          name: "alt",
+          type: "string",
+          title: "Alternative text",
+          validation: (Rule) =>
+            Rule.error("You have to fill out the alternative text.").required(),
         },
       ],
     }),
