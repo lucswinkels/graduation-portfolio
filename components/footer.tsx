@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
 
-import { CardPattern } from "./card-pattern";
 import Container from "./container";
 import { Logo } from "./logo";
 
@@ -27,9 +25,8 @@ export default function Footer() {
   ];
   return (
     <>
-      <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t relative overflow-hidden">
-        {/* <CardPattern className="opacity-5" /> */}
-        <Container className="relative z-20">
+      <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t">
+        <Container>
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-8">
             <Logo className="size-12 lg:size-14 xl:size-18" />
             <ul className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center w-max">

@@ -38,7 +38,7 @@ export default function ReadingGuide() {
         </div>
         <Button asChild className="mt-4 lg:mt-0">
           <a href="/files/reading-guide.pdf" target="_blank">
-            <ExternalLink className="mr-2 size-4" /> PDF version
+            PDF version <ExternalLink className="ml-2 size-4" />
           </a>
         </Button>
       </div>
