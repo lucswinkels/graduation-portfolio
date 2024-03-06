@@ -14,6 +14,7 @@ import { slugify } from "@/lib/utils";
 import NotFoundPage from "@/app/not-found";
 
 import FadeUp from "./animation/fade-up";
+import { CodeBlock } from "./code-block";
 import Container from "./container";
 import NextPreviousPost from "./next-previous-post";
 import { Blockquote } from "./typography/blockquote";
@@ -75,10 +76,23 @@ export default function Post({
     );
   };
 
+  const CodeComponent = ({ value }: SanityAsset) => {
+    return (
+      <div className="my-16 w-max max-w-full">
+        <CodeBlock
+          language={value.language}
+          value={value.code}
+          fileName={value.filename}
+        />
+      </div>
+    );
+  };
+
   const components = {
     types: {
       image: ImageComponent,
       video: VideoComponent,
+      code: CodeComponent,
     },
     block: {
       normal: ({ children }: any) => <P>{children}</P>,
