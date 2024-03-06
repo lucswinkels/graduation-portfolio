@@ -48,7 +48,7 @@ export default function Post({
           width={width}
           height={height}
           loading="lazy"
-          className="rounded-lg border mb-2 shadow-lg"
+          className="rounded-lg border mb-2 shadow-lg max-h-[80dvh] max-w-full w-max h-auto"
         />
         <MutedText className="mx-auto mt-0 italic">{value.alt}</MutedText>
       </div>
@@ -56,20 +56,22 @@ export default function Post({
   };
 
   const VideoComponent = ({ value }: SanityAsset) => {
-    const asset = value.asset._ref;
-    // Returns "type-assetId-fileType"
+    const asset = value.asset._ref; // Returns "type-assetId-fileType"
     const assetParts = asset.split("-");
     const assetId = assetParts[1];
     const assetFileType = assetParts[2];
     return (
-      <video
-        className="my-16 w-max h-auto max-h-[80dvh] max-w-full rounded-lg border shadow-lg"
-        autoPlay
-        loop
-        controls
-        muted
-        src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
-      ></video>
+      <div className="my-16 flex justify-center flex-col w-max max-w-full">
+        <video
+          className="w-max h-auto max-h-[80dvh] max-w-full rounded-lg border shadow-lg mb-2"
+          autoPlay
+          loop
+          controls
+          muted
+          src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
+        ></video>
+        <MutedText className="mx-auto mt-0 italic">{value.alt}</MutedText>
+      </div>
     );
   };
 
