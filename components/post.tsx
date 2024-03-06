@@ -8,7 +8,7 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import { SanityDocument } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityAsset } from "@sanity/image-url/lib/types/types";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ExternalLink } from "lucide-react";
 
 import { slugify } from "@/lib/utils";
 import NotFoundPage from "@/app/not-found";
@@ -27,6 +27,7 @@ import { MutedText } from "./typography/muted-text";
 import { P } from "./typography/p";
 import { SmallText } from "./typography/small-text";
 import { Badge } from "./ui/badge";
+import { Button } from "./ui/button";
 
 const builder = imageUrlBuilder(client);
 
@@ -88,19 +89,32 @@ export default function Post({
     );
   };
 
+  const ButtonComponent = ({ value }: SanityAsset) => {
+    return (
+      <Button asChild className="no-underline">
+        <a href={value.href} target="_blank">
+          <ExternalLink className="mr-2 size-4" /> {value.text}
+        </a>
+      </Button>
+    );
+  };
+
   const components = {
     types: {
       image: ImageComponent,
       video: VideoComponent,
       code: CodeComponent,
+      button: ButtonComponent,
     },
     block: {
-      normal: ({ children }: any) => <P>{children}</P>,
-      blockquote: ({ children }: any) => <Blockquote>{children}</Blockquote>,
-      h1: ({ children }: any) => <H1>{children}</H1>,
-      h2: ({ children }: any) => <H2>{children}</H2>,
-      h3: ({ children }: any) => <H3>{children}</H3>,
-      h4: ({ children }: any) => <H4>{children}</H4>,
+      normal: ({ children }: SanityAsset) => <P>{children}</P>,
+      blockquote: ({ children }: SanityAsset) => (
+        <Blockquote>{children}</Blockquote>
+      ),
+      h1: ({ children }: SanityAsset) => <H1>{children}</H1>,
+      h2: ({ children }: SanityAsset) => <H2>{children}</H2>,
+      h3: ({ children }: SanityAsset) => <H3>{children}</H3>,
+      h4: ({ children }: SanityAsset) => <H4>{children}</H4>,
     },
   };
 

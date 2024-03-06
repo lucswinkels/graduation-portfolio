@@ -39,6 +39,23 @@ export default defineType({
       },
     }),
     defineArrayMember({
+      type: "object",
+      name: "button",
+      title: "Button",
+      fields: [
+        {
+          title: "Text",
+          name: "text",
+          type: "string",
+        },
+        {
+          title: "URL",
+          name: "href",
+          type: "url",
+        },
+      ],
+    }),
+    defineArrayMember({
       type: "image",
       name: "image",
       title: "Image",
