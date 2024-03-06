@@ -6,7 +6,6 @@ import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityDocument } from "next-sanity";
 
-import { CardPattern } from "./card-pattern";
 import { H3 } from "./typography/h3";
 import { H4 } from "./typography/h4";
 import { P } from "./typography/p";
@@ -28,10 +27,9 @@ export default function NextPreviousPost({
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <Link
             href={`/${previousPost.slug.current}`}
-            className="bg-background hover:bg-accent-subtle lg:basis-1/2 basis-full w-full p-8 border-b lg:border-b-0 lg:border-r transition-colors relative overflow-hidden"
+            className="bg-background hover:bg-accent-subtle lg:basis-1/2 basis-full w-full p-8 border-b lg:border-b-0 lg:border-r transition-colors"
           >
-            {/* <CardPattern /> */}
-            <div className="relative z-20">
+            <div>
               <Image
                 src={builder
                   .image(previousPost.mainImage)
@@ -52,10 +50,9 @@ export default function NextPreviousPost({
           </Link>
           <Link
             href={`/${nextPost.slug.current}`}
-            className="lg:basis-1/2 basis-full w-full p-8 transition-colors relative overflow-hidden bg-background hover:bg-accent-subtle"
+            className="lg:basis-1/2 basis-full w-full p-8 transition-colors bg-background hover:bg-accent-subtle"
           >
-            {/* <CardPattern /> */}
-            <div className="relative z-20">
+            <div>
               <Image
                 src={builder
                   .image(nextPost.mainImage)

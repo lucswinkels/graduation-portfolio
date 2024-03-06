@@ -93,7 +93,7 @@ export default function Post({
     return (
       <Button asChild className="no-underline">
         <a href={value.href} target="_blank">
-          <ExternalLink className="mr-2 size-4" /> {value.text}
+          {value.text} <ExternalLink className="ml-2 size-4" />
         </a>
       </Button>
     );
