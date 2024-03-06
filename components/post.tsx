@@ -55,9 +55,26 @@ export default function Post({
     );
   };
 
+  const VideoComponent = ({ value }: any) => {
+    const str = value.asset._ref;
+    const parts = str.split("-");
+    const assetId = parts[1];
+    return (
+      <video
+        className="my-16 w-max max-w-full rounded-lg border shadow-lg"
+        autoPlay
+        loop
+        controls
+        muted
+        src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.mp4`}
+      ></video>
+    );
+  };
+
   const components = {
     types: {
       image: ImageComponent,
+      file: VideoComponent,
     },
     block: {
       normal: ({ children }: any) => <P>{children}</P>,

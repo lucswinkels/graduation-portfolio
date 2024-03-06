@@ -71,5 +71,10 @@ export default defineType({
         },
       ],
     }),
+    defineArrayMember({
+      type: "file",
+      name: "video",
+      title: "Video",
+    }),
   ],
 });
