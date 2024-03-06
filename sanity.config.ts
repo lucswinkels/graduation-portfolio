@@ -4,6 +4,7 @@
 
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
+import { muxInput } from "sanity-plugin-mux-input";
 import { deskTool } from "sanity/desk";
 
 import { defaultDocumentNode } from "./sanity/desk/defaultDocumentNode";
@@ -18,6 +19,7 @@ export default defineConfig({
   // Add and edit the content schema in the './sanity/schema' folder
   schema,
   plugins: [
+    muxInput({ mp4_support: "standard" }),
     deskTool({ defaultDocumentNode }),
     // Vision is a tool that lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
