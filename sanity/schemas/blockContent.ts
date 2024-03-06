@@ -71,10 +71,5 @@ export default defineType({
         },
       ],
     }),
-    defineArrayMember({
-      title: "Video",
-      name: "video",
-      type: "mux.video",
-    }),
   ],
 });
