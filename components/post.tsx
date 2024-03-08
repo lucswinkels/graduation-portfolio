@@ -161,7 +161,7 @@ export default function Post({
           alt={post.mainImage.alt}
           priority
         />
-        <div className="prose prose-p:text-foreground dark:prose-li:text-foreground dark:prose-invert max-w-full">
+        <div className="prose prose-p:text-foreground marker:text-foreground/40 dark:prose-li:text-foreground dark:prose-invert max-w-full">
           <PortableText value={post.body} components={components} />
         </div>
         <NextPreviousPost previousPost={previousPost} nextPost={nextPost} />
