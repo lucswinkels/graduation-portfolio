@@ -31,7 +31,7 @@ export function ModeToggle(props: ButtonProps) {
             key={option}
             onClick={() => setTheme(option)}
             className={cn(
-              `capitalize bg-background flex items-center justify-between hover:!bg-accent-subtle ${
+              `capitalize bg-background flex items-center justify-between ${
                 theme === option && "bg-accent"
               }`
             )}
