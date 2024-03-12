@@ -25,6 +25,7 @@ import { H4 } from "./typography/h4";
 import { Lead } from "./typography/lead";
 import { MutedText } from "./typography/muted-text";
 import { P } from "./typography/p";
+import { Prose } from "./typography/prose";
 import { SmallText } from "./typography/small-text";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
@@ -161,9 +162,9 @@ export default function Post({
           alt={post.mainImage.alt}
           priority
         />
-        <div className="prose prose-p:text-foreground marker:text-foreground/40 dark:prose-li:text-foreground dark:prose-invert max-w-full">
+        <Prose>
           <PortableText value={post.body} components={components} />
-        </div>
+        </Prose>
         <NextPreviousPost previousPost={previousPost} nextPost={nextPost} />
       </Container>
     </FadeUp>
