@@ -204,19 +204,28 @@ export default function ReadingGuide() {
               can I avoid them?
             </li>
             <li>
-              Which technologies can and should be used to develop the new
-              webshop?
+              Which features are needed for the B2C-webshop and with which
+              priority should they be implemented?
             </li>
-            <li>How can Masita’s technical requirements be integrated?</li>
+            <li>
+              Which platforms can and should be used to develop the new webshop?
+            </li>
+            <li>How can Masita&apos;s technical requirements be integrated?</li>
             <li>
               How can I make sure the new webshop is user-friendly and optimised
               for conversion?
             </li>
           </List>
           <P>
-            With these questions in mind, I started conducting research on which
-            technologies could be used.
+            To further identify the requirements of the project, I made a list
+            of{" "}
+            <A href="/requirements-prioritisation">
+              requirements and user stories
+            </A>{" "}
+            ordered by priority using the requirements prioritisation method.
           </P>
+          <P>Previous issues research - TBA</P>
+          <P>E-commerce platforms research - TBA</P>
         </div>
       </Prose>
     </>
