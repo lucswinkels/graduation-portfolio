@@ -15,6 +15,7 @@ import { H3 } from "@/components/typography/h3";
 import { Lead } from "@/components/typography/lead";
 import { List } from "@/components/typography/list";
 import { P } from "@/components/typography/p";
+import { Prose } from "@/components/typography/prose";
 import { SmallText } from "@/components/typography/small-text";
 
 export const metadata: Metadata = {
@@ -42,7 +43,7 @@ export default function ReadingGuide() {
           </a>
         </Button>
       </div>
-      <div className="prose prose-p:text-foreground marker:text-foreground/40 dark:prose-li:text-foreground dark:prose-invert max-w-full">
+      <Prose>
         <H2>Table of contents</H2>
         <List>
           <li>
@@ -206,7 +207,7 @@ export default function ReadingGuide() {
             technologies could be used.
           </P>
         </div>
-      </div>
+      </Prose>
     </>
   );
 
