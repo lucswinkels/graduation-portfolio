@@ -217,10 +217,13 @@ export default function ReadingGuide() {
             </li>
           </List>
           <P>
-            With these questions in mind, I started conducting research on which
-            technologies could be used.
+            To further identify the requirements of the project, I made a list
+            of{" "}
+            <A href="/requirements-prioritisation">
+              requirements and user stories
+            </A>{" "}
+            ordered by priority using the requirements prioritisation method.
           </P>
-          <P>Requirements prioritisation - TBA</P>
           <P>Previous issues research - TBA</P>
           <P>E-commerce platforms research - TBA</P>
         </div>
