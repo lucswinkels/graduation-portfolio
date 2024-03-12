@@ -42,7 +42,7 @@ export default function ReadingGuide() {
           </a>
         </Button>
       </div>
-      <div className="prose dark:prose-invert marker:text-foreground/40 max-w-full">
+      <div className="prose prose-p:text-foreground marker:text-foreground/40 dark:prose-li:text-foreground dark:prose-invert max-w-full">
         <H2>Table of contents</H2>
         <List>
           <li>
