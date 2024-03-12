@@ -1,8 +1,16 @@
 import * as React from "react";
 import { Metadata } from "next";
 import Link from "next/link";
-import { ChevronRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import { Button } from "@/components/ui/button";
 import FadeUp from "@/components/animation/fade-up";
 import BurdenOfProof from "@/components/burden-of-proof";
@@ -16,7 +24,6 @@ import { Lead } from "@/components/typography/lead";
 import { List } from "@/components/typography/list";
 import { P } from "@/components/typography/p";
 import { Prose } from "@/components/typography/prose";
-import { SmallText } from "@/components/typography/small-text";
 
 export const metadata: Metadata = {
   title: "Reading guide",
@@ -25,13 +32,17 @@ export const metadata: Metadata = {
 export default function ReadingGuide() {
   const Content = () => (
     <>
-      <div className="md:flex hidden items-center mb-8 text-muted-foreground">
-        <SmallText>
-          <Link href="/">Home</Link>
-        </SmallText>
-        <ChevronRight className="mx-1 size-4" />
-        <SmallText className="text-foreground">Reading guide</SmallText>
-      </div>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Reading guide</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
       <div className="lg:flex justify-between mb-8 xl:mb-16">
         <div>
           <H1 className="mb-4">Reading guide</H1>
