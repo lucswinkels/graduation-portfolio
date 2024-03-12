@@ -1,16 +1,23 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import { getImageDimensions } from "@sanity/asset-utils";
 import { SanityDocument } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityAsset } from "@sanity/image-url/lib/types/types";
-import { ChevronRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 import { slugify } from "@/lib/utils";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import NotFoundPage from "@/app/not-found";
 
 import FadeUp from "./animation/fade-up";
@@ -26,7 +33,6 @@ import { Lead } from "./typography/lead";
 import { MutedText } from "./typography/muted-text";
 import { P } from "./typography/p";
 import { Prose } from "./typography/prose";
-import { SmallText } from "./typography/small-text";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 
@@ -122,19 +128,23 @@ export default function Post({
   return post ? (
     <FadeUp>
       <Container>
-        <div className="md:flex hidden items-center mb-8 text-muted-foreground">
-          <SmallText>
-            <Link href="/">Home</Link>
-          </SmallText>
-          <ChevronRight className="mx-1 size-4" />
-          <SmallText>
-            <Link href={`/projects/${slugify(post.project)}`}>
-              {post.project}
-            </Link>
-          </SmallText>
-          <ChevronRight className="mx-1 size-4" />
-          <SmallText className="text-foreground">{post.title}</SmallText>
-        </div>
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbLink href={`/projects/${slugify(post.project)}`}>
+                {post.project}
+              </BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>{post.title}</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
         <H1 className="mb-4">{post.title}</H1>
         <Lead>{post.description}</Lead>
         {post.categories || post.researchMethods ? (
