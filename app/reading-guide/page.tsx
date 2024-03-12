@@ -204,10 +204,13 @@ export default function ReadingGuide() {
               can I avoid them?
             </li>
             <li>
-              Which technologies can and should be used to develop the new
-              webshop?
+              Which features are needed for the B2C-webshop and with which
+              priority should they be implemented?
             </li>
-            <li>How can Masita’s technical requirements be integrated?</li>
+            <li>
+              Which platforms can and should be used to develop the new webshop?
+            </li>
+            <li>How can Masita&apos;s technical requirements be integrated?</li>
             <li>
               How can I make sure the new webshop is user-friendly and optimised
               for conversion?
@@ -217,6 +220,9 @@ export default function ReadingGuide() {
             With these questions in mind, I started conducting research on which
             technologies could be used.
           </P>
+          <P>Requirements prioritisation - TBA</P>
+          <P>Previous issues research - TBA</P>
+          <P>E-commerce platforms research - TBA</P>
         </div>
       </Prose>
     </>
