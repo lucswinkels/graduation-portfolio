@@ -29,7 +29,7 @@ export default function Footer() {
         <Container>
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-8">
             <Logo className="size-12 lg:size-14 xl:size-18" />
-            <ul className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center w-max">
+            <ul className="flex flex-col md:flex-row gap-4 md:gap-8 md:items-center w-max text-sm font-medium">
               {links.map((link) => (
                 <li key={link.href}>
                   {link.external ? (
