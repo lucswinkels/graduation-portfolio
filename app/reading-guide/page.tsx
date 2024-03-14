@@ -224,8 +224,25 @@ export default function ReadingGuide() {
             </A>{" "}
             ordered by priority using the requirements prioritisation method.
           </P>
-          <P>Previous issues research - TBA</P>
-          <P>E-commerce platforms research - TBA</P>
+          <P>
+            {" "}
+            <A href="/previous-issues-research">Previous issues research</A> -
+            TBA
+          </P>
+          <P>
+            {" "}
+            <A href="/e-commerce-platforms-research">
+              E-commerce platforms research
+            </A>{" "}
+            - TBA
+          </P>
+          <P>
+            {" "}
+            <A href="/technical-requirement-integration-research">
+              Technical requirement integration research
+            </A>{" "}
+            - TBA
+          </P>
         </div>
       </Prose>
     </>
