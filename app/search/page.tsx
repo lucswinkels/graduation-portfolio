@@ -59,7 +59,7 @@ export default async function SearchPage() {
             </div>
           )}
         </div>
-        {searchQuery && results.length === 0 ? (
+        {searchQuery && searchQuery.trim() !== "" && results.length === 0 ? (
           <P>No results found.</P>
         ) : (
           <Posts posts={results} />

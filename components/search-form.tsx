@@ -121,7 +121,9 @@ export function SearchForm({ className }: React.ComponentProps<"form">) {
   function onSubmit(values: z.infer<typeof formSchema>) {
     router.push(`/search?query=${encodeURIComponent(values.searchQuery)}`);
     // TODO: Close drawer/dialog
+    // TODO: Refresh page
   }
+  React.useEffect(() => {}, [form]);
   return (
     <Form {...form}>
       <form
