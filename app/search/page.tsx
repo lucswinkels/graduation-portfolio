@@ -36,6 +36,7 @@ export default async function SearchPage() {
     query: projectPostsQuery,
     params: { projectSlug: searchQuery },
   });
+
   return (
     <Container>
       <FadeUp>
@@ -52,13 +53,12 @@ export default async function SearchPage() {
         </Breadcrumb>
         <div className="mb-8 xl:mb-16">
           <H1 className="mb-4">Search</H1>
-          {searchQuery && searchQuery.trim() !== "" ? (
+          {searchQuery && searchQuery.trim() !== "" && (
             <Lead> Showing search results for: {searchQuery}</Lead>
-          ) : (
-            <div className="max-w-full lg:max-w-sm mt-8">
-              <SearchForm />
-            </div>
           )}
+          <div className="max-w-full lg:max-w-sm mt-8">
+            <SearchForm />
+          </div>
         </div>
         {searchQuery && searchQuery.trim() !== "" && results.length === 0 && (
           <P>No results found.</P>

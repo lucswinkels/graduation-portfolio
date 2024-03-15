@@ -136,6 +136,11 @@ export function SearchForm({ className }: React.ComponentProps<"form">) {
   // function onSubmit(values: z.infer<typeof formSchema>) {
   //   router.replace(`/search?query=${encodeURIComponent(values.searchQuery)}`);
   // }
+  // const router = useRouter();
+  // function onSubmit(values: z.infer<typeof formSchema>) {
+  //   setSearchQuery(values.searchQuery);
+  //   router.push(`/search?query=${encodeURIComponent(values.searchQuery)}`);
+  // }
   function onSubmit(values: z.infer<typeof formSchema>) {
     setSearchQuery(values.searchQuery);
     window.location.href = `/search?query=${encodeURIComponent(
