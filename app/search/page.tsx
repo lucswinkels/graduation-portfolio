@@ -1,7 +1,6 @@
 import * as React from "react";
 import { Metadata } from "next";
 import { headers } from "next/headers";
-import { useSearchParams } from "next/navigation";
 import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
@@ -9,7 +8,6 @@ import { SanityDocument } from "next-sanity";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import Posts from "@/components/posts";
-import { A } from "@/components/typography/a";
 import { H3 } from "@/components/typography/h3";
 import { P } from "@/components/typography/p";
 
