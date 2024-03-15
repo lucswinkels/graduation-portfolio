@@ -25,6 +25,7 @@ import {
 import Container from "./container";
 import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
+import { SearchComponent } from "./search";
 import { Button } from "./ui/button";
 
 export function Navbar() {
@@ -120,6 +121,9 @@ export function Navbar() {
           </div>
           <ModeToggle variant="outline" />
         </div>
+        <div className="mt-8">
+          <SearchComponent />
+        </div>
       </div>
     );
   };
@@ -165,6 +169,9 @@ export function Navbar() {
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <ModeToggle variant="ghost" />
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <SearchComponent iconOnly />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
