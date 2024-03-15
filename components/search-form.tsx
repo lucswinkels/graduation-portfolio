@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Search } from "lucide-react";
+import { MoveRight, Search } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -33,13 +33,13 @@ import {
   FormControl,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
 interface Props {
   iconOnly?: boolean;
+  fullWidthTrigger?: boolean;
 }
 
 const formSchema = z.object({
@@ -61,7 +61,12 @@ export function SearchFormComponent(props: Props) {
               <Search className="size-4" />
             </Button>
           ) : (
-            <Button variant="outline">
+            <Button
+              variant="outline"
+              className={`${
+                props.fullWidthTrigger && "w-full flex justify-between"
+              }`}
+            >
               Search <Search className="size-4 ml-2" />
             </Button>
           )}
@@ -87,7 +92,12 @@ export function SearchFormComponent(props: Props) {
             <Search className="size-4" />
           </Button>
         ) : (
-          <Button variant="outline">
+          <Button
+            variant="outline"
+            className={`${
+              props.fullWidthTrigger && "w-full flex justify-between"
+            }`}
+          >
             Search <Search className="size-4 ml-2" />
           </Button>
         )}
@@ -117,11 +127,14 @@ export function SearchForm({ className }: React.ComponentProps<"form">) {
       searchQuery: "",
     },
   });
-  const router = useRouter();
+  // const router = useRouter();
+  // function onSubmit(values: z.infer<typeof formSchema>) {
+  //   router.push(`/search?query=${encodeURIComponent(values.searchQuery)}`);
+  // }
   function onSubmit(values: z.infer<typeof formSchema>) {
-    router.push(`/search?query=${encodeURIComponent(values.searchQuery)}`);
-    // TODO: Close drawer/dialog
-    // TODO: Refresh page
+    window.location.href = `/search?query=${encodeURIComponent(
+      values.searchQuery
+    )}`;
   }
   React.useEffect(() => {}, [form]);
   return (
@@ -135,7 +148,6 @@ export function SearchForm({ className }: React.ComponentProps<"form">) {
           name="searchQuery"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Search query</FormLabel>
               <FormControl>
                 <Input
                   placeholder="What do you want to search for?"
@@ -146,7 +158,9 @@ export function SearchForm({ className }: React.ComponentProps<"form">) {
             </FormItem>
           )}
         />
-        <Button type="submit">Submit</Button>
+        <Button type="submit">
+          Search <MoveRight className="ml-2 size-4" />
+        </Button>
       </form>
     </Form>
   );

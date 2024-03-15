@@ -30,6 +30,7 @@ export default async function SearchPage() {
   const fullUrl = headersList.get("referer") || "";
   const urlParams = new URLSearchParams(fullUrl.split("?")[1]);
   const searchQuery = urlParams.get("query") || "";
+
   // TODO: Add other content for results instead of just project posts based on project (also add posts based on post slug)
   const results = await sanityFetch<SanityDocument[]>({
     query: projectPostsQuery,
@@ -51,17 +52,18 @@ export default async function SearchPage() {
         </Breadcrumb>
         <div className="mb-8 xl:mb-16">
           <H1 className="mb-4">Search</H1>
-          {searchQuery ? (
+          {searchQuery && searchQuery.trim() !== "" ? (
             <Lead> Showing search results for: {searchQuery}</Lead>
           ) : (
-            <div className="max-w-full lg:max-w-md mt-8">
+            <div className="max-w-full lg:max-w-sm mt-8">
               <SearchForm />
             </div>
           )}
         </div>
-        {searchQuery && searchQuery.trim() !== "" && results.length === 0 ? (
+        {searchQuery && searchQuery.trim() !== "" && results.length === 0 && (
           <P>No results found.</P>
-        ) : (
+        )}
+        {searchQuery && searchQuery.trim() !== "" && results.length > 0 && (
           <Posts posts={results} />
         )}
       </FadeUp>

@@ -122,7 +122,7 @@ export function Navbar() {
           <ModeToggle variant="outline" />
         </div>
         <div className="mt-8">
-          <SearchFormComponent />
+          <SearchFormComponent fullWidthTrigger />
         </div>
       </div>
     );
