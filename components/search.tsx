@@ -1,5 +1,10 @@
+"use client";
+
 import * as React from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { Search } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
@@ -22,12 +27,25 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 
 interface Props {
   iconOnly?: boolean;
 }
+
+const formSchema = z.object({
+  searchQuery: z.string().min(3, {
+    message: "Search query must be at least 3 characters.",
+  }),
+});
 
 export function SearchComponent(props: Props) {
   const [open, setOpen] = React.useState(false);
@@ -92,13 +110,39 @@ export function SearchComponent(props: Props) {
 }
 
 function SearchForm({ className }: React.ComponentProps<"form">) {
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      searchQuery: "",
+    },
+  });
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    console.log(values);
+  }
   return (
-    <form className={cn("grid items-start gap-4", className)}>
-      <div className="grid gap-2">
-        <Label htmlFor="query">Search query</Label>
-        <Input id="query" placeholder="What do you want to search for?" />
-      </div>
-      <Button type="submit">Search</Button>
-    </form>
+    <Form {...form}>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className={cn("grid items-start gap-4", className)}
+      >
+        <FormField
+          control={form.control}
+          name="searchQuery"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Search query</FormLabel>
+              <FormControl>
+                <Input
+                  placeholder="What do you want to search for?"
+                  {...field}
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <Button type="submit">Submit</Button>
+      </form>
+    </Form>
   );
 }
