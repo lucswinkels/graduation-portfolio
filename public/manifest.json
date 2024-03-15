@@ -1,11 +1,11 @@
 {
-  "name": "Portfolio | Luc Swinkels",
-  "short_name": "Portfolio | LS",
-  "description": "Portfolio | Luc Swinkels",
+  "name": "Graduation portfolio | Luc Swinkels",
+  "short_name": "Graduation portfolio | LS",
+  "description": "My portfolio for my graduation internship at Moonly Software.",
   "theme_color": "#fefefe",
   "background_color": "#fefefe",
   "display": "standalone",
-  "start_url": "/",
+  "start_url": "https://graduation.lucswinkels.com/",
   "orientation": "any",
   "icons": [
     {
