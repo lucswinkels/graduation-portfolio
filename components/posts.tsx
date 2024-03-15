@@ -26,6 +26,12 @@ import {
   SelectValue,
 } from "./ui/select";
 
+interface LearningOutcome {
+  slug: {
+    current: string;
+  };
+}
+
 export default function Posts({
   posts = [],
   className,
@@ -41,7 +47,8 @@ export default function Posts({
     return (
       selectedLearningOutcome === "all-learning-outcomes" ||
       post?.learningOutcomes?.some(
-        (outcome: any) => outcome.slug.current === selectedLearningOutcome
+        (outcome: LearningOutcome) =>
+          outcome.slug.current === selectedLearningOutcome
       )
     );
   });
