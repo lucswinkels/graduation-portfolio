@@ -48,7 +48,7 @@ const formSchema = z.object({
   }),
 });
 
-export function SearchComponent(props: Props) {
+export function SearchFormComponent(props: Props) {
   const [open, setOpen] = React.useState(false);
   const isDesktop = useMediaQuery("(min-width: 768px)");
 
@@ -110,7 +110,7 @@ export function SearchComponent(props: Props) {
   );
 }
 
-function SearchForm({ className }: React.ComponentProps<"form">) {
+export function SearchForm({ className }: React.ComponentProps<"form">) {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {

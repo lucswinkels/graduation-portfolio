@@ -5,17 +5,27 @@ import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import Posts from "@/components/posts";
-import { H3 } from "@/components/typography/h3";
+import { SearchForm } from "@/components/search-form";
+import { H1 } from "@/components/typography/h1";
+import { Lead } from "@/components/typography/lead";
 import { P } from "@/components/typography/p";
 
 export const metadata: Metadata = {
   title: "Search // Portfolio | Luc Swinkels",
 };
 
-export default async function SearchComponent() {
+export default async function SearchPage() {
   const headersList = headers();
   const fullUrl = headersList.get("referer") || "";
   const urlParams = new URLSearchParams(fullUrl.split("?")[1]);
@@ -25,19 +35,31 @@ export default async function SearchComponent() {
     query: projectPostsQuery,
     params: { projectSlug: searchQuery },
   });
-  const Content = () => (
-    <div className="mb-16 xl:mb-24">
-      <H3 className="w-full md:w-[500px] lg:w-[650px] mb-8">Search</H3>
-      <P className="w-full md:w-[500px] lg:w-[650px] text-lg text-balance">
-        Showing search results for: {searchQuery}
-      </P>
-    </div>
-  );
   return (
     <Container>
       <FadeUp>
-        <Content />
-        {results.length === 0 ? (
+        <Breadcrumb>
+          <BreadcrumbList>
+            <BreadcrumbItem>
+              <BreadcrumbLink href="/">Home</BreadcrumbLink>
+            </BreadcrumbItem>
+            <BreadcrumbSeparator />
+            <BreadcrumbItem>
+              <BreadcrumbPage>Burden of proof</BreadcrumbPage>
+            </BreadcrumbItem>
+          </BreadcrumbList>
+        </Breadcrumb>
+        <div className="mb-8 xl:mb-16">
+          <H1 className="mb-4">Search</H1>
+          {searchQuery ? (
+            <Lead> Showing search results for: {searchQuery}</Lead>
+          ) : (
+            <div className="w-full max-w-lg">
+              <SearchForm />
+            </div>
+          )}
+        </div>
+        {searchQuery && results.length === 0 ? (
           <P>No results found.</P>
         ) : (
           <Posts posts={results} />
