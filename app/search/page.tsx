@@ -45,7 +45,7 @@ export default async function SearchPage() {
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbPage>Burden of proof</BreadcrumbPage>
+              <BreadcrumbPage>Search</BreadcrumbPage>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
@@ -54,7 +54,7 @@ export default async function SearchPage() {
           {searchQuery ? (
             <Lead> Showing search results for: {searchQuery}</Lead>
           ) : (
-            <div className="w-full max-w-lg">
+            <div className="max-w-full lg:max-w-md mt-8">
               <SearchForm />
             </div>
           )}
