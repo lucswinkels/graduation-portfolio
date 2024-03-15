@@ -14,7 +14,11 @@ import Post from "@/components/post";
 
 import NotFoundPage from "../not-found";
 
-export async function generateMetadata({ params, searchParams }: any) {
+interface Params {
+  slug: string;
+}
+
+export async function generateMetadata({ params }: { params: Params }) {
   const post = await sanityFetch<SanityDocument>({ query: postQuery, params });
   return {
     title: post?.title ? post.title : "Page not found",
@@ -26,7 +30,7 @@ export async function generateStaticParams() {
   return posts;
 }
 
-export default async function Page({ params }: { params: any }) {
+export default async function Page({ params }: { params: Params }) {
   const post = await sanityFetch<SanityDocument>({ query: postQuery, params });
   if (post) {
     let previousPost = await sanityFetch<SanityDocument>({
