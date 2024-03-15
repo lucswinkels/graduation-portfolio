@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useRouter } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Search } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -116,8 +117,10 @@ function SearchForm({ className }: React.ComponentProps<"form">) {
       searchQuery: "",
     },
   });
+  const router = useRouter();
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    router.push(`/search?query=${encodeURIComponent(values.searchQuery)}`);
+    // TODO: Close drawer/dialog
   }
   return (
     <Form {...form}>

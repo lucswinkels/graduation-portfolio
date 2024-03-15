@@ -25,7 +25,7 @@ import {
 import Container from "./container";
 import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
-import { SearchComponent } from "./search";
+import { SearchComponent } from "./search-form";
 import { Button } from "./ui/button";
 
 export function Navbar() {
