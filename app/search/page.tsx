@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Metadata } from "next";
 import { headers } from "next/headers";
-import { projectPostsQuery } from "@/sanity/lib/queries";
+import { postsMatchingSearchQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
@@ -38,12 +37,19 @@ export async function generateMetadata() {
 export default async function SearchPage() {
   const searchQuery = getSearchQuery();
   // TODO: Fix search showing previous query results (e.g. search for masita, then search for masita2, it will show masita results after sending the masita2 query)
-  // TODO: Add other content for results instead of just project posts based on project (also add posts based on post slug)
   const results = await sanityFetch<SanityDocument[]>({
-    query: projectPostsQuery,
-    params: { projectSlug: searchQuery },
+    query: postsMatchingSearchQuery,
+    params: { query: searchQuery },
   });
-
+  const filteredResults = results.filter(
+    (result) =>
+      result.title !== null &&
+      result.slug.current !== null &&
+      result.description !== null &&
+      result.project !== null &&
+      result.categories !== null &&
+      result.mainImage !== null
+  );
   return (
     <Container>
       <FadeUp>
@@ -67,12 +73,12 @@ export default async function SearchPage() {
             <SearchForm />
           </div>
         </div>
-        {searchQuery && searchQuery.trim() !== "" && results.length === 0 && (
-          <P>No results found.</P>
-        )}
-        {searchQuery && searchQuery.trim() !== "" && results.length > 0 && (
-          <Posts posts={results} />
-        )}
+        {searchQuery &&
+          searchQuery.trim() !== "" &&
+          filteredResults.length === 0 && <P>No results found.</P>}
+        {searchQuery &&
+          searchQuery.trim() !== "" &&
+          filteredResults.length > 0 && <Posts posts={filteredResults} />}
       </FadeUp>
     </Container>
   );

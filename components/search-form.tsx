@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MoveRight, Search } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -43,8 +43,8 @@ interface Props {
 }
 
 const formSchema = z.object({
-  searchQuery: z.string().min(3, {
-    message: "Search query must be at least 3 characters.",
+  searchQuery: z.string().min(2, {
+    message: "Search query must be at least 2 characters.",
   }),
 });
 
@@ -75,7 +75,8 @@ export function SearchFormComponent(props: Props) {
           <DialogHeader>
             <DialogTitle>Search</DialogTitle>
             <DialogDescription>
-              Search for any project, category or word.
+              Results will show posts where your search query matches the title,
+              project, or category.
             </DialogDescription>
           </DialogHeader>
           <SearchForm />
@@ -106,7 +107,8 @@ export function SearchFormComponent(props: Props) {
         <DrawerHeader className="text-left">
           <DrawerTitle>Search</DrawerTitle>
           <DrawerDescription>
-            Search for any project, category or word.
+            Results will show posts where your search query matches the title,
+            project, or category.
           </DrawerDescription>
         </DrawerHeader>
         <SearchForm className="px-4" />
@@ -132,15 +134,6 @@ export function SearchForm({ className }: React.ComponentProps<"form">) {
       searchQuery: searchParams.get("query") ?? "",
     },
   });
-  // const router = useRouter();
-  // function onSubmit(values: z.infer<typeof formSchema>) {
-  //   router.replace(`/search?query=${encodeURIComponent(values.searchQuery)}`);
-  // }
-  // const router = useRouter();
-  // function onSubmit(values: z.infer<typeof formSchema>) {
-  //   setSearchQuery(values.searchQuery);
-  //   router.push(`/search?query=${encodeURIComponent(values.searchQuery)}`);
-  // }
   function onSubmit(values: z.infer<typeof formSchema>) {
     setSearchQuery(values.searchQuery);
     window.location.href = `/search?query=${encodeURIComponent(
