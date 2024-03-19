@@ -25,7 +25,7 @@ import {
 import Container from "./container";
 import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
-import { SearchFormComponent } from "./search-form";
+import { SearchFormTrigger } from "./search-form-trigger";
 import { Button } from "./ui/button";
 
 export function Navbar() {
@@ -122,7 +122,7 @@ export function Navbar() {
           <ModeToggle variant="outline" />
         </div>
         <div className="mt-8">
-          <SearchFormComponent fullWidthTrigger />
+          <SearchFormTrigger fullWidthTrigger />
         </div>
       </div>
     );
@@ -171,7 +171,7 @@ export function Navbar() {
                 <ModeToggle variant="ghost" />
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <SearchFormComponent iconOnly />
+                <SearchFormTrigger iconOnly />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>

@@ -1,33 +1,12 @@
-"use client";
-
 import * as React from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MoveRight, Search } from "lucide-react";
+import { MoveRight } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import { cn } from "@/lib/utils";
-import { useMediaQuery } from "@/hooks/use-media-query";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
 import {
   Form,
   FormControl,
@@ -36,11 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-
-interface Props {
-  iconOnly?: boolean;
-  fullWidthTrigger?: boolean;
-}
+import { getSearchQueryFromURL } from "@/app/search/page";
 
 const formSchema = z.object({
   searchQuery: z.string().min(2, {
@@ -48,102 +23,24 @@ const formSchema = z.object({
   }),
 });
 
-export function SearchFormComponent(props: Props) {
-  const [open, setOpen] = React.useState(false);
-  const isDesktop = useMediaQuery("(min-width: 768px)");
-
-  if (isDesktop) {
-    return (
-      <Dialog open={open} onOpenChange={setOpen}>
-        <DialogTrigger asChild>
-          {props.iconOnly ? (
-            <Button variant="ghost" size="icon">
-              <Search className="size-4" />
-            </Button>
-          ) : (
-            <Button
-              variant="outline"
-              className={`${
-                props.fullWidthTrigger && "w-full flex justify-between"
-              }`}
-            >
-              Search <Search className="size-4 ml-2" />
-            </Button>
-          )}
-        </DialogTrigger>
-        <DialogContent className="sm:max-w-[425px]">
-          <DialogHeader>
-            <DialogTitle>Search</DialogTitle>
-            <DialogDescription>
-              Results will show posts where your search query matches the title,
-              project, or category.
-            </DialogDescription>
-          </DialogHeader>
-          <SearchForm />
-        </DialogContent>
-      </Dialog>
-    );
-  }
-
-  return (
-    <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        {props.iconOnly ? (
-          <Button variant="ghost" size="icon">
-            <Search className="size-4" />
-          </Button>
-        ) : (
-          <Button
-            variant="outline"
-            className={`${
-              props.fullWidthTrigger && "w-full flex justify-between"
-            }`}
-          >
-            Search <Search className="size-4 ml-2" />
-          </Button>
-        )}
-      </DrawerTrigger>
-      <DrawerContent>
-        <DrawerHeader className="text-left">
-          <DrawerTitle>Search</DrawerTitle>
-          <DrawerDescription>
-            Results will show posts where your search query matches the title,
-            project, or category.
-          </DrawerDescription>
-        </DrawerHeader>
-        <SearchForm className="px-4" />
-        <DrawerFooter className="pt-2">
-          <DrawerClose asChild>
-            <Button variant="outline">Cancel</Button>
-          </DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
-  );
-}
-
 export function SearchForm({ className }: React.ComponentProps<"form">) {
-  const router = useRouter();
-  const searchParams = useSearchParams();
-  const [searchQuery, setSearchQuery] = React.useState(
-    searchParams.get("query") ?? ""
-  );
+  const searchQuery = getSearchQueryFromURL();
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      searchQuery: searchParams.get("query") ?? "",
+      searchQuery: searchQuery ?? "",
     },
   });
   function onSubmit(values: z.infer<typeof formSchema>) {
-    setSearchQuery(values.searchQuery);
+    // setSearchQuery(values.searchQuery);
     router.push(`/search?query=${encodeURIComponent(values.searchQuery)}`);
-    window.location.href = `/search?query=${encodeURIComponent(
-      values.searchQuery
-    )}`;
+    // window.location.href = `/search?query=${encodeURIComponent(
+    //   values.searchQuery
+    // )}`;
   }
-  React.useEffect(() => {
-    setSearchQuery(searchQuery);
-  }, [searchQuery]);
+  // React.useEffect(() => {
+  //   setSearchQuery(searchQuery);
+  // }, [searchQuery]);
   return (
     <Form {...form}>
       <form

@@ -20,7 +20,7 @@ import { H1 } from "@/components/typography/h1";
 import { Lead } from "@/components/typography/lead";
 import { P } from "@/components/typography/p";
 
-function getSearchQueryFromURL(): string {
+export function getSearchQueryFromURL(): string {
   const headersList = headers();
   const fullUrl = headersList.get("referer") || "";
   const urlParams = new URLSearchParams(fullUrl.split("?")[1]);
