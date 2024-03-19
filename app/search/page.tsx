@@ -30,7 +30,7 @@ export default async function SearchPage() {
   const fullUrl = headersList.get("referer") || "";
   const urlParams = new URLSearchParams(fullUrl.split("?")[1]);
   const searchQuery = urlParams.get("query") || "";
-
+  // TODO: Fix search showing previous query results (e.g. search for masita, then search for masita2, it will show masita results after sending the masita2 query)
   // TODO: Add other content for results instead of just project posts based on project (also add posts based on post slug)
   const results = await sanityFetch<SanityDocument[]>({
     query: projectPostsQuery,
