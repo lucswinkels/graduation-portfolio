@@ -130,6 +130,8 @@ export function SearchForm({ className }: React.ComponentProps<"form">) {
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
+    // Comment/Uncomment to populate form input with query from url
+    // TODO: Remove this when search double submit bug is fixed
     defaultValues: {
       searchQuery: searchParams.get("query") ?? "",
     },
