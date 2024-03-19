@@ -20,7 +20,7 @@ import { H1 } from "@/components/typography/h1";
 import { Lead } from "@/components/typography/lead";
 import { P } from "@/components/typography/p";
 
-function getSearchQuery(): string {
+function getSearchQueryFromURL(): string {
   const headersList = headers();
   const fullUrl = headersList.get("referer") || "";
   const urlParams = new URLSearchParams(fullUrl.split("?")[1]);
@@ -28,14 +28,14 @@ function getSearchQuery(): string {
 }
 
 export async function generateMetadata() {
-  const searchQuery = getSearchQuery();
+  const searchQuery = getSearchQueryFromURL();
   return {
     title: searchQuery ? `Showing results for: ${searchQuery}` : "Search",
   };
 }
 
 export default async function SearchPage() {
-  const searchQuery = getSearchQuery();
+  const searchQuery = getSearchQueryFromURL();
   // TODO: Fix search showing previous query results (e.g. search for masita, then search for masita2, it will show masita results after sending the masita2 query)
   const results = await sanityFetch<SanityDocument[]>({
     query: postsMatchingSearchQuery,

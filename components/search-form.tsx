@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MoveRight, Search } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -123,21 +123,20 @@ export function SearchFormComponent(props: Props) {
 }
 
 export function SearchForm({ className }: React.ComponentProps<"form">) {
+  const router = useRouter();
   const searchParams = useSearchParams();
   const [searchQuery, setSearchQuery] = React.useState(
     searchParams.get("query") ?? ""
   );
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    // Comment/Uncomment to populate form input with query from url
-    // TODO: Remove this when search double submit bug is fixed
     defaultValues: {
       searchQuery: searchParams.get("query") ?? "",
     },
   });
   function onSubmit(values: z.infer<typeof formSchema>) {
     setSearchQuery(values.searchQuery);
+    router.push(`/search?query=${encodeURIComponent(values.searchQuery)}`);
     window.location.href = `/search?query=${encodeURIComponent(
       values.searchQuery
     )}`;
