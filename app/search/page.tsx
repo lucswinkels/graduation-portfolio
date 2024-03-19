@@ -21,21 +21,22 @@ import { H1 } from "@/components/typography/h1";
 import { Lead } from "@/components/typography/lead";
 import { P } from "@/components/typography/p";
 
-export async function generateMetadata() {
+function getSearchQuery(): string {
   const headersList = headers();
   const fullUrl = headersList.get("referer") || "";
   const urlParams = new URLSearchParams(fullUrl.split("?")[1]);
-  const searchQuery = urlParams.get("query") || "";
+  return urlParams.get("query") || "";
+}
+
+export async function generateMetadata() {
+  const searchQuery = getSearchQuery();
   return {
     title: searchQuery ? `Showing results for: ${searchQuery}` : "Search",
   };
 }
 
 export default async function SearchPage() {
-  const headersList = headers();
-  const fullUrl = headersList.get("referer") || "";
-  const urlParams = new URLSearchParams(fullUrl.split("?")[1]);
-  const searchQuery = urlParams.get("query") || "";
+  const searchQuery = getSearchQuery();
   // TODO: Fix search showing previous query results (e.g. search for masita, then search for masita2, it will show masita results after sending the masita2 query)
   // TODO: Add other content for results instead of just project posts based on project (also add posts based on post slug)
   const results = await sanityFetch<SanityDocument[]>({
