@@ -21,9 +21,15 @@ import { H1 } from "@/components/typography/h1";
 import { Lead } from "@/components/typography/lead";
 import { P } from "@/components/typography/p";
 
-export const metadata: Metadata = {
-  title: "Search // Portfolio | Luc Swinkels",
-};
+export async function generateMetadata() {
+  const headersList = headers();
+  const fullUrl = headersList.get("referer") || "";
+  const urlParams = new URLSearchParams(fullUrl.split("?")[1]);
+  const searchQuery = urlParams.get("query") || "";
+  return {
+    title: searchQuery ? `Showing results for: ${searchQuery}` : "Search",
+  };
+}
 
 export default async function SearchPage() {
   const headersList = headers();
