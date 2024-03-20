@@ -8,6 +8,14 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
   "learningOutcomes": learningOutcomes[]->{title, slug},
 }`;
 
+// Get all posts where search query matches title, categories, or project
+export const postsMatchingSearchQuery = groq`*[_type == "post" && defined(slug.current) && (project->slug.current match $query || title match $query || categories[]->title match $query)]{
+  _id, title, slug, description, mainImage,
+  "categories": categories[]->title,
+  "project": project->title,
+  "learningOutcomes": learningOutcomes[]->{title, slug},
+}`;
+
 // Get specific project's posts
 export const projectPostsQuery = groq`*[_type == "post" && defined(slug.current) && project->slug.current == $projectSlug]{
   _id, title, slug, description, mainImage,
