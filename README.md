@@ -1,10 +1,10 @@
 # Graduation internship portfolio
 
-This is my portfolio for my graduation internship @ Moonly Software during my IT & Media Design study at the Fontys University of Applied Sciences.
+This is my portfolio for my graduation internship @ Moonly Software during my IT & Media Design study at the Fontys University of Applied Science, where I worked on developing a new B2C e-commerce platform.
 
-Built using [Next.js](https://nextjs.org/) with [shadcn/ui](https://ui.shadcn.com/).
+This portfolio was built with [Next.js](https://nextjs.org/) and [shadcn/ui](https://ui.shadcn.com/).
 
-Content written using [Sanity CMS](https://www.sanity.io/).
+Content is maintained using [Sanity CMS](https://www.sanity.io/).
 
-A Live demo is available [here](https://graduation.lucswinkels.com). 
+A live demo is available [here](https://graduation.lucswinkels.com). 
 
