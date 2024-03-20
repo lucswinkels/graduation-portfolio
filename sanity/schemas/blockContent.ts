@@ -109,7 +109,6 @@ export default defineType({
           { title: "JSON", value: "json" },
           { title: "SQL", value: "sql" },
         ],
-        withFilename: true,
       },
     }),
   ],

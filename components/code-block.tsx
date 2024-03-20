@@ -38,15 +38,12 @@ for (const language of languages) {
 export function CodeBlock({
   language,
   value,
-  fileName,
 }: {
   language: string;
   value: string;
-  fileName?: string;
 }) {
   return (
     <>
-      {fileName && <span>{fileName}</span>}
       <Refractor language={language} value={value} />
     </>
   );
