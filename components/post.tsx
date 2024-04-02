@@ -76,6 +76,7 @@ export default function Post({
           autoPlay
           loop
           controls
+          playsInline
           muted
           src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
         ></video>
