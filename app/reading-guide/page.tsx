@@ -243,6 +243,24 @@ export default function ReadingGuide() {
             </A>{" "}
             - TBA
           </P>
+          <P>
+            {" "}
+            <A href="/ux-and-conversion-optimization-research">
+              UX & conversion optimization research
+            </A>{" "}
+            - TBA
+          </P>
+          <P>
+            {" "}
+            <A href="/frontend-frameworks-research">
+              Front-end frameworks research
+            </A>{" "}
+            - TBA
+          </P>
+          <P>
+            {" "}
+            <A href="/ui-libraries-research">UI libraries research</A> - TBA
+          </P>
         </div>
       </Prose>
     </>
