@@ -72,6 +72,10 @@ export default async function SearchPage() {
           <div className="max-w-full lg:max-w-sm mt-8">
             <SearchForm />
           </div>
+          <P className="mt-4 text-red-500">
+            Please note: you have to submit your query twice, I am working on
+            fixing this bug.
+          </P>
         </div>
         {searchQuery &&
           searchQuery.trim() !== "" &&

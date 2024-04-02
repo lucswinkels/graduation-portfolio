@@ -50,7 +50,7 @@ export default function Post({
   const ImageComponent = ({ value }: SanityAsset) => {
     const { width, height } = getImageDimensions(value);
     return (
-      <div className="my-16 flex justify-center flex-col w-max max-w-full">
+      <div className="my-8 flex justify-center flex-col w-max max-w-full">
         <Image
           src={builder.image(value).width(width).height(height).url()}
           alt={value.alt}
@@ -59,7 +59,7 @@ export default function Post({
           loading="lazy"
           className="rounded-lg border mb-2 shadow-lg max-h-[80dvh] max-w-full w-max h-auto"
         />
-        <MutedText className="mx-auto mt-0 italic">{value.alt}</MutedText>
+        <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
     );
   };
@@ -70,23 +70,24 @@ export default function Post({
     const assetId = assetParts[1];
     const assetFileType = assetParts[2];
     return (
-      <div className="my-16 flex justify-center flex-col w-max max-w-full">
+      <div className="my-8 flex justify-center flex-col w-max max-w-full">
         <video
           className="w-max h-auto max-h-[80dvh] max-w-full rounded-lg border shadow-lg mb-2"
           autoPlay
           loop
           controls
+          playsInline
           muted
           src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
         ></video>
-        <MutedText className="mx-auto mt-0 italic">{value.alt}</MutedText>
+        <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
     );
   };
 
   const CodeComponent = ({ value }: SanityAsset) => {
     return (
-      <div className="my-16 w-max max-w-full">
+      <div className="my-8 w-max max-w-full">
         <CodeBlock language={value.language} value={value.code} />
       </div>
     );
