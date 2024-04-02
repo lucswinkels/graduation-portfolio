@@ -93,15 +93,12 @@ export default function Post({
   };
 
   const ButtonComponent = ({ value }: SanityAsset) => {
-    // TODO: Remove wrapper div once all buttons are condensed into 1 file (agile-methodology)
     return (
-      <div className="block mb-4">
-        <Button asChild className="no-underline">
-          <a href={value.href} target="_blank">
-            {value.text} <ExternalLink className="ml-2 size-4" />
-          </a>
-        </Button>
-      </div>
+      <Button asChild className="no-underline">
+        <a href={value.href} target="_blank">
+          {value.text} <ExternalLink className="ml-2 size-4" />
+        </a>
+      </Button>
     );
   };
 
