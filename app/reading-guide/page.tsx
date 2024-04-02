@@ -252,14 +252,14 @@ export default function ReadingGuide() {
           </P>
           <P>
             {" "}
-            <A href="/frontend-framework-research">
-              Front-end framework research
+            <A href="/frontend-frameworks-research">
+              Front-end frameworks research
             </A>{" "}
             - TBA
           </P>
           <P>
             {" "}
-            <A href="/ui-library-research">UI library research</A> - TBA
+            <A href="/ui-libraries-research">UI libraries research</A> - TBA
           </P>
         </div>
       </Prose>
