@@ -59,7 +59,7 @@ export default function Post({
           loading="lazy"
           className="rounded-lg border mb-2 shadow-lg max-h-[80dvh] max-w-full w-max h-auto"
         />
-        <MutedText className="mx-auto mt-0 italic">{value.alt}</MutedText>
+        <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
     );
   };
@@ -79,7 +79,7 @@ export default function Post({
           muted
           src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
         ></video>
-        <MutedText className="mx-auto mt-0 italic">{value.alt}</MutedText>
+        <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
     );
   };
