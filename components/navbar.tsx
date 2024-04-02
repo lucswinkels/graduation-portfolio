@@ -121,9 +121,9 @@ export function Navbar() {
           </div>
           <ModeToggle variant="outline" />
         </div>
-        {/* <div className="mt-8">
+        <div className="mt-8">
           <SearchFormComponent fullWidthTrigger />
-        </div> */}
+        </div>
       </div>
     );
   };
@@ -170,9 +170,9 @@ export function Navbar() {
               <NavigationMenuItem>
                 <ModeToggle variant="ghost" />
               </NavigationMenuItem>
-              {/* <NavigationMenuItem>
+              <NavigationMenuItem>
                 <SearchFormComponent iconOnly />
-              </NavigationMenuItem> */}
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
         </div>
