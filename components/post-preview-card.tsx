@@ -37,14 +37,16 @@ export function PostPreviewCard({ ...props }) {
             </span>
           </div>
           <CardContent className="pt-2 pl-8 pb-0 pr-0">
-            <Image
-              src={builder.image(props.image).width(1920).height(1080).url()}
-              className="border-l border-t shadow-lg rounded-tl-xl"
-              width={1920}
-              height={1080}
-              quality={100}
-              alt={props.image.alt}
-            />
+            <div className="overflow-hidden relative border-l border-t shadow-lg rounded-tl-xl">
+              <Image
+                src={builder.image(props.image).width(1920).height(1080).url()}
+                className="group-hover:scale-110 transition-transform"
+                width={1920}
+                height={1080}
+                quality={100}
+                alt={props.image.alt}
+              />
+            </div>
           </CardContent>
         </Card>
       </motion.div>
