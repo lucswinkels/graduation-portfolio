@@ -24,7 +24,7 @@ export default function Footer() {
   ];
   return (
     <>
-      <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t">
+      {/* <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t">
         <Container>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <Logo className="size-12 lg:size-14 xl:size-16" />
@@ -52,9 +52,11 @@ export default function Footer() {
             </ul>
           </div>
         </Container>
-      </div>
-      <div className="bg-accent-subtle w-full border-t py-8">
-        <Container className="flex justify-between flex-col md:flex-row ">
+      </div> */}
+
+      {/* OLD: <div className="w-full py-8 bg-accent-subtle border-t">*/}
+      <div className="bg-background w-full border-t py-8">
+        <Container className="flex justify-between">
           <span className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Luc Swinkels.
           </span>
