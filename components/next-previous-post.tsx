@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
+import { MoveRight } from "lucide-react";
 import { SanityDocument } from "next-sanity";
 
 import { H3 } from "./typography/h3";
@@ -27,8 +28,11 @@ export default function NextPreviousPost({
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <Link
             href={`/${previousPost.slug.current}`}
-            className="bg-background hover:bg-accent-subtle lg:basis-1/2 basis-full w-full p-8 border-b lg:border-b-0 lg:border-r transition-colors"
+            className="bg-background hover:bg-accent-subtle lg:basis-1/2 basis-full w-full p-8 border-b lg:border-b-0 lg:border-r transition-colors group relative"
           >
+            <span className="-translate-x-4 group-hover:translate-x-0 absolute top-4 right-4 size-12 border bg-background opacity-0 group-hover:opacity-100 font-semibold text-sm items-center justify-center rounded-full flex transition-all">
+              <MoveRight className="size-4" />
+            </span>
             <div>
               <Image
                 src={builder
@@ -42,7 +46,7 @@ export default function NextPreviousPost({
                 quality={100}
                 alt={previousPost.mainImage.alt}
               />
-              <div className="flex flex-col gap-1 lg:gap-2 transition-transform">
+              <div className="flex flex-col gap-1 lg:gap-1 transition-transform">
                 <P className="text-muted-foreground">Previous</P>
                 <H3 className="line-clamp-1">{previousPost.title}</H3>
               </div>
@@ -50,8 +54,11 @@ export default function NextPreviousPost({
           </Link>
           <Link
             href={`/${nextPost.slug.current}`}
-            className="lg:basis-1/2 basis-full w-full p-8 transition-colors bg-background hover:bg-accent-subtle"
+            className="bg-background hover:bg-accent-subtle lg:basis-1/2 basis-full w-full p-8 border-b lg:border-b-0 lg:border-r transition-colors group relative"
           >
+            <span className="-translate-x-4 group-hover:translate-x-0 absolute top-4 right-4 size-12 border bg-background opacity-0 group-hover:opacity-100 font-semibold text-sm items-center justify-center rounded-full flex transition-all">
+              <MoveRight className="size-4" />
+            </span>
             <div>
               <Image
                 src={builder
@@ -59,13 +66,13 @@ export default function NextPreviousPost({
                   .width(1000)
                   .height(1000)
                   .url()}
-                className="border shadow-lg rounded-xl mb-8"
+                className="border shadow-lg rounded-lg mb-8"
                 width={200}
                 height={200}
                 quality={100}
                 alt={nextPost.mainImage.alt}
               />
-              <div className="flex flex-col gap-1 lg:gap-2 transition-transform">
+              <div className="flex flex-col gap-1 lg:gap-1 transition-transform">
                 <P className="text-muted-foreground">Next</P>
                 <H3 className="line-clamp-1">{nextPost.title}</H3>
               </div>
