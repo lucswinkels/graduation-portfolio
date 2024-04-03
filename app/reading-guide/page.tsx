@@ -226,6 +226,10 @@ export default function ReadingGuide() {
           </P>
           <P>
             {" "}
+            <A href="/agile-methodology">Agile methodology</A> - TBA
+          </P>
+          <P>
+            {" "}
             <A href="/previous-issues-research">Previous issues research</A> -
             TBA
           </P>
@@ -252,6 +256,10 @@ export default function ReadingGuide() {
           </P>
           <P>
             {" "}
+            <A href="/user-tests">User tests</A> - TBA
+          </P>
+          <P>
+            {" "}
             <A href="/frontend-frameworks-research">
               Front-end frameworks research
             </A>{" "}
@@ -260,6 +268,10 @@ export default function ReadingGuide() {
           <P>
             {" "}
             <A href="/ui-libraries-research">UI libraries research</A> - TBA
+          </P>
+          <P>
+            {" "}
+            <A href="/store-development">Store development</A> - TBA
           </P>
         </div>
       </Prose>
