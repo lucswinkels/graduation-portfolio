@@ -131,7 +131,7 @@ export function Navbar() {
   return (
     <>
       <MobileMenu />
-      <Container className="border-b fixed top-0 left-0 z-50 bg-background">
+      <Container className="border-b fixed top-0 left-0 z-50 border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="w-full items-center justify-between flex h-16">
           <NavigationMenu>
             <NavigationMenuList>
@@ -140,11 +140,11 @@ export function Navbar() {
               </NavigationMenuItem>
             </NavigationMenuList>
             <NavigationMenuList>
-              <div className="lg:flex hidden ml-8 space-x-8">
+              <div className="lg:flex hidden items-center ml-8 space-x-8">
                 {navItems.map((item, i) => (
                   <NavigationMenuItem key={i}>
                     <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="font-medium transition-colors pb-0.5 border-b border-transparent hover:border-foreground text-sm">
+                      <NavigationMenuLink className="transition-colors text-foreground/60 hover:text-foreground/80 text-sm">
                         {item.title}
                       </NavigationMenuLink>
                     </Link>
