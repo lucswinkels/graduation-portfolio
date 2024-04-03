@@ -37,8 +37,8 @@ export function Logo({
     //     </g>
     //   </svg>
     // </Link>
-    <Link className="flex items-center space-x-3" href="/" onClick={onClick}>
-      <svg
+    <Link className="flex items-center space-x-2" href="/" onClick={onClick}>
+      {/* <svg
         width="1100"
         height="1100"
         viewBox="0 0 1100 1100"
@@ -57,14 +57,14 @@ export function Logo({
           rx="60"
           fill="currentColor"
         />
-      </svg>
-      {/* <svg
+      </svg> */}
+      <svg
         width="1100"
         height="1100"
         viewBox="0 0 1100 1100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-6 h-6"
+        className="w-4 h-4"
       >
         <rect
           x="600"
@@ -84,8 +84,8 @@ export function Logo({
           rx="60"
           fill="currentColor"
         />
-      </svg> */}
-      <span className="font-semibold">Luc</span>
+      </svg>
+      <span className="font-bold">Luc</span>
     </Link>
   );
 }
