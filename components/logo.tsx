@@ -37,7 +37,7 @@ export function Logo({
     //     </g>
     //   </svg>
     // </Link>
-    <Link className="flex items-center space-x-2" href="/" onClick={onClick}>
+    <Link className="flex items-center space-x-3" href="/" onClick={onClick}>
       <svg
         width="1100"
         height="1100"

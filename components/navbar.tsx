@@ -131,7 +131,7 @@ export function Navbar() {
   return (
     <>
       <MobileMenu />
-      <Container className="border-b fixed top-0 left-0 z-50 border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <Container className="border-b fixed top-0 left-0 z-50 bg-background">
         <div className="w-full items-center justify-between flex h-16">
           <NavigationMenu>
             <NavigationMenuList>
