@@ -55,7 +55,7 @@ export default function Footer() {
       </div> */}
 
       {/* OLD: <div className="w-full py-8 bg-accent-subtle border-t">*/}
-      <div className="bg-background w-full border-t py-8">
+      <div className="bg-background w-full border-t h-16 flex justify-center items-center">
         <Container className="flex justify-between">
           <span className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Luc Swinkels.

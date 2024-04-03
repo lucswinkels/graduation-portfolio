@@ -41,7 +41,7 @@ export default function BackToTop() {
             onClick={scrollToTop}
             className={`${
               visible ? "visible opacity-100" : "invisible opacity-0"
-            } md:visible invisible fixed bottom-5 right-5 transition-all duration-300 z-30`}
+            } md:visible invisible fixed bottom-3 right-3 transition-all duration-300 z-30`}
           >
             <Button size="icon" variant="outline" className="size-10">
               <MoveUp className="size-4" />
