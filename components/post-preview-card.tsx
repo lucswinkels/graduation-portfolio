@@ -24,7 +24,7 @@ export function PostPreviewCard({ ...props }) {
       >
         <Card
           {...props}
-          className="group-hover:-translate-y-2 transition-all relative bg-background hover:bg-accent-subtle"
+          className="group-hover:-translate-y-1 transition-all relative bg-background hover:bg-accent-subtle"
         >
           <div className="flex flex-row items-center p-6 justify-between">
             <div>
@@ -32,17 +32,17 @@ export function PostPreviewCard({ ...props }) {
               <span className="text-muted-foreground mx-2">/</span>
               <span className="font-semibold">{props.title}</span>
             </div>
-            {/* <span className="opacity-0 group-hover:opacity-100 font-semibold text-sm hidden xl:flex items-center transition-opacity">
-              View <MoveRight className="size-4 ml-2" />
-            </span> */}
+            <span className="opacity-0 group-hover:opacity-100 font-semibold text-sm hidden xl:flex items-center transition-opacity">
+              <MoveRight className="size-4 ml-2" />
+            </span>
           </div>
           <CardContent className="pt-2 pl-8 pb-0 pr-0">
             <div className="overflow-hidden relative border-l border-t shadow-lg rounded-tl-xl">
               <Image
-                src={builder.image(props.image).width(1920).height(1080).url()}
-                className="group-hover:scale-110 transition-transform"
-                width={1920}
-                height={1080}
+                src={builder.image(props.image).width(960).height(540).url()}
+                className="group-hover:scale-105 transition-transform"
+                width={960}
+                height={540}
                 quality={100}
                 alt={props.image.alt}
               />
