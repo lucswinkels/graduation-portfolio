@@ -14,7 +14,7 @@ const builder = imageUrlBuilder(client);
 
 export function PostPreviewCard({ ...props }) {
   return (
-    <Link href={`/${props.href}`} className="group">
+    <Link href={`/${props.href}`} className="group post-preview">
       <motion.div
         key={props.slug}
         initial="hidden"
@@ -32,9 +32,9 @@ export function PostPreviewCard({ ...props }) {
               <span className="text-muted-foreground mx-2">/</span>
               <span className="font-semibold">{props.title}</span>
             </div>
-            <span className="opacity-0 group-hover:opacity-100 font-semibold text-sm hidden xl:flex items-center transition-opacity">
+            {/* <span className="opacity-0 group-hover:opacity-100 font-semibold text-sm hidden xl:flex items-center transition-opacity">
               View <MoveRight className="size-4 ml-2" />
-            </span>
+            </span> */}
           </div>
           <CardContent className="pt-2 pl-8 pb-0 pr-0">
             <div className="overflow-hidden relative border-l border-t shadow-lg rounded-tl-xl">

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { MoveRight } from "lucide-react";
 
 export default function Cursor() {
   const ref = useRef(null);
@@ -12,7 +13,7 @@ export default function Cursor() {
     const handleMouseOver = () => setIsOverLink(true);
     const handleMouseOut = () => setIsOverLink(false);
 
-    const anchors = document.querySelectorAll("a");
+    const anchors = document.querySelectorAll("a.post-preview");
     anchors.forEach((anchor) => {
       anchor.addEventListener("mouseover", handleMouseOver);
       anchor.addEventListener("mouseout", handleMouseOut);
@@ -50,15 +51,18 @@ export default function Cursor() {
   return (
     <motion.div
       ref={ref}
-      className={`rounded-full bg-foreground opacity-5 pointer-events-none select-none fixed z-0 border size-16`}
+      className="rounded-full bg-background pointer-events-none select-none fixed z-50 border size-12 flex items-center justify-center"
       animate={{
         x: coordinates.x,
         y: coordinates.y,
+        opacity: isOverLink ? 1 : 0,
         scale: isOverLink ? 1.5 : 1,
       }}
       transition={{
-        type: "spring",
+        type: "linear",
       }}
-    />
+    >
+      <MoveRight className="size-4 select-none cursor-pointer pointer-events-none" />
+    </motion.div>
   );
 }
