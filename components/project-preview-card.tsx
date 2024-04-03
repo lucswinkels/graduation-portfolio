@@ -38,10 +38,10 @@ export function ProjectPreviewCard({ ...props }) {
           </div>
           <CardContent className="pt-2 pl-8 pb-0 pr-0">
             <Image
-              src={builder.image(props.image).width(1920).height(1080).url()}
+              src={builder.image(props.image).width(960).height(540).url()}
               className="border-l border-t shadow-xl rounded-tl-xl"
-              width={1920}
-              height={1080}
+              width={960}
+              height={540}
               quality={100}
               alt={props.image.alt}
             />
