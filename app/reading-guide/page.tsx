@@ -225,41 +225,69 @@ export default function ReadingGuide() {
             ordered by priority using the requirements prioritisation method.
           </P>
           <P>
-            {" "}
-            <A href="/previous-issues-research">Previous issues research</A> -
-            TBA
+            Throughout the project, I worked with{" "}
+            <A href="/agile-methodology">agile methodology</A> by planning
+            sprints and holding sprint demo&apos;s and retrospectives.
           </P>
           <P>
-            {" "}
+            To find out where it went wrong for the previous Masita B2C store,
+            and to document possible pitfalls for the project, I conducted a{" "}
+            <A href="/previous-issues-research">previous issues research</A>{" "}
+            where I interviewed developers who worked on the previous store.
+          </P>
+          <P>
+            To figure out which platform would be best suited to build the new
+            store on, I conducted{" "}
             <A href="/e-commerce-platforms-research">
-              E-commerce platforms research
-            </A>{" "}
-            - TBA
+              e-commerce platforms research
+            </A>
+            , where I looked at possible e-commerce solutions and their pros and
+            cons.
           </P>
           <P>
-            {" "}
+            I also researched how I could implement Masita&apos;s pre-existing
+            technical requirements for integrations such as external sales
+            platform integrations in this{" "}
             <A href="/technical-requirement-integration-research">
-              Technical requirement integration research
-            </A>{" "}
-            - TBA
+              technical requirement integration research
+            </A>
+            .
           </P>
           <P>
-            {" "}
+            To figure out how I could design the new store to be user friendly
+            with validated designs, I conducted{" "}
             <A href="/ux-and-conversion-optimization-research">
               UX & conversion optimization research
-            </A>{" "}
-            - TBA
+            </A>
+            , where I analysed similar online stores and their designs, and then
+            basing my designs on these findings.
           </P>
           <P>
-            {" "}
+            These designs were then validated with{" "}
+            <A href="/user-tests">user tests</A>.
+          </P>
+          <P>
+            With my designs done, I had a good feel of how the new store would
+            look and what would be required to build it. To figure out how I was
+            going to develop the front-end of the new store and translate my
+            designs into code, I conducted{" "}
             <A href="/frontend-frameworks-research">
-              Front-end frameworks research
-            </A>{" "}
-            - TBA
+              front-end frameworks research
+            </A>
+            , where I analysed different front-end frameworks and their pros and
+            cons.
           </P>
           <P>
-            {" "}
-            <A href="/ui-libraries-research">UI libraries research</A> - TBA
+            After picking a suitable front-end framework, I looked at different
+            UI libraries to see if and which UI libraries could be used to
+            develop the front-end in this{" "}
+            <A href="/ui-libraries-research">UI libraries research</A>.
+          </P>
+          <P>
+            After validating my designs with research and user tests, and having
+            picked all the relevant technologies, I started developing. I
+            documented the entire development process here:{" "}
+            <A href="/store-development">store development</A>
           </P>
         </div>
       </Prose>
