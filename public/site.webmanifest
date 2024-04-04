@@ -1,6 +1,6 @@
 {
-  "name": "Graduation portfolio | Luc Swinkels",
-  "short_name": "Graduation portfolio | LS",
+  "name": "Portfolio | Luc Swinkels",
+  "short_name": "Portfolio | LS",
   "description": "My portfolio for my graduation internship at Moonly Software.",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
@@ -17,6 +17,15 @@
       "src": "/android-chrome-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/img/logo/jpg/banner/black-icon--white-bg.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpg",
+      "form_factor": "wide",
+      "label": "Portfolio | Luc Swinkels"
     }
   ]
 }
