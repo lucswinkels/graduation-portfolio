@@ -94,11 +94,11 @@ export function Navbar() {
     ];
 
     const MobileMenuItemStyles =
-      "h-14 w-full flex items-center border-b text-sm";
+      "h-16 w-full flex items-center border-b text-sm";
 
     return (
       <div
-        className={`lg:hidden px-6 md:px-[15%] font-medium flex-col fixed top-20 left-0 z-40 w-full bg-background h-[calc(100vh-5rem)] ${
+        className={`lg:hidden px-6 md:px-[15%] font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100vh-4rem)] ${
           mobileMenuVisibility ? "flex" : "hidden"
         } `}
       >
@@ -132,22 +132,19 @@ export function Navbar() {
     <>
       <MobileMenu />
       <Container className="border-b fixed top-0 left-0 z-50 bg-background">
-        <div className="w-full items-center justify-between flex h-20">
+        <div className="w-full items-center justify-between flex h-16">
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem className="flex">
                 <Logo onClick={closeMobileMenu} />
               </NavigationMenuItem>
             </NavigationMenuList>
-          </NavigationMenu>
-          <NavigationMenu>
-            <MobileMenuToggle />
             <NavigationMenuList>
-              <div className="lg:flex items-center hidden gap-6 2xl:gap-8 lg:mr-8">
+              <div className="lg:flex hidden items-center ml-8 space-x-8">
                 {navItems.map((item, i) => (
                   <NavigationMenuItem key={i}>
                     <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="text-sm font-medium leading-none hover:border-foreground border-b transition-colors border-transparent pb-0.5">
+                      <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
                         {item.title}
                       </NavigationMenuLink>
                     </Link>
@@ -155,6 +152,9 @@ export function Navbar() {
                 ))}
               </div>
             </NavigationMenuList>
+          </NavigationMenu>
+          <NavigationMenu>
+            <MobileMenuToggle />
             <NavigationMenuList className="lg:flex hidden">
               <NavigationMenuItem>
                 <Button variant="ghost" size="icon">

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio | Luc Swinkels",
     images: [
       {
-        url: `${domain}/img/logo/banner.png`,
+        url: `${domain}/img/logo/jpg/banner/black-icon--white-gradient-bg.jpg`,
         width: 1920,
         height: 1080,
       },
@@ -41,10 +41,10 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: `${domain}/favicon.ico`,
-    shortcut: `${domain}/img/logo/png/ls-logo-black.png`,
+    shortcut: `${domain}/img/logo/jpg/boxed/black-icon--white-gradient-bg.jpg`,
     apple: `${domain}/apple-touch-icon.png`,
   },
-  manifest: `${domain}/manifest.json`,
+  manifest: `${domain}/site.webmanifest`,
 };
 
 export default function RootLayout({
@@ -59,7 +59,7 @@ export default function RootLayout({
         <Analytics />
         <ThemeProvider attribute="class" enableSystem>
           <Navbar />
-          <div className="py-[calc(5rem+10vh)] xl:py-[calc(5rem+15vh)]">
+          <div className="py-[calc(4rem+10vh)] xl:py-[calc(4rem+15vh)]">
             {children}
           </div>
           <BackToTop />
