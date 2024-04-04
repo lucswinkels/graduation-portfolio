@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio | Luc Swinkels",
     images: [
       {
-        url: `${domain}/img/logo/jpg/banner/black-icon--white-gradient-bg.jpg`,
+        url: `${domain}/img/logo/jpg/banner/black-icon--white-bg.jpg`,
         width: 1920,
         height: 1080,
       },
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: `${domain}/favicon.ico`,
-    shortcut: `${domain}/img/logo/jpg/boxed/black-icon--white-gradient-bg.jpg`,
+    shortcut: `${domain}/img/logo/jpg/boxed/black-icon--white-bg.jpg`,
     apple: `${domain}/apple-touch-icon.png`,
   },
   manifest: `${domain}/site.webmanifest`,
