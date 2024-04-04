@@ -18,5 +18,14 @@
       "sizes": "512x512",
       "type": "image/png"
     }
+  ],
+  "screenshots": [
+    {
+      "src": "/img/logo/jpg/banner/black-icon--white-gradient-bg.jpg",
+      "sizes": "1920x1080",
+      "type": "image/jpg",
+      "form_factor": "wide",
+      "label": "Graduation portfolio | Luc Swinkels"
+    }
   ]
 }
