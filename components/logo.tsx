@@ -23,7 +23,7 @@ export function Logo({
         viewBox="0 0 1100 1100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="size-4"
+        className="size-5"
       >
         <rect
           x="600"
