@@ -30,17 +30,17 @@ export function Logo({
           y="250"
           width="250"
           height="250"
-          rx="60"
+          rx="40"
           fill="currentColor"
         />
-        <rect width="500" height="500" rx="60" fill="currentColor" />
-        <rect y="600" width="500" height="500" rx="60" fill="currentColor" />
+        <rect width="500" height="500" rx="40" fill="currentColor" />
+        <rect y="600" width="500" height="500" rx="40" fill="currentColor" />
         <rect
           x="600"
           y="600"
           width="500"
           height="500"
-          rx="60"
+          rx="40"
           fill="currentColor"
         />
       </svg>

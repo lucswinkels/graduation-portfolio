@@ -17,6 +17,16 @@ const inter = Inter({ subsets: ["latin"] });
 
 const domain = "https://graduation.lucswinkels.com";
 
+{
+  /* <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#121212">
+<meta name="msapplication-TileColor" content="#121212">
+<meta name="theme-color" content="#ffffff"></meta> */
+}
+
 export const metadata: Metadata = {
   title: {
     template: "%s // Portfolio | Luc Swinkels",
@@ -31,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "Portfolio | Luc Swinkels",
     images: [
       {
-        url: `${domain}/img/logo/jpg/banner/black-icon--white-bg.jpg`,
+        url: `${domain}/img/logo/jpg/banner/banner--black-icon--white-gradient-background.jpg`,
         width: 1920,
         height: 1080,
       },
@@ -41,7 +51,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: `${domain}/favicon.ico`,
-    shortcut: `${domain}/img/logo/jpg/boxed/black-icon--white-bg.jpg`,
+    shortcut: `${domain}/img/logo/jpg/boxed/boxed--black-icon--white-gradient-background.jpg`,
     apple: `${domain}/apple-touch-icon.png`,
   },
   manifest: `${domain}/site.webmanifest`,
