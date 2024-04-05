@@ -4,6 +4,7 @@ import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
+import { AnimatedLogoIcon } from "@/components/animated-logo-icon";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import Posts from "@/components/posts";
@@ -21,17 +22,20 @@ export default async function Home() {
     params: { projectSlug: "masita" },
   });
   const Content = () => (
-    <div className="mb-16 xl:mb-24">
-      <H3 className="w-full md:w-[500px] lg:w-[650px] mb-8">
-        Welcome to my portfolio.
-      </H3>
-      <P className="w-full md:w-[500px] lg:w-[650px] text-lg text-balance">
-        This is my graduation portfolio that documents the process of my
-        graduation internship at Moonly Software, for my IT & Media Design study
-        at the Fontys University of Applied Sciences. <br /> <br />
-        Click on one of the project items below or read the full process of this
-        internship <A href="/reading-guide">here</A>.
-      </P>
+    <div className="mb-16 xl:mb-24 flex justify-between items-center">
+      <div>
+        <H3 className="w-full md:w-[500px] lg:w-[650px] mb-8">
+          Welcome to my portfolio.
+        </H3>
+        <P className="w-full md:w-[500px] lg:w-[650px] text-lg text-balance">
+          This is my graduation portfolio that documents the process of my
+          graduation internship at Moonly Software, for my IT & Media Design
+          study at the Fontys University of Applied Sciences. <br /> <br />
+          Click on one of the project items below or read the full process of
+          this internship <A href="/reading-guide">here</A>.
+        </P>
+      </div>
+      {/* <AnimatedLogoIcon className="hidden size-48 xl:block user-select-none pointer-events-none opacity-5" /> */}
     </div>
   );
   return (
