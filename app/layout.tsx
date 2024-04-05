@@ -69,7 +69,7 @@ export default function RootLayout({
         <Analytics />
         <ThemeProvider attribute="class" enableSystem>
           <Navbar />
-          <div className="py-[calc(4rem+10vh)] xl:py-[calc(4rem+15vh)]">
+          <div className="py-[calc(4rem+10vh)] xl:py-[calc(4rem+15vh)] min-h-[calc(100vh-4rem)]">
             {children}
           </div>
           <BackToTop />
