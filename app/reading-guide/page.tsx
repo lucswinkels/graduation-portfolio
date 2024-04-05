@@ -260,17 +260,15 @@ export default function ReadingGuide() {
               UX & conversion optimization research
             </A>
             , where I analysed similar online stores and their designs, and then
-            based my designs on these findings.
+            based my designs on these findings. These designs were made into
+            different iterations of a prototype where I gathered feedback from
+            peer reviews and user tests to validate my designs.
           </P>
           <P>
-            These designs were then validated with{" "}
-            <A href="/user-tests">user tests</A>.
-          </P>
-          <P>
-            With my designs done, I had a good feeling of how the new store would
-            look and what would be required to build it. To figure out how I was
-            going to develop the front-end of the new store and translate my
-            designs into code, I conducted{" "}
+            With my designs done, I had a good feeling of how the new store
+            would look and what would be required to build it. To figure out how
+            I was going to develop the front-end of the new store and translate
+            my designs into code, I conducted{" "}
             <A href="/frontend-frameworks-research">
               front-end frameworks research
             </A>
