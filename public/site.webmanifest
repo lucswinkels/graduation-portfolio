@@ -26,6 +26,13 @@
       "type": "image/jpg",
       "form_factor": "wide",
       "label": "Portfolio | Luc Swinkels"
+    },
+    {
+      "src": "/img/logo/jpg/boxed/boxed--black-icon--white-gradient-background.jpg",
+      "sizes": "1000x1000",
+      "type": "image/jpg",
+      "form_factor": "narrow",
+      "label": "Portfolio | Luc Swinkels"
     }
   ]
 }
