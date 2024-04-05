@@ -8,6 +8,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
 
 import BackToTop from "@/components/back-to-top";
 import Cursor from "@/components/cursor";
@@ -64,7 +65,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={GeistSans.className}>
         <SpeedInsights />
         <Analytics />
         <ThemeProvider attribute="class" enableSystem>
