@@ -27,7 +27,7 @@ export default async function Home() {
         <H1 className="w-full md:w-[500px] lg:w-[650px] mb-2">
           Hey! I&apos;m Luc.
         </H1>
-        <Lead className="w-full md:w-[500px] lg:w-[650px] mb-8 xl:mb-12">
+        <Lead className="w-full md:w-[500px] lg:w-[650px] mb-8 lg:mb-12">
           Front-end developer and UX/UI designer.
         </Lead>
         <P className="w-full md:w-[500px] lg:w-[650px] text-lg text-balance">
