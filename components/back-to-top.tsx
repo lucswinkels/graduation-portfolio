@@ -40,15 +40,23 @@ export default function BackToTop() {
           <a
             onClick={scrollToTop}
             className={`${
-              visible ? "visible opacity-100" : "invisible opacity-0"
-            } md:visible invisible fixed bottom-3 right-3 transition-all duration-300 z-30`}
+              visible
+                ? "visible opacity-100"
+                : "pointer-events-none invisible opacity-0"
+            }  fixed bottom-4 right-4 transition-all duration-300 z-30`}
           >
             <Button size="icon" variant="outline" className="size-10">
               <MoveUp className="size-4" />
             </Button>
           </a>
         </TooltipTrigger>
-        <TooltipContent>
+        <TooltipContent
+          className={`${
+            visible
+              ? "visible opacity-100"
+              : "pointer-events-none invisible opacity-0"
+          }`}
+        >
           <p>Back To Top</p>
         </TooltipContent>
       </Tooltip>

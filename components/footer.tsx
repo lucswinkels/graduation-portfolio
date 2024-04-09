@@ -24,7 +24,7 @@ export default function Footer() {
   ];
   return (
     <>
-      {/* <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t">
+      <div className="w-full py-16 lg:py-24 xl:py-32 bg-background border-t">
         <Container>
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-8">
             <Logo className="size-12 lg:size-14 xl:size-16" />
@@ -52,9 +52,7 @@ export default function Footer() {
             </ul>
           </div>
         </Container>
-      </div> */}
-
-      {/* OLD: <div className="w-full py-8 bg-accent-subtle border-t">*/}
+      </div>
       <div className="bg-background w-full border-t h-16 flex justify-center items-center">
         <Container className="flex justify-between">
           <span className="text-sm text-muted-foreground">

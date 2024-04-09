@@ -4,12 +4,12 @@ import { projectPostsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
-import { AnimatedLogoIcon } from "@/components/animated-logo-icon";
 import FadeUp from "@/components/animation/fade-up";
 import Container from "@/components/container";
 import Posts from "@/components/posts";
 import { A } from "@/components/typography/a";
-import { H3 } from "@/components/typography/h3";
+import { H1 } from "@/components/typography/h1";
+import { Lead } from "@/components/typography/lead";
 import { P } from "@/components/typography/p";
 
 export const metadata: Metadata = {
@@ -24,9 +24,12 @@ export default async function Home() {
   const Content = () => (
     <div className="mb-16 xl:mb-24 flex justify-between items-center">
       <div>
-        <H3 className="w-full md:w-[500px] lg:w-[650px] mb-8">
-          Welcome to my portfolio.
-        </H3>
+        <H1 className="w-full md:w-[500px] lg:w-[650px] mb-2">
+          Hey! I&apos;m Luc.
+        </H1>
+        <Lead className="w-full md:w-[500px] lg:w-[650px] mb-8 lg:mb-12">
+          Front-end developer and UX/UI designer.
+        </Lead>
         <P className="w-full md:w-[500px] lg:w-[650px] text-lg text-balance">
           This is my graduation portfolio that documents the process of my
           graduation internship at Moonly Software, for my IT & Media Design
@@ -35,15 +38,16 @@ export default async function Home() {
           this internship <A href="/reading-guide">here</A>.
         </P>
       </div>
-      {/* <AnimatedLogoIcon className="hidden size-48 xl:block user-select-none pointer-events-none opacity-5" /> */}
     </div>
   );
   return (
-    <Container>
-      <FadeUp>
-        <Content />
-        <Posts posts={posts} />
-      </FadeUp>
-    </Container>
+    <>
+      <Container>
+        <FadeUp>
+          <Content />
+          <Posts posts={posts} />
+        </FadeUp>
+      </Container>
+    </>
   );
 }
