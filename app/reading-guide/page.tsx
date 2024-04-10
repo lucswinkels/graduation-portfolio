@@ -264,6 +264,15 @@ export default function ReadingGuide() {
             different iterations of a prototype where I gathered feedback from
             peer reviews and user tests to validate my designs.
           </P>
+          <P>TODO: split ux-conversion research into below items:</P>
+          <P>
+            {" "}
+            <A href="/design-pattern-research">Design pattern research (TBA)</A>
+          </P>
+          <P>
+            {" "}
+            <A href="/prototyping-wireframes">Prototyping wireframes(TBA)</A>
+          </P>
           <P>
             {" "}
             <A href="/peer-reviews">Peer reviews (TBA)</A>
