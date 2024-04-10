@@ -31,7 +31,7 @@ export function PostPreviewCard({ ...props }) {
           {...props}
           className="group-hover:-translate-y-1 transition-all relative bg-background hover:bg-accent-subtle h-full flex flex-col items-stretch"
         >
-          <BackgroundBeams className="group-hover:opacity-100 opacity-0 transition-opacity duration-300" />
+          {/* <BackgroundBeams className="group-hover:opacity-100 opacity-0 transition-opacity duration-300" /> */}
           <div className="flex flex-row items-center p-6 justify-between">
             <div>
               <span className="text-muted-foreground">{props.project}</span>
