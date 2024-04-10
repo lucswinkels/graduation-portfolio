@@ -265,6 +265,14 @@ export default function ReadingGuide() {
             peer reviews and user tests to validate my designs.
           </P>
           <P>
+            {" "}
+            <A href="/peer-reviews">Peer reviews (TBA)</A>
+          </P>
+          <P>
+            {" "}
+            <A href="/usability-testing">Usability testing (TBA)</A>
+          </P>
+          <P>
             With my designs done, I had a good feeling of how the new store
             would look and what would be required to build it. To figure out how
             I was going to develop the front-end of the new store and translate
