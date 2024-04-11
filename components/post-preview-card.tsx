@@ -78,7 +78,7 @@ export function PostPreviewCard({ ...props }) {
                 alt={props.image.alt}
               /> */}
               <CardBackground category={props.categories[0].toLowerCase()}>
-                <div className="flex flex-row space-x-2 absolute">
+                <div className="flex flex-row gap-2 flex-wrap absolute">
                   {props.categories.map((category: string, i: number) => (
                     <Badge key={i} variant="card">
                       {category}
