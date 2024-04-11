@@ -3,19 +3,7 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import {
-  Book,
-  ExternalLink,
-  Github,
-  Grid3X3,
-  Home,
-  Menu,
-  Palette,
-  PersonStanding,
-  Table,
-  User,
-  X,
-} from "lucide-react";
+import { Book, Github, Grid3X3, Home, Menu, User, X } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import {
@@ -34,17 +22,47 @@ import { Card } from "./ui/card";
 
 export function Navbar() {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
-
-  const navItems = [
+  const iconStyles = "size-6 md:size-8";
+  const mainMenuItems = [
     {
+      icon: <Home className={iconStyles} />,
+      title: "Home",
+      href: "/",
+    },
+    {
+      icon: <User className={iconStyles} />,
+      title: "About me",
+      href: "/about-me",
+    },
+    {
+      icon: <Book className={iconStyles} />,
       title: "Reading guide",
       href: "/reading-guide",
     },
     {
+      icon: <Grid3X3 className={iconStyles} />,
       title: "Burden of proof",
       href: "/burden-of-proof",
     },
   ];
+  // const desktopMenuItems = [
+  //   {
+  //     title: "Home",
+  //     href: "/",
+  //   },
+  //   {
+  //     title: "About me",
+  //     href: "/about-me",
+  //   },
+  //   {
+  //     title: "Reading guide",
+  //     href: "/reading-guide",
+  //   },
+  //   {
+  //     title: "Burden of proof",
+  //     href: "/burden-of-proof",
+  //   },
+  // ];
 
   const closeMobileMenu = () => {
     setMobileMenuVisibility(false);
@@ -72,30 +90,29 @@ export function Navbar() {
   };
 
   const MobileMenu = () => {
-    const IconStyles = "size-6 md:size-8";
-    const MobileMenuLinkItems = [
-      {
-        icon: <Home className={IconStyles} />,
-        title: "Home",
-        href: "/",
-      },
-      {
-        icon: <User className={IconStyles} />,
-        title: "About me",
-        href: "/about-me",
-      },
-      {
-        icon: <Book className={IconStyles} />,
-        title: "Reading guide",
-        href: "/reading-guide",
-      },
-      {
-        icon: <Grid3X3 className={IconStyles} />,
-        title: "Burden of proof",
-        href: "/burden-of-proof",
-      },
-    ];
-
+    // const iconStyles = "size-6 md:size-8";
+    // const mobileMenuItems = [
+    //   {
+    //     icon: <Home className={iconStyles} />,
+    //     title: "Home",
+    //     href: "/",
+    //   },
+    //   {
+    //     icon: <User className={iconStyles} />,
+    //     title: "About me",
+    //     href: "/about-me",
+    //   },
+    //   {
+    //     icon: <Book className={iconStyles} />,
+    //     title: "Reading guide",
+    //     href: "/reading-guide",
+    //   },
+    //   {
+    //     icon: <Grid3X3 className={iconStyles} />,
+    //     title: "Burden of proof",
+    //     href: "/burden-of-proof",
+    //   },
+    // ];
     return (
       <div
         className={`lg:hidden p-6 md:p-[10%] font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100vh-4rem)] ${
@@ -104,7 +121,7 @@ export function Navbar() {
       >
         <div className="space-y-4 h-full flex items-stretch flex-col">
           <div className="grid grid-cols-2 gap-4 grow">
-            {MobileMenuLinkItems.map((item, i) => (
+            {mainMenuItems.map((item, i) => (
               <Link href={item.href} key={i} onClick={handleMenuVisibility}>
                 <Card className="flex flex-col space-y-1 items-center h-full justify-center p-4 text-center hover:bg-accent transition-colors">
                   {item.icon}
@@ -145,7 +162,7 @@ export function Navbar() {
             </NavigationMenuList>
             <NavigationMenuList>
               <div className="lg:flex hidden items-center ml-8 space-x-8">
-                {navItems.map((item, i) => (
+                {mainMenuItems.map((item, i) => (
                   <NavigationMenuItem key={i}>
                     <Link href={item.href} legacyBehavior passHref>
                       <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
