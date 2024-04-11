@@ -9,8 +9,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityAsset } from "@sanity/image-url/lib/types/types";
 import { ExternalLink } from "lucide-react";
 
-import { CATEGORY_GRADIENT_VARIANTS } from "@/lib/constants";
-import { cn, slugify } from "@/lib/utils";
+import { slugify } from "@/lib/utils";
 import {
   Accordion,
   AccordionContent,
@@ -37,6 +36,7 @@ import { H1 } from "./typography/h1";
 import { H2 } from "./typography/h2";
 import { H3 } from "./typography/h3";
 import { H4 } from "./typography/h4";
+import { H5 } from "./typography/h5";
 import { Lead } from "./typography/lead";
 import { List } from "./typography/list";
 import { MutedText } from "./typography/muted-text";
@@ -44,7 +44,7 @@ import { P } from "./typography/p";
 import { Prose } from "./typography/prose";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { Card } from "./ui/card";
+import { Card, CardContent, CardHeader } from "./ui/card";
 
 const builder = imageUrlBuilder(client);
 
@@ -229,42 +229,62 @@ export default function Post({
           alt={post.mainImage.alt}
           priority
         /> */}
-        {post.categories || post.researchMethods ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-16">
-            <Card>
-              <GradientCategoryBackground
-                category={post.categories[0].toLowerCase()}
-                className="p-4 space-y-4"
-              >
-                <H4 className="text-white">Categories</H4>
-                <div className="flex flex-row gap-2 flex-wrap">
-                  {post.categories ? (
-                    post.categories.map((category: string) => (
-                      <Badge variant="card" key={category}>
-                        {category}
-                      </Badge>
-                    ))
-                  ) : (
-                    <P>No categories found.</P>
-                  )}
-                </div>
-              </GradientCategoryBackground>
-            </Card>
-            <Card className="p-4 space-y-4">
-              <H4>Research methods</H4>
-              <div className="flex flex-row gap-2 flex-wrap">
-                {post.researchMethods ? (
-                  post.researchMethods.map((method: { title: string }) => (
-                    <Badge variant="card" key={method.title}>
-                      {method.title}
-                    </Badge>
-                  ))
-                ) : (
-                  <P>No methods found.</P>
-                )}
+        {post.categories || post.researchMethods || post.researchQuestion ? (
+          <Card className="my-8 lg:my-16">
+            <GradientCategoryBackground
+              category={post.categories[0].toLowerCase()}
+              className="p-4 lg:p-8"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                <Card>
+                  <CardHeader className="border-b p-4">
+                    <H5>Categories</H5>
+                  </CardHeader>
+                  <CardContent className="p-4 space-y-4">
+                    <div className="flex flex-row gap-2 flex-wrap">
+                      {post.categories ? (
+                        post.categories.map((category: string) => (
+                          <Badge key={category}>{category}</Badge>
+                        ))
+                      ) : (
+                        <P>No categories found.</P>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader className="border-b p-4">
+                    <H5>Research methods</H5>
+                  </CardHeader>
+                  <CardContent className="p-4 space-y-4">
+                    <div className="flex flex-row gap-2 flex-wrap">
+                      {post.researchMethods ? (
+                        post.researchMethods.map(
+                          (method: { title: string }) => (
+                            <Badge key={method.title}>{method.title}</Badge>
+                          )
+                        )
+                      ) : (
+                        <P>No methods found.</P>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader className="border-b p-4">
+                    <H5>Research question</H5>
+                  </CardHeader>
+                  <CardContent className="p-4 space-y-4">
+                    {post.researchQuestion ? (
+                      <P>{post.researchQuestion}</P>
+                    ) : (
+                      <P>There is no research question for this deliverable.</P>
+                    )}
+                  </CardContent>
+                </Card>
               </div>
-            </Card>
-          </div>
+            </GradientCategoryBackground>
+          </Card>
         ) : null}
         <Prose>
           <PortableText value={post.body} components={components} />
