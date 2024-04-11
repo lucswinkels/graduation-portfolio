@@ -9,7 +9,8 @@ import imageUrlBuilder from "@sanity/image-url";
 import { SanityAsset } from "@sanity/image-url/lib/types/types";
 import { ExternalLink } from "lucide-react";
 
-import { slugify } from "@/lib/utils";
+import { CATEGORY_GRADIENT_VARIANTS } from "@/lib/constants";
+import { cn, slugify } from "@/lib/utils";
 import {
   Accordion,
   AccordionContent,
@@ -29,6 +30,7 @@ import NotFoundPage from "@/app/not-found";
 import FadeUp from "./animation/fade-up";
 import { CodeBlock } from "./code-block";
 import Container from "./container";
+import { GradientCategoryBackground } from "./gradient-category-background";
 import NextPreviousPost from "./next-previous-post";
 import { Blockquote } from "./typography/blockquote";
 import { H1 } from "./typography/h1";
@@ -42,6 +44,7 @@ import { P } from "./typography/p";
 import { Prose } from "./typography/prose";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { Card } from "./ui/card";
 
 const builder = imageUrlBuilder(client);
 
@@ -112,9 +115,13 @@ export default function Post({
 
   const AccordionTextComponent = ({ value }: SanityAsset) => {
     return (
-      <Accordion type="single" collapsible className="my-8 max-w-[75ch]">
+      <Accordion
+        type="single"
+        collapsible
+        className="my-8 xl:my-12 max-w-[75ch]"
+      >
         <AccordionItem value="text-accordion">
-          <AccordionTrigger className="text-base py-2 font-semibold">
+          <AccordionTrigger className="py-2 text-base font-semibold">
             {value.title}
           </AccordionTrigger>
           <AccordionContent>
@@ -131,9 +138,13 @@ export default function Post({
 
   const AccordionBulletListComponent = ({ value }: SanityAsset) => {
     return (
-      <Accordion type="single" collapsible className="my-8 max-w-[75ch]">
+      <Accordion
+        type="single"
+        collapsible
+        className="my-8 xl:my-12 max-w-[75ch]"
+      >
         <AccordionItem value="list-accordion">
-          <AccordionTrigger className="text-base py-2 font-semibold">
+          <AccordionTrigger className="py-2 text-base font-semibold">
             {value.title}
           </AccordionTrigger>
           <AccordionContent>
@@ -193,23 +204,23 @@ export default function Post({
         </Breadcrumb>
         <H1 className="mb-4">{post.title}</H1>
         <Lead>{post.description}</Lead>
-        {post.categories || post.researchMethods ? (
+        {/* {post.categories || post.researchMethods ? (
           <div className="flex gap-2 xl:gap-4 flex-wrap mt-8">
             {post.categories &&
               post.categories.map((category: string) => (
-                <Badge variant="secondary" key={category}>
+                <Badge variant="card" key={category}>
                   {category}
                 </Badge>
               ))}
             {post.researchMethods &&
               post.researchMethods.map((method: { title: string }) => (
-                <Badge variant="secondary" key={method.title}>
+                <Badge variant="card" key={method.title}>
                   {method.title}
                 </Badge>
               ))}
           </div>
-        ) : null}
-        <Image
+        ) : null} */}
+        {/* <Image
           src={builder.image(post.mainImage).width(1024).height(1024).url()}
           className="rounded-lg my-16 shadow-lg"
           quality={100}
@@ -217,7 +228,44 @@ export default function Post({
           height={512}
           alt={post.mainImage.alt}
           priority
-        />
+        /> */}
+        {post.categories || post.researchMethods ? (
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-16">
+            <Card>
+              <GradientCategoryBackground
+                category={post.categories[0].toLowerCase()}
+                className="p-4 space-y-4"
+              >
+                <H4 className="text-white">Categories</H4>
+                <div className="flex flex-row gap-2 flex-wrap">
+                  {post.categories ? (
+                    post.categories.map((category: string) => (
+                      <Badge variant="card" key={category}>
+                        {category}
+                      </Badge>
+                    ))
+                  ) : (
+                    <P>No categories found.</P>
+                  )}
+                </div>
+              </GradientCategoryBackground>
+            </Card>
+            <Card className="p-4 space-y-4">
+              <H4>Research methods</H4>
+              <div className="flex flex-row gap-2 flex-wrap">
+                {post.researchMethods ? (
+                  post.researchMethods.map((method: { title: string }) => (
+                    <Badge variant="card" key={method.title}>
+                      {method.title}
+                    </Badge>
+                  ))
+                ) : (
+                  <P>No methods found.</P>
+                )}
+              </div>
+            </Card>
+          </div>
+        ) : null}
         <Prose>
           <PortableText value={post.body} components={components} />
         </Prose>
