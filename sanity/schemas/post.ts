@@ -13,7 +13,7 @@ export default defineType({
     defineField({
       name: "description",
       title: "Description",
-      type: "text",
+      type: "string",
     }),
     defineField({
       name: "slug",
@@ -68,7 +68,7 @@ export default defineType({
     defineField({
       name: "researchQuestion",
       title: "Research question",
-      type: "text",
+      type: "string",
     }),
     defineField({
       name: "body",
