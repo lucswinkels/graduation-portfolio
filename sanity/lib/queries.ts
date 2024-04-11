@@ -6,7 +6,7 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},
-}`;
+} | order(categories[0] asc)`;
 
 // Get all posts where search query matches title, categories, or project
 export const postsMatchingSearchQuery = groq`*[_type == "post" && defined(slug.current) && (project->slug.current match $query || title match $query || categories[]->title match $query)]{
@@ -14,7 +14,7 @@ export const postsMatchingSearchQuery = groq`*[_type == "post" && defined(slug.c
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},
-}`;
+} | order(categories[0] asc)`;
 
 // Get specific project's posts
 export const projectPostsQuery = groq`*[_type == "post" && defined(slug.current) && project->slug.current == $projectSlug]{
@@ -22,7 +22,7 @@ export const projectPostsQuery = groq`*[_type == "post" && defined(slug.current)
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},
-}`;
+} | order(categories[0] asc)`;
 
 // Get a single post by its slug
 export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{ 
