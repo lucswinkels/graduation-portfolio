@@ -258,7 +258,7 @@ export default function ReadingGuide() {
             with validated designs, I conducted{" "}
             <A href="/webshop-design-pattern-research">
               design pattern research
-            </A>
+            </A>{" "}
             where I analysed similar online clothing stores and their design
             patterns. Based on this research, I started designing{" "}
             <A href="/prototype-wireframes">prototype wireframes</A>. To
