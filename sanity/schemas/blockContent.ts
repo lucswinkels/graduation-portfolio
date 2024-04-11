@@ -1,4 +1,10 @@
-import { Code2, Image, RectangleHorizontal, Video } from "lucide-react";
+import {
+  ChevronDown,
+  Code2,
+  Image,
+  RectangleHorizontal,
+  Video,
+} from "lucide-react";
 import { defineArrayMember, defineType } from "sanity";
 
 export default defineType({
@@ -54,6 +60,24 @@ export default defineType({
           title: "URL",
           name: "href",
           type: "url",
+        },
+      ],
+    }),
+    defineArrayMember({
+      type: "object",
+      name: "accordion",
+      title: "Accordion",
+      icon: ChevronDown,
+      fields: [
+        {
+          title: "Title",
+          name: "title",
+          type: "string",
+        },
+        {
+          title: "Content",
+          name: "content",
+          type: "string",
         },
       ],
     }),

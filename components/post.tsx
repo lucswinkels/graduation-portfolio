@@ -11,6 +11,12 @@ import { ExternalLink } from "lucide-react";
 
 import { slugify } from "@/lib/utils";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -103,12 +109,24 @@ export default function Post({
     );
   };
 
+  const AccordionComponent = ({ value }: SanityAsset) => {
+    return (
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
+          <AccordionTrigger>{value.title}</AccordionTrigger>
+          <AccordionContent>{value.content}</AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+  };
+
   const components = {
     types: {
       image: ImageComponent,
       video: VideoComponent,
       code: CodeComponent,
       button: ButtonComponent,
+      accordion: AccordionComponent,
     },
     block: {
       normal: ({ children }: SanityAsset) => <P>{children}</P>,
