@@ -49,8 +49,14 @@ export function PostPreviewCard({ ...props }) {
                 quality={100}
                 alt={props.image.alt}
               /> */}
-              <div className="flex justify-center items-center min-h-40 w-full h-full bg-foreground">
-                <Logo className="size-8 text-background" noLink />
+              {/* TODO: Add image? Change colors based on post? */}
+              <div className="flex justify-center items-center min-h-40 w-full h-full p-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+                <div className="text-center flex flex-col items-center justify-center space-y-4">
+                  <Logo className="size-8 text-white" noLink />
+                  <span className="text-white text-sm font-medium line-clamp-1">
+                    {props.title}
+                  </span>
+                </div>
               </div>
             </div>
           </CardContent>
