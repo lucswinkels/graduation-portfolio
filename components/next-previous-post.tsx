@@ -56,7 +56,7 @@ export default function NextPreviousPost({
                 {/* <Logo className="w-10 h-10 opacity-20 text-white" /> */}
                 <CategoryIcon
                   category={previousPost.categories[0].toLowerCase()}
-                  className="w-12 h-12 text-white opacity-20"
+                  className="w-12 h-12 lg:w-16 lg:h-16 text-white opacity-20 group-hover:scale-110 transition-transform"
                 />
               </GradientCategoryBackground>
               <div className="flex flex-col gap-1 lg:gap-1 transition-transform">
@@ -92,7 +92,7 @@ export default function NextPreviousPost({
                 {/* <Logo className="w-10 h-10 opacity-20 text-white" /> */}
                 <CategoryIcon
                   category={nextPost.categories[0].toLowerCase()}
-                  className="w-12 h-12 text-white opacity-20"
+                  className="w-12 h-12 lg:w-16 lg:h-16 text-white opacity-20 group-hover:scale-110 transition-transform"
                 />
               </GradientCategoryBackground>
               <div className="flex flex-col gap-1 lg:gap-1 transition-transform">

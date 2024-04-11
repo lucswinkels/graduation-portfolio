@@ -67,7 +67,7 @@ export function PostPreviewCard({ ...props }) {
                   {/* <Logo className="w-10 h-10 text-white opacity-20" noLink /> */}
                   <CategoryIcon
                     category={props.categories[0].toLowerCase()}
-                    className="w-12 h-12 text-white opacity-20"
+                    className="w-12 h-12 text-white opacity-20 group-hover:scale-110 transition-transform"
                   />
                 </div>
               </GradientCategoryBackground>
