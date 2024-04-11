@@ -11,6 +11,12 @@ import { ExternalLink } from "lucide-react";
 
 import { slugify } from "@/lib/utils";
 import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
@@ -30,6 +36,7 @@ import { H2 } from "./typography/h2";
 import { H3 } from "./typography/h3";
 import { H4 } from "./typography/h4";
 import { Lead } from "./typography/lead";
+import { List } from "./typography/list";
 import { MutedText } from "./typography/muted-text";
 import { P } from "./typography/p";
 import { Prose } from "./typography/prose";
@@ -103,12 +110,54 @@ export default function Post({
     );
   };
 
+  const AccordionTextComponent = ({ value }: SanityAsset) => {
+    return (
+      <Accordion type="single" collapsible className="my-8 max-w-[75ch]">
+        <AccordionItem value="text-accordion">
+          <AccordionTrigger className="text-base py-2 font-semibold">
+            {value.title}
+          </AccordionTrigger>
+          <AccordionContent>
+            {value.content.map((item: SanityAsset, i: number) => (
+              <P key={i} className="text-base">
+                {item.children[0].text}
+              </P>
+            ))}
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+  };
+
+  const AccordionBulletListComponent = ({ value }: SanityAsset) => {
+    return (
+      <Accordion type="single" collapsible className="my-8 max-w-[75ch]">
+        <AccordionItem value="list-accordion">
+          <AccordionTrigger className="text-base py-2 font-semibold">
+            {value.title}
+          </AccordionTrigger>
+          <AccordionContent>
+            <List>
+              {value.content.map((item: SanityAsset, i: number) => (
+                <li key={i} className="text-base">
+                  {item.children[0].text}
+                </li>
+              ))}
+            </List>
+          </AccordionContent>
+        </AccordionItem>
+      </Accordion>
+    );
+  };
+
   const components = {
     types: {
       image: ImageComponent,
       video: VideoComponent,
       code: CodeComponent,
       button: ButtonComponent,
+      accordionText: AccordionTextComponent,
+      accordionBulletList: AccordionBulletListComponent,
     },
     block: {
       normal: ({ children }: SanityAsset) => <P>{children}</P>,
