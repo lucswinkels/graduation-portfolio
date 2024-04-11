@@ -18,10 +18,10 @@ const builder = imageUrlBuilder(client);
 
 export function PostPreviewCard({ ...props }) {
   const gradientVariants = {
-    research: "from-indigo-500 to-cyan-500",
+    research: "from-green-500 to-teal-500",
     design: "from-violet-500 to-fuchsia-500",
     development: "from-rose-500 to-red-500",
-    docs: "from-indigo-500 to-blue-500",
+    docs: "from-yellow-500 to-orange-500",
     other: "from-slate-500 to-slate-800",
   };
   const CardBackground = ({
@@ -85,7 +85,7 @@ export function PostPreviewCard({ ...props }) {
                   ))}
                 </div>
                 <div className="flex items-center justify-center w-full h-full">
-                  <Logo className="size-8 text-white" noLink />
+                  <Logo className="size-12 text-white opacity-20" noLink />
                 </div>
               </CardBackground>
             </div>

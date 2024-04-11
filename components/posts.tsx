@@ -99,9 +99,16 @@ export default function Posts({
           </TooltipProvider>
         )}
       </div>
-      <div
+      {/* Grid with colspan */}
+      {/* <div
         className={cn(
           "grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-8 [&>*:nth-child(1)]:lg:col-span-2 [&>*:nth-child(4)]:lg:col-span-2 [&>*:nth-child(4)]:xl:col-span-1 [&>*:nth-child(8)]:lg:col-span-2 [&>*:nth-child(8)]:xl:col-span-1 [&>*:nth-child(11)]:lg:col-span-2 [&>*:nth-child(11)]:xl:col-span-1 [&>*:nth-child(5)]:xl:col-span-2 [&>*:nth-child(9)]:xl:col-span-2 [&>*:nth-child(10)]:xl:col-span-2",
+          className
+        )}
+      > */}
+      <div
+        className={cn(
+          "grid 2xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 gap-4 mt-8",
           className
         )}
       >
