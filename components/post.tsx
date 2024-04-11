@@ -120,18 +120,23 @@ export default function Post({
         collapsible
         className="my-8 xl:my-12 max-w-[75ch]"
       >
-        <AccordionItem value="text-accordion">
-          <AccordionTrigger className="py-2 text-base font-semibold">
-            {value.title}
-          </AccordionTrigger>
-          <AccordionContent>
-            {value.content.map((item: SanityAsset, i: number) => (
-              <P key={i} className="text-base">
-                {item.children[0].text}
-              </P>
-            ))}
-          </AccordionContent>
-        </AccordionItem>
+        <Card>
+          <AccordionItem
+            value="list-accordion"
+            className="[&>h3]:m-0 border-b-0"
+          >
+            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border hover:no-underline">
+              {value.title}
+            </AccordionTrigger>
+            <AccordionContent className="p-4">
+              {value.content.map((item: SanityAsset, i: number) => (
+                <P key={i} className="text-base">
+                  {item.children[0].text}
+                </P>
+              ))}
+            </AccordionContent>
+          </AccordionItem>
+        </Card>
       </Accordion>
     );
   };
@@ -143,20 +148,25 @@ export default function Post({
         collapsible
         className="my-8 xl:my-12 max-w-[75ch]"
       >
-        <AccordionItem value="list-accordion">
-          <AccordionTrigger className="py-2 text-base font-semibold">
-            {value.title}
-          </AccordionTrigger>
-          <AccordionContent>
-            <List>
-              {value.content.map((item: SanityAsset, i: number) => (
-                <li key={i} className="text-base">
-                  {item.children[0].text}
-                </li>
-              ))}
-            </List>
-          </AccordionContent>
-        </AccordionItem>
+        <Card>
+          <AccordionItem
+            value="list-accordion"
+            className="[&>h3]:m-0 border-b-0"
+          >
+            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border hover:no-underline">
+              {value.title}
+            </AccordionTrigger>
+            <AccordionContent className="p-4">
+              <List className="my-0">
+                {value.content.map((item: SanityAsset, i: number) => (
+                  <li key={i} className="text-base">
+                    {item.children[0].text}
+                  </li>
+                ))}
+              </List>
+            </AccordionContent>
+          </AccordionItem>
+        </Card>
       </Accordion>
     );
   };
