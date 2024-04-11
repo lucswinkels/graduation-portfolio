@@ -86,7 +86,7 @@ export function PostPreviewCard({ ...props }) {
                   ))}
                 </div>
                 <div className="flex items-center justify-center w-full h-full">
-                  <Logo className="size-12 text-white opacity-20" noLink />
+                  <Logo className="w-10 h-10 text-white opacity-20" noLink />
                 </div>
               </CardBackground>
             </div>
