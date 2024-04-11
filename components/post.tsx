@@ -125,10 +125,10 @@ export default function Post({
             value="list-accordion"
             className="[&>h3]:m-0 border-b-0"
           >
-            <AccordionTrigger className="p-4 text-base font-semibold">
+            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border">
               {value.title}
             </AccordionTrigger>
-            <AccordionContent className="px-4">
+            <AccordionContent className="p-4">
               {value.content.map((item: SanityAsset, i: number) => (
                 <P key={i} className="text-base">
                   {item.children[0].text}
@@ -153,10 +153,10 @@ export default function Post({
             value="list-accordion"
             className="[&>h3]:m-0 border-b-0"
           >
-            <AccordionTrigger className="p-4 text-base font-semibold">
+            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border">
               {value.title}
             </AccordionTrigger>
-            <AccordionContent className="px-4">
+            <AccordionContent className="p-4">
               <List className="my-0">
                 {value.content.map((item: SanityAsset, i: number) => (
                   <li key={i} className="text-base">
