@@ -10,10 +10,6 @@ export function List({
   className?: string;
 }) {
   return (
-    <ul
-      className={cn("my-6 ml-6 list-disc [&>li]:mt-2 max-w-[75ch]", className)}
-    >
-      {children}
-    </ul>
+    <ul className={cn("list-disc max-w-[75ch]", className)}>{children}</ul>
   );
 }

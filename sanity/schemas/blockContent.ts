@@ -65,8 +65,8 @@ export default defineType({
     }),
     defineArrayMember({
       type: "object",
-      name: "accordion",
-      title: "Accordion",
+      name: "accordionText",
+      title: "Accordion Text",
       icon: ChevronDown,
       fields: [
         {
@@ -77,7 +77,29 @@ export default defineType({
         {
           title: "Content",
           name: "content",
+          type: "blockContent",
+          validation: (Rule) =>
+            Rule.error("You have to add content.").required(),
+        },
+      ],
+    }),
+    defineArrayMember({
+      type: "object",
+      name: "accordionBulletList",
+      title: "Accordion Bullet List",
+      icon: ChevronDown,
+      fields: [
+        {
+          title: "Title",
+          name: "title",
           type: "string",
+        },
+        {
+          title: "Content",
+          name: "content",
+          type: "blockContent",
+          validation: (Rule) =>
+            Rule.error("You have to add content.").required(),
         },
       ],
     }),
