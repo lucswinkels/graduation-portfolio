@@ -235,7 +235,7 @@ export default function Post({
               category={post.categories[0].toLowerCase()}
               className="p-4 lg:p-8"
             >
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
                 <Card>
                   <CardHeader className="border-b p-4">
                     <H5>Categories</H5>
@@ -247,7 +247,7 @@ export default function Post({
                           <Badge key={category}>{category}</Badge>
                         ))
                       ) : (
-                        <P>No categories found.</P>
+                        <P>There is no categories for this deliverable.</P>
                       )}
                     </div>
                   </CardContent>
@@ -265,7 +265,9 @@ export default function Post({
                           )
                         )
                       ) : (
-                        <P>No methods found.</P>
+                        <P>
+                          There are no research methods for this deliverable.
+                        </P>
                       )}
                     </div>
                   </CardContent>
