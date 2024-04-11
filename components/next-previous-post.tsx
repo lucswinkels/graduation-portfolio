@@ -7,6 +7,8 @@ import imageUrlBuilder from "@sanity/image-url";
 import { MoveRight } from "lucide-react";
 import { SanityDocument } from "next-sanity";
 
+import { GradientCategoryBackground } from "./gradient-category-background";
+import { Logo } from "./logo";
 import { H3 } from "./typography/h3";
 import { H4 } from "./typography/h4";
 import { P } from "./typography/p";
@@ -34,7 +36,7 @@ export default function NextPreviousPost({
               <MoveRight className="size-4" />
             </span>
             <div>
-              <Image
+              {/* <Image
                 src={builder
                   .image(previousPost.mainImage)
                   .width(1000)
@@ -45,7 +47,13 @@ export default function NextPreviousPost({
                 height={200}
                 quality={100}
                 alt={previousPost.mainImage.alt}
-              />
+              /> */}
+              <GradientCategoryBackground
+                category={previousPost.categories[0].toLowerCase()}
+                className="border flex items-center justify-center shadow-lg rounded-lg mb-8 w-32 h-32 lg:w-48 lg:h-48"
+              >
+                <Logo className="w-10 h-10 opacity-20 text-white" />
+              </GradientCategoryBackground>
               <div className="flex flex-col gap-1 lg:gap-1 transition-transform">
                 <P className="text-muted-foreground">Previous</P>
                 <H3 className="line-clamp-1">{previousPost.title}</H3>
@@ -60,7 +68,7 @@ export default function NextPreviousPost({
               <MoveRight className="size-4" />
             </span>
             <div>
-              <Image
+              {/* <Image
                 src={builder
                   .image(nextPost.mainImage)
                   .width(1000)
@@ -71,7 +79,13 @@ export default function NextPreviousPost({
                 height={200}
                 quality={100}
                 alt={nextPost.mainImage.alt}
-              />
+              /> */}
+              <GradientCategoryBackground
+                category={nextPost.categories[0].toLowerCase()}
+                className="border flex items-center justify-center shadow-lg rounded-lg mb-8 w-32 h-32 lg:w-48 lg:h-48"
+              >
+                <Logo className="w-10 h-10 opacity-20 text-white" />
+              </GradientCategoryBackground>
               <div className="flex flex-col gap-1 lg:gap-1 transition-transform">
                 <P className="text-muted-foreground">Next</P>
                 <H3 className="line-clamp-1">{nextPost.title}</H3>
