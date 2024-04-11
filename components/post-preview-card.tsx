@@ -5,33 +5,30 @@ import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { motion } from "framer-motion";
-import { MoveRight } from "lucide-react";
+import { AirVent, MoveRight } from "lucide-react";
 
 import { FADE_UP_ANIMATION_VARIANTS } from "@/lib/constants";
 import { Card, CardContent } from "@/components/ui/card";
 
-import { BackgroundBeams } from "./ui/background-beams";
+import { Logo } from "./logo";
 
 const builder = imageUrlBuilder(client);
 
 export function PostPreviewCard({ ...props }) {
   return (
-    <Link
-      href={`/${props.href}`}
-      className="group post-preview flex lg:max-h-[400px]"
-    >
+    <Link href={`/${props.href}`} className="group post-preview flex">
       <motion.div
         key={props.slug}
         initial="hidden"
         animate="show"
         exit="hidden"
         variants={FADE_UP_ANIMATION_VARIANTS}
+        className="w-full"
       >
         <Card
           {...props}
-          className="group-hover:-translate-y-1 transition-all relative bg-background hover:bg-accent-subtle h-full flex flex-col items-stretch"
+          className="group-hover:-translate-y-1 relative transition-all bg-background hover:bg-accent-subtle h-full flex flex-col"
         >
-          {/* <BackgroundBeams className="group-hover:opacity-100 opacity-0 transition-opacity duration-300" /> */}
           <div className="flex flex-row items-center p-6 justify-between">
             <div className="line-clamp-2">
               <span className="text-muted-foreground">{props.project}</span>
@@ -43,15 +40,18 @@ export function PostPreviewCard({ ...props }) {
             </span>
           </div>
           <CardContent className="pt-2 pl-8 pb-0 pr-0 h-full flex">
-            <div className="overflow-hidden relative border-l border-t shadow-lg rounded-tl-xl h-full flex">
-              <Image
+            <div className="overflow-hidden relative border-l border-t shadow-lg rounded-tl-xl h-full flex w-full">
+              {/* <Image
                 src={builder.image(props.image).width(1920).height(1080).url()}
                 className="group-hover:scale-105 transition-transform object-cover object-center"
                 width={1920}
                 height={1080}
                 quality={100}
                 alt={props.image.alt}
-              />
+              /> */}
+              <div className="flex justify-center items-center min-h-40 w-full h-full bg-foreground">
+                <Logo className="size-8 text-background" noLink />
+              </div>
             </div>
           </CardContent>
         </Card>

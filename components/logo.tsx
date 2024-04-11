@@ -7,39 +7,46 @@ import { cn } from "@/lib/utils";
 export function Logo({
   onClick,
   className,
+  noLink,
 }: {
   onClick?: React.MouseEventHandler<HTMLAnchorElement>;
   className?: string;
+  noLink?: boolean;
 }) {
-  return (
+  const logo = (
+    <svg
+      width="1100"
+      height="1100"
+      viewBox="0 0 1100 1100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("size-6", className)}
+    >
+      <rect
+        x="600"
+        y="250"
+        width="250"
+        height="250"
+        rx="40"
+        fill="currentColor"
+      />
+      <rect width="500" height="500" rx="40" fill="currentColor" />
+      <rect y="600" width="500" height="500" rx="40" fill="currentColor" />
+      <rect
+        x="600"
+        y="600"
+        width="500"
+        height="500"
+        rx="40"
+        fill="currentColor"
+      />
+    </svg>
+  );
+  return noLink ? (
+    logo
+  ) : (
     <Link href="/" onClick={onClick}>
-      <svg
-        width="1100"
-        height="1100"
-        viewBox="0 0 1100 1100"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className={cn("size-6", className)}
-      >
-        <rect
-          x="600"
-          y="250"
-          width="250"
-          height="250"
-          rx="40"
-          fill="currentColor"
-        />
-        <rect width="500" height="500" rx="40" fill="currentColor" />
-        <rect y="600" width="500" height="500" rx="40" fill="currentColor" />
-        <rect
-          x="600"
-          y="600"
-          width="500"
-          height="500"
-          rx="40"
-          fill="currentColor"
-        />
-      </svg>
+      {logo}
     </Link>
   );
 }
