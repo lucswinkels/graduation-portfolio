@@ -7,10 +7,13 @@ import {
   Book,
   ExternalLink,
   Github,
+  Grid3X3,
   Home,
   Menu,
   Palette,
+  PersonStanding,
   Table,
+  User,
   X,
 } from "lucide-react";
 
@@ -27,6 +30,7 @@ import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
 import { SearchFormComponent } from "./search-form";
 import { Button } from "./ui/button";
+import { Card } from "./ui/card";
 
 export function Navbar() {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
@@ -68,7 +72,7 @@ export function Navbar() {
   };
 
   const MobileMenu = () => {
-    const IconStyles = "mr-4 size-6 text-foreground";
+    const IconStyles = "size-6 md:size-8";
     const MobileMenuLinkItems = [
       {
         icon: <Home className={IconStyles} />,
@@ -76,52 +80,52 @@ export function Navbar() {
         href: "/",
       },
       {
+        icon: <User className={IconStyles} />,
+        title: "About me",
+        href: "/about-me",
+      },
+      {
         icon: <Book className={IconStyles} />,
         title: "Reading guide",
         href: "/reading-guide",
       },
       {
-        icon: <Table className={IconStyles} />,
+        icon: <Grid3X3 className={IconStyles} />,
         title: "Burden of proof",
         href: "/burden-of-proof",
       },
-      {
-        icon: <Github className={IconStyles} />,
-        title: "Source code (GitHub)",
-        href: "https://github.com/lucswinkels/graduation-portfolio",
-        external: true,
-      },
     ];
-
-    const MobileMenuItemStyles =
-      "h-16 w-full flex items-center border-b text-sm";
 
     return (
       <div
-        className={`lg:hidden px-6 md:px-[10%] font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100vh-4rem)] ${
+        className={`lg:hidden p-6 md:p-[10%] font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100vh-4rem)] ${
           mobileMenuVisibility ? "flex" : "hidden"
         } `}
       >
-        {MobileMenuLinkItems.map((item, i) => (
-          <Link
-            href={item.href}
-            key={i}
-            className={MobileMenuItemStyles}
-            onClick={handleMenuVisibility}
-          >
-            {item.icon}
-            {item.title}
-            {item.external && <ExternalLink className="size-4 ml-2" />}
-          </Link>
-        ))}
-        <div className={cn("justify-between", MobileMenuItemStyles)}>
-          <div className="flex">
-            <Palette className={IconStyles} />
-            <p>Theme</p>
+        <div className="space-y-4 h-full flex items-stretch flex-col">
+          <div className="grid grid-cols-2 gap-4 grow">
+            {MobileMenuLinkItems.map((item, i) => (
+              <Link href={item.href} key={i} onClick={handleMenuVisibility}>
+                <Card className="flex flex-col space-y-1 items-center h-full justify-center p-4 text-center hover:bg-accent transition-colors">
+                  {item.icon}
+                  <span className="text-sm font-semibold">{item.title}</span>
+                </Card>
+              </Link>
+            ))}
           </div>
-          <ModeToggle variant="outline" />
-        </div>
-        <div className="mt-8">
+          <div className="grid grid-cols-2 gap-4">
+            <Button
+              variant="outline"
+              size="icon"
+              asChild
+              className="w-full p-4"
+            >
+              <a href="https://github.com/lucswinkels/graduation-portfolio">
+                <Github className="size-[1.2rem]" />
+              </a>
+            </Button>
+            <ModeToggle variant="outline" className="w-full p-4" />
+          </div>
           <SearchFormComponent fullWidthTrigger />
         </div>
       </div>
