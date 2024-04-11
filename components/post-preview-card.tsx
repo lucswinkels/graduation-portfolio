@@ -10,6 +10,7 @@ import { MoveRight } from "lucide-react";
 import { FADE_UP_ANIMATION_VARIANTS } from "@/lib/constants";
 import { Card, CardContent } from "@/components/ui/card";
 
+import { CategoryIcon } from "./category-icon";
 import { GradientCategoryBackground } from "./gradient-category-background";
 import { Logo } from "./logo";
 import { Badge } from "./ui/badge";
@@ -63,7 +64,11 @@ export function PostPreviewCard({ ...props }) {
                   ))}
                 </div>
                 <div className="flex items-center justify-center w-full h-full">
-                  <Logo className="w-10 h-10 text-white opacity-20" noLink />
+                  {/* <Logo className="w-10 h-10 text-white opacity-20" noLink /> */}
+                  <CategoryIcon
+                    category={props.categories[0].toLowerCase()}
+                    className="w-12 h-12 text-white opacity-20"
+                  />
                 </div>
               </GradientCategoryBackground>
             </div>

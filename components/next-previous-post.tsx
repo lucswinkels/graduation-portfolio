@@ -7,6 +7,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { MoveRight } from "lucide-react";
 import { SanityDocument } from "next-sanity";
 
+import { CategoryIcon } from "./category-icon";
 import { GradientCategoryBackground } from "./gradient-category-background";
 import { Logo } from "./logo";
 import { H3 } from "./typography/h3";
@@ -52,7 +53,11 @@ export default function NextPreviousPost({
                 category={previousPost.categories[0].toLowerCase()}
                 className="border flex items-center justify-center shadow-lg rounded-lg mb-8 w-32 h-32 lg:w-48 lg:h-48"
               >
-                <Logo className="w-10 h-10 opacity-20 text-white" />
+                {/* <Logo className="w-10 h-10 opacity-20 text-white" /> */}
+                <CategoryIcon
+                  category={previousPost.categories[0].toLowerCase()}
+                  className="w-12 h-12 text-white opacity-20"
+                />
               </GradientCategoryBackground>
               <div className="flex flex-col gap-1 lg:gap-1 transition-transform">
                 <P className="text-muted-foreground">Previous</P>
@@ -84,7 +89,11 @@ export default function NextPreviousPost({
                 category={nextPost.categories[0].toLowerCase()}
                 className="border flex items-center justify-center shadow-lg rounded-lg mb-8 w-32 h-32 lg:w-48 lg:h-48"
               >
-                <Logo className="w-10 h-10 opacity-20 text-white" />
+                {/* <Logo className="w-10 h-10 opacity-20 text-white" /> */}
+                <CategoryIcon
+                  category={nextPost.categories[0].toLowerCase()}
+                  className="w-12 h-12 text-white opacity-20"
+                />
               </GradientCategoryBackground>
               <div className="flex flex-col gap-1 lg:gap-1 transition-transform">
                 <P className="text-muted-foreground">Next</P>
