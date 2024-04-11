@@ -125,7 +125,7 @@ export default function Post({
             value="list-accordion"
             className="[&>h3]:m-0 border-b-0"
           >
-            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border">
+            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border hover:no-underline">
               {value.title}
             </AccordionTrigger>
             <AccordionContent className="p-4">
@@ -153,7 +153,7 @@ export default function Post({
             value="list-accordion"
             className="[&>h3]:m-0 border-b-0"
           >
-            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border">
+            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border hover:no-underline">
               {value.title}
             </AccordionTrigger>
             <AccordionContent className="p-4">
