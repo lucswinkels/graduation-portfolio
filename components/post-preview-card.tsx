@@ -22,6 +22,7 @@ export function PostPreviewCard({ ...props }) {
     design: "from-violet-500 to-fuchsia-500",
     development: "from-rose-500 to-red-500",
     docs: "from-yellow-500 to-orange-500",
+    testing: "from-cyan-500 to-sky-500",
     other: "from-slate-500 to-slate-800",
   };
   const CardBackground = ({
