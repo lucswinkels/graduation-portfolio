@@ -67,7 +67,7 @@ export default function NextPreviousPost({
           </Link>
           <Link
             href={`/${nextPost.slug.current}`}
-            className="bg-background hover:bg-accent-subtle lg:basis-1/2 basis-full w-full p-8 border-b lg:border-b-0 lg:border-r transition-colors group relative"
+            className="bg-background hover:bg-accent-subtle lg:basis-1/2 basis-full w-full p-8 transition-colors group relative"
           >
             <span className="-translate-x-4 group-hover:translate-x-0 absolute top-4 right-4 size-12 border bg-background opacity-0 group-hover:opacity-100 font-semibold text-sm items-center justify-center rounded-full flex transition-all">
               <MoveRight className="size-4" />
