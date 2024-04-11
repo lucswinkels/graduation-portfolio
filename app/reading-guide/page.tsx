@@ -256,33 +256,25 @@ export default function ReadingGuide() {
           <P>
             To figure out how I could design the new store to be user friendly
             with validated designs, I conducted{" "}
-            <A href="/ux-and-conversion-optimization-research">
-              UX & conversion optimization research
+            <A href="/webshop-design-pattern-research">
+              design pattern research
             </A>
-            , where I analysed similar online stores and their designs, and then
-            based my designs on these findings. These designs were made into
-            different iterations of a prototype where I gathered feedback from
-            peer reviews and user tests to validate my designs.
-          </P>
-          <P>TODO: split ux-conversion research into below items:</P>
-          <P>
-            {" "}
-            <A href="/design-pattern-research">Design pattern research (TBA)</A>
+            where I analysed similar online clothing stores and their design
+            patterns. Based on this research, I started designing{" "}
+            <A href="/prototype-wireframes">prototype wireframes</A>. To
+            validate these designs, I held a{" "}
+            <A href="/prototype-peer-review">peer review</A> where I gathered
+            feedback on the wireframes and version 1 of the prototype.
           </P>
           <P>
-            {" "}
-            <A href="/prototyping-wireframes">Prototyping wireframes(TBA)</A>
+            After incorporating the feedback I gathered from the peer review
+            into a second version of the prototype, I set up{" "}
+            <A href="/prototype-usability-testing">usability tests</A> to
+            validate the designs with users. Based on the feedback I gathered
+            from the usability tests, I made a final version of the prototype.
           </P>
           <P>
-            {" "}
-            <A href="/peer-reviews">Peer reviews (TBA)</A>
-          </P>
-          <P>
-            {" "}
-            <A href="/usability-testing">Usability testing (TBA)</A>
-          </P>
-          <P>
-            With my designs done, I had a good feeling of how the new store
+            With my prototype done, I had a good feeling of how the new store
             would look and what would be required to build it. To figure out how
             I was going to develop the front-end of the new store and translate
             my designs into code, I conducted{" "}
@@ -299,10 +291,10 @@ export default function ReadingGuide() {
             <A href="/ui-libraries-research">UI libraries research</A>.
           </P>
           <P>
-            After validating my designs with research and user tests, and having
-            picked all the relevant technologies, I started developing. I
-            documented the entire development process here:{" "}
-            <A href="/store-development">store development</A>
+            After validating my designs with research and user tests and having
+            picked all the relevant technologies, I started the development
+            process. I documented the entire development process here:{" "}
+            <A href="/store-development">store development</A>.
           </P>
         </div>
       </Prose>
