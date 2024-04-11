@@ -12,14 +12,15 @@ import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 
 import { Logo } from "./logo";
+import { Badge } from "./ui/badge";
 
 const builder = imageUrlBuilder(client);
 
 export function PostPreviewCard({ ...props }) {
   const gradientVariants = {
-    research: "from-teal-200 to-teal-500",
-    design: "from-indigo-400 to-cyan-400",
-    development: "from-rose-400 to-red-500",
+    research: "from-indigo-500 to-cyan-500",
+    design: "from-violet-500 to-fuchsia-500",
+    development: "from-rose-500 to-red-500",
     docs: "from-indigo-500 to-blue-500",
     other: "from-slate-500 to-slate-800",
   };
@@ -33,7 +34,7 @@ export function PostPreviewCard({ ...props }) {
     return (
       <div
         className={cn(
-          "flex justify-center items-center min-h-40 w-full h-full p-8 bg-gradient-to-br",
+          "min-h-40 w-full h-full p-4 bg-gradient-to-br",
           gradientVariants[category]
         )}
       >
@@ -76,11 +77,15 @@ export function PostPreviewCard({ ...props }) {
                 alt={props.image.alt}
               /> */}
               <CardBackground category={props.categories[0].toLowerCase()}>
-                <div className="text-center flex flex-col items-center justify-center space-y-4">
+                <div className="flex flex-row space-x-2 absolute">
+                  {props.categories.map((category: string, i: number) => (
+                    <Badge key={i} variant="card">
+                      {category}
+                    </Badge>
+                  ))}
+                </div>
+                <div className="flex items-center justify-center w-full h-full">
                   <Logo className="size-8 text-white" noLink />
-                  <span className="text-white text-sm font-medium line-clamp-1">
-                    {props.title}
-                  </span>
                 </div>
               </CardBackground>
             </div>
