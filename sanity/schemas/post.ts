@@ -55,15 +55,20 @@ export default defineType({
     }),
     defineField({
       name: "learningOutcomes",
-      title: "Learning Outcomes",
+      title: "Learning outcomes",
       type: "array",
       of: [{ type: "reference", to: { type: "learningOutcome" } }],
     }),
     defineField({
       name: "researchMethods",
-      title: "Research Methods",
+      title: "Research methods",
       type: "array",
       of: [{ type: "reference", to: { type: "researchMethod" } }],
+    }),
+    defineField({
+      name: "researchQuestion",
+      title: "Research question",
+      type: "text",
     }),
     defineField({
       name: "body",
