@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { AirVent, MoveRight } from "lucide-react";
 
 import { FADE_UP_ANIMATION_VARIANTS } from "@/lib/constants";
+import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 
 import { Logo } from "./logo";
@@ -15,6 +16,31 @@ import { Logo } from "./logo";
 const builder = imageUrlBuilder(client);
 
 export function PostPreviewCard({ ...props }) {
+  const gradientVariants = {
+    research: "from-teal-200 to-teal-500",
+    design: "from-indigo-400 to-cyan-400",
+    development: "from-rose-400 to-red-500",
+    docs: "from-indigo-500 to-blue-500",
+    other: "from-slate-500 to-slate-800",
+  };
+  const CardBackground = ({
+    children,
+    category,
+  }: {
+    children: React.ReactNode;
+    category: keyof typeof gradientVariants;
+  }) => {
+    return (
+      <div
+        className={cn(
+          "flex justify-center items-center min-h-40 w-full h-full p-8 bg-gradient-to-br",
+          gradientVariants[category]
+        )}
+      >
+        {children}
+      </div>
+    );
+  };
   return (
     <Link href={`/${props.href}`} className="group post-preview flex">
       <motion.div
@@ -49,15 +75,14 @@ export function PostPreviewCard({ ...props }) {
                 quality={100}
                 alt={props.image.alt}
               /> */}
-              {/* TODO: Add image? Change colors based on post? */}
-              <div className="flex justify-center items-center min-h-40 w-full h-full p-8 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+              <CardBackground category={props.categories[0].toLowerCase()}>
                 <div className="text-center flex flex-col items-center justify-center space-y-4">
                   <Logo className="size-8 text-white" noLink />
                   <span className="text-white text-sm font-medium line-clamp-1">
                     {props.title}
                   </span>
                 </div>
-              </div>
+              </CardBackground>
             </div>
           </CardContent>
         </Card>
