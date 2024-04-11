@@ -5,44 +5,18 @@ import Link from "next/link";
 import { client } from "@/sanity/lib/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { motion } from "framer-motion";
-import { AirVent, MoveRight } from "lucide-react";
+import { MoveRight } from "lucide-react";
 
 import { FADE_UP_ANIMATION_VARIANTS } from "@/lib/constants";
-import { cn } from "@/lib/utils";
 import { Card, CardContent } from "@/components/ui/card";
 
+import { GradientCategoryBackground } from "./gradient-category-background";
 import { Logo } from "./logo";
 import { Badge } from "./ui/badge";
 
 const builder = imageUrlBuilder(client);
 
 export function PostPreviewCard({ ...props }) {
-  const gradientVariants = {
-    research: "from-green-500 to-teal-500",
-    design: "from-violet-500 to-fuchsia-500",
-    development: "from-rose-500 to-red-500",
-    docs: "from-yellow-500 to-orange-500",
-    testing: "from-cyan-500 to-sky-500",
-    other: "from-slate-500 to-slate-800",
-  };
-  const CardBackground = ({
-    children,
-    category,
-  }: {
-    children: React.ReactNode;
-    category: keyof typeof gradientVariants;
-  }) => {
-    return (
-      <div
-        className={cn(
-          "min-h-40 w-full h-full p-4 bg-gradient-to-br",
-          gradientVariants[category]
-        )}
-      >
-        {children}
-      </div>
-    );
-  };
   return (
     <Link href={`/${props.href}`} className="group post-preview flex">
       <motion.div
@@ -77,7 +51,10 @@ export function PostPreviewCard({ ...props }) {
                 quality={100}
                 alt={props.image.alt}
               /> */}
-              <CardBackground category={props.categories[0].toLowerCase()}>
+              <GradientCategoryBackground
+                className="min-h-40 p-4"
+                category={props.categories[0].toLowerCase()}
+              >
                 <div className="flex flex-row gap-2 flex-wrap absolute">
                   {props.categories.map((category: string, i: number) => (
                     <Badge key={i} variant="card">
@@ -86,9 +63,9 @@ export function PostPreviewCard({ ...props }) {
                   ))}
                 </div>
                 <div className="flex items-center justify-center w-full h-full">
-                  <Logo className="size-12 text-white opacity-20" noLink />
+                  <Logo className="w-10 h-10 text-white opacity-20" noLink />
                 </div>
-              </CardBackground>
+              </GradientCategoryBackground>
             </div>
           </CardContent>
         </Card>

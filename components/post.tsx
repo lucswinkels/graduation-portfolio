@@ -29,12 +29,14 @@ import NotFoundPage from "@/app/not-found";
 import FadeUp from "./animation/fade-up";
 import { CodeBlock } from "./code-block";
 import Container from "./container";
+import { GradientCategoryBackground } from "./gradient-category-background";
 import NextPreviousPost from "./next-previous-post";
 import { Blockquote } from "./typography/blockquote";
 import { H1 } from "./typography/h1";
 import { H2 } from "./typography/h2";
 import { H3 } from "./typography/h3";
 import { H4 } from "./typography/h4";
+import { H5 } from "./typography/h5";
 import { Lead } from "./typography/lead";
 import { List } from "./typography/list";
 import { MutedText } from "./typography/muted-text";
@@ -42,6 +44,7 @@ import { P } from "./typography/p";
 import { Prose } from "./typography/prose";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+import { Card, CardContent, CardHeader } from "./ui/card";
 
 const builder = imageUrlBuilder(client);
 
@@ -112,9 +115,13 @@ export default function Post({
 
   const AccordionTextComponent = ({ value }: SanityAsset) => {
     return (
-      <Accordion type="single" collapsible className="my-8 max-w-[75ch]">
+      <Accordion
+        type="single"
+        collapsible
+        className="my-8 xl:my-12 max-w-[75ch]"
+      >
         <AccordionItem value="text-accordion">
-          <AccordionTrigger className="text-base py-2 font-semibold">
+          <AccordionTrigger className="py-2 text-base font-semibold">
             {value.title}
           </AccordionTrigger>
           <AccordionContent>
@@ -131,9 +138,13 @@ export default function Post({
 
   const AccordionBulletListComponent = ({ value }: SanityAsset) => {
     return (
-      <Accordion type="single" collapsible className="my-8 max-w-[75ch]">
+      <Accordion
+        type="single"
+        collapsible
+        className="my-8 xl:my-12 max-w-[75ch]"
+      >
         <AccordionItem value="list-accordion">
-          <AccordionTrigger className="text-base py-2 font-semibold">
+          <AccordionTrigger className="py-2 text-base font-semibold">
             {value.title}
           </AccordionTrigger>
           <AccordionContent>
@@ -193,23 +204,23 @@ export default function Post({
         </Breadcrumb>
         <H1 className="mb-4">{post.title}</H1>
         <Lead>{post.description}</Lead>
-        {post.categories || post.researchMethods ? (
+        {/* {post.categories || post.researchMethods ? (
           <div className="flex gap-2 xl:gap-4 flex-wrap mt-8">
             {post.categories &&
               post.categories.map((category: string) => (
-                <Badge variant="secondary" key={category}>
+                <Badge variant="card" key={category}>
                   {category}
                 </Badge>
               ))}
             {post.researchMethods &&
               post.researchMethods.map((method: { title: string }) => (
-                <Badge variant="secondary" key={method.title}>
+                <Badge variant="card" key={method.title}>
                   {method.title}
                 </Badge>
               ))}
           </div>
-        ) : null}
-        <Image
+        ) : null} */}
+        {/* <Image
           src={builder.image(post.mainImage).width(1024).height(1024).url()}
           className="rounded-lg my-16 shadow-lg"
           quality={100}
@@ -217,7 +228,66 @@ export default function Post({
           height={512}
           alt={post.mainImage.alt}
           priority
-        />
+        /> */}
+        {post.categories || post.researchMethods || post.researchQuestion ? (
+          <Card className="my-8 lg:my-16">
+            <GradientCategoryBackground
+              category={post.categories[0].toLowerCase()}
+              className="p-4 lg:p-8"
+            >
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
+                <Card>
+                  <CardHeader className="border-b p-4">
+                    <H5>Categories</H5>
+                  </CardHeader>
+                  <CardContent className="p-4 space-y-4">
+                    <div className="flex flex-row gap-2 flex-wrap">
+                      {post.categories ? (
+                        post.categories.map((category: string) => (
+                          <Badge key={category}>{category}</Badge>
+                        ))
+                      ) : (
+                        <P>There is no categories for this deliverable.</P>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader className="border-b p-4">
+                    <H5>Research methods</H5>
+                  </CardHeader>
+                  <CardContent className="p-4 space-y-4">
+                    <div className="flex flex-row gap-2 flex-wrap">
+                      {post.researchMethods ? (
+                        post.researchMethods.map(
+                          (method: { title: string }) => (
+                            <Badge key={method.title}>{method.title}</Badge>
+                          )
+                        )
+                      ) : (
+                        <P>
+                          There are no research methods for this deliverable.
+                        </P>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader className="border-b p-4">
+                    <H5>Research question</H5>
+                  </CardHeader>
+                  <CardContent className="p-4 space-y-4">
+                    {post.researchQuestion ? (
+                      <P>{post.researchQuestion}</P>
+                    ) : (
+                      <P>There is no research question for this deliverable.</P>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+            </GradientCategoryBackground>
+          </Card>
+        ) : null}
         <Prose>
           <PortableText value={post.body} components={components} />
         </Prose>

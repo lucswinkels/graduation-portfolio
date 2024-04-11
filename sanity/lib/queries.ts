@@ -26,7 +26,7 @@ export const projectPostsQuery = groq`*[_type == "post" && defined(slug.current)
 
 // Get a single post by its slug
 export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{ 
-  _id, title, mainImage, body, description, publishedAt, slug,
+  _id, title, mainImage, body, description, publishedAt, slug, researchQuestion,
   "categories": categories[]->title, 
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},   
