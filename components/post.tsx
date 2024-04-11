@@ -27,6 +27,7 @@ import {
 import NotFoundPage from "@/app/not-found";
 
 import FadeUp from "./animation/fade-up";
+import { CategoryIcon } from "./category-icon";
 import { CodeBlock } from "./code-block";
 import Container from "./container";
 import { GradientCategoryBackground } from "./gradient-category-background";
@@ -254,7 +255,13 @@ export default function Post({
                     <div className="flex flex-row gap-2 flex-wrap">
                       {post.categories ? (
                         post.categories.map((category: string) => (
-                          <Badge key={category}>{category}</Badge>
+                          <Badge key={category}>
+                            <CategoryIcon
+                              category={category.toLowerCase()}
+                              className="w-3 h-3 mr-1"
+                            />
+                            {category}
+                          </Badge>
                         ))
                       ) : (
                         <P>There is no categories for this deliverable.</P>
