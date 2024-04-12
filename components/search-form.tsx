@@ -9,7 +9,7 @@ import { z } from "zod";
 
 import { cn } from "@/lib/utils";
 import { useMediaQuery } from "@/hooks/use-media-query";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonProps } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -37,8 +37,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 
-interface Props {
+interface Props extends ButtonProps {
   iconOnly?: boolean;
+  variant?: ButtonProps["variant"];
   fullWidthTrigger?: boolean;
 }
 
@@ -57,7 +58,7 @@ export function SearchFormComponent(props: Props) {
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
           {props.iconOnly ? (
-            <Button variant="ghost" size="icon">
+            <Button variant={props.variant} size="icon">
               <Search className="size-4" />
             </Button>
           ) : (

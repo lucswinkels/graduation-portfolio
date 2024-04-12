@@ -178,7 +178,7 @@ export function Navbar() {
             <MobileMenuToggle />
             <NavigationMenuList className="lg:flex hidden">
               <NavigationMenuItem>
-                <Button variant="ghost" size="icon">
+                <Button variant="outline" size="icon">
                   <a
                     href="https://github.com/lucswinkels/graduation-portfolio"
                     target="_blank"
@@ -189,10 +189,10 @@ export function Navbar() {
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <ModeToggle variant="ghost" />
+                <ModeToggle variant="outline" />
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <SearchFormComponent iconOnly />
+                <SearchFormComponent iconOnly variant="outline" />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
