@@ -1,5 +1,6 @@
 "use client";
 
+import { Braces, Code, Database, Terminal } from "lucide-react";
 import Refractor from "react-refractor";
 import bash from "refractor/lang/bash";
 import css from "refractor/lang/css";
@@ -38,13 +39,41 @@ for (const language of languages) {
 export function CodeBlock({
   language,
   value,
+  filename,
 }: {
   language: string;
   value: string;
+  filename?: string;
 }) {
+  const languageIcons: { [key: string]: JSX.Element } = {
+    bash: <Terminal />,
+    css: <Braces />,
+    js: <Code />,
+    json: <Braces />,
+    jsx: <Code />,
+    markup: <Code />,
+    php: <Code />,
+    python: <Code />,
+    sass: <Braces />,
+    scss: <Braces />,
+    sql: <Database />,
+    tsx: <Code />,
+    ts: <Code />,
+  };
+
   return (
     <>
-      <Refractor language={language} value={value} />
+      {filename && (
+        <div className="bg-background border-b rounded-tr-lg rounded-tl-lg">
+          {languageIcons[language]}
+          <span>{filename}</span>
+        </div>
+      )}
+      <Refractor
+        language={language}
+        value={value}
+        className="border bg-background rounded-tl-none rounded-tr-none"
+      />
     </>
   );
 }
