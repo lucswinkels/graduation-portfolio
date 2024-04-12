@@ -115,7 +115,7 @@ export function Navbar() {
     // ];
     return (
       <div
-        className={`lg:hidden p-6 md:p-[10%] font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100vh-4rem)] ${
+        className={`lg:hidden p-6 md:p-[10%] font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100dvh-4rem)] ${
           mobileMenuVisibility ? "flex" : "hidden"
         } `}
       >
