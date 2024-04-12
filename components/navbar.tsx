@@ -143,7 +143,7 @@ export function Navbar() {
             </Button>
             <ModeToggle variant="outline" className="w-full p-4" />
           </div>
-          <SearchFormComponent fullWidthTrigger />
+          <SearchFormComponent fullWidthTrigger variant="outline" />
         </div>
       </div>
     );
@@ -178,7 +178,7 @@ export function Navbar() {
             <MobileMenuToggle />
             <NavigationMenuList className="lg:flex hidden">
               <NavigationMenuItem>
-                <Button variant="outline" size="icon">
+                <Button variant="ghost" size="icon">
                   <a
                     href="https://github.com/lucswinkels/graduation-portfolio"
                     target="_blank"
@@ -189,10 +189,10 @@ export function Navbar() {
                 </Button>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <ModeToggle variant="outline" />
+                <ModeToggle variant="ghost" />
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <SearchFormComponent iconOnly variant="outline" />
+                <SearchFormComponent iconOnly variant="ghost" />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
