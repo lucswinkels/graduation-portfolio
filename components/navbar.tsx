@@ -120,7 +120,7 @@ export function Navbar() {
         } `}
       >
         <div className="space-y-4 h-full flex items-stretch flex-col">
-          <div className="grid grid-cols-2 gap-4 grow">
+          <div className="grid grid-cols-2 landscape:grid-cols-4 gap-4 grow">
             {mainMenuItems.map((item, i) => (
               <Link href={item.href} key={i} onClick={handleMenuVisibility}>
                 <Card className="flex flex-col space-y-1 items-center h-full justify-center p-4 text-center hover:bg-accent transition-colors">
