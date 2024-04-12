@@ -139,13 +139,6 @@ export default defineType({
       name: "code",
       title: "Code block",
       icon: Code2,
-      fields: [
-        {
-          name: "filename",
-          type: "string",
-          title: "Filename",
-        },
-      ],
       options: {
         languageAlternatives: [
           { title: "TSX", value: "tsx" },
@@ -162,6 +155,7 @@ export default defineType({
           { title: "JSON", value: "json" },
           { title: "SQL", value: "sql" },
         ],
+        withFilename: true,
       },
     }),
   ],
