@@ -86,8 +86,8 @@ export function CodeBlock({
     });
   };
   return (
-    <>
-      <div className="bg-[color:hsl(240,10%,3.9%)] border-[color:hsl(240,3.7%,15.9%)] text-[color:hsl(240,5%,64.9%)] border rounded-tr-lg rounded-tl-lg px-4 py-3 flex justify-between items-center">
+    <div className="border border-[color:hsl(240,3.7%,15.9%)] bg-[color:hsl(240,3.7%,5%)] rounded-lg p-1 pt-0">
+      <div className="bg-[color:hsl(240,10%,3.9%)] border-[color:hsl(240,3.7%,15.9%)] text-[color:hsl(240,5%,64.9%)] border-b px-3 py-4 flex justify-between items-center w-[calc(100%+0.5rem)] rounded-t-lg relative right-1">
         <div className="flex items-center gap-2">
           {languageIcons[language]}
           <span className="text-sm">{filename}</span>
@@ -107,8 +107,8 @@ export function CodeBlock({
       <Refractor
         language={language}
         value={value}
-        className="bg-[color:hsl(240,3.7%,5%)] border-[color:hsl(240,3.7%,15.9%)] text-[color:hsl(240,5%,64.9%)] border border-t-0 rounded-tl-none rounded-tr-none"
+        className="bg-[color:hsl(240,3.7%,5%)] text-[color:hsl(240,5%,64.9%)]"
       />
-    </>
+    </div>
   );
 }
