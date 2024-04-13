@@ -1,13 +1,15 @@
 "use client";
 
+import { Braces, Copy, Database, Terminal } from "lucide-react";
 import {
-  Braces,
-  Clipboard,
-  Code,
-  Copy,
-  Database,
-  Terminal,
-} from "lucide-react";
+  BiLogoCss3,
+  BiLogoHtml5,
+  BiLogoJavascript,
+  BiLogoPhp,
+  BiLogoPython,
+  BiLogoSass,
+  BiLogoTypescript,
+} from "react-icons/bi";
 import Refractor from "react-refractor";
 import bash from "refractor/lang/bash";
 import css from "refractor/lang/css";
@@ -63,21 +65,20 @@ export function CodeBlock({
 }) {
   const { toast } = useToast();
   const iconSize = "size-4";
-  //TODO: replace with actual logo's
   const languageIcons: { [key: string]: JSX.Element } = {
     bash: <Terminal className={iconSize} />,
-    css: <Braces className={iconSize} />,
-    js: <Code className={iconSize} />,
+    css: <BiLogoCss3 className={iconSize} />,
+    js: <BiLogoJavascript className={iconSize} />,
     json: <Braces className={iconSize} />,
-    jsx: <Code className={iconSize} />,
-    markup: <Code className={iconSize} />,
-    php: <Code className={iconSize} />,
-    python: <Code className={iconSize} />,
-    sass: <Braces className={iconSize} />,
-    scss: <Braces className={iconSize} />,
+    jsx: <BiLogoJavascript className={iconSize} />,
+    markup: <BiLogoHtml5 className={iconSize} />,
+    php: <BiLogoPhp className={iconSize} />,
+    python: <BiLogoPython className={iconSize} />,
+    sass: <BiLogoSass className={iconSize} />,
+    scss: <BiLogoSass className={iconSize} />,
     sql: <Database className={iconSize} />,
-    tsx: <Code className={iconSize} />,
-    ts: <Code className={iconSize} />,
+    tsx: <BiLogoTypescript className={iconSize} />,
+    ts: <BiLogoTypescript className={iconSize} />,
   };
   const handleCopyToClipboard = () => {
     navigator.clipboard.writeText(value);
