@@ -142,19 +142,17 @@ code[class*="language-"] ::selection {
 /* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
-  margin: 0.5em 0;
+  margin: 0;
   overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
   color: white;
-  background: #011627;
 }
 
 :not(pre) > code[class*="language-"] {
   padding: 0.1em;
-  border-radius: 0.3em;
   white-space: normal;
 }
 

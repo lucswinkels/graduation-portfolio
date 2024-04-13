@@ -1,6 +1,7 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import { Toaster } from "@/components/ui/toaster";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 
@@ -76,6 +77,7 @@ export default function RootLayout({
           <BackToTop />
           {/* <Cursor /> */}
           {/* <Footer /> */}
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

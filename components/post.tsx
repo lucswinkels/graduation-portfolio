@@ -98,8 +98,12 @@ export default function Post({
 
   const CodeComponent = ({ value }: SanityAsset) => {
     return (
-      <div className="my-8 w-max max-w-full">
-        <CodeBlock language={value.language} value={value.code} />
+      <div className="my-8 lg:w-max w-full max-w-full min-w-64">
+        <CodeBlock
+          language={value.language}
+          value={value.code}
+          filename={value.filename}
+        />
       </div>
     );
   };

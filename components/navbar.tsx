@@ -115,12 +115,12 @@ export function Navbar() {
     // ];
     return (
       <div
-        className={`lg:hidden p-6 md:p-[10%] font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100vh-4rem)] ${
+        className={`lg:hidden p-6 md:p-[10%] landscape:md:py-6 font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100dvh-4rem)] ${
           mobileMenuVisibility ? "flex" : "hidden"
         } `}
       >
         <div className="space-y-4 h-full flex items-stretch flex-col">
-          <div className="grid grid-cols-2 gap-4 grow">
+          <div className="grid grid-cols-1 landscape:grid-cols-4 gap-4 grow">
             {mainMenuItems.map((item, i) => (
               <Link href={item.href} key={i} onClick={handleMenuVisibility}>
                 <Card className="flex flex-col space-y-1 items-center h-full justify-center p-4 text-center hover:bg-accent transition-colors">
@@ -143,7 +143,7 @@ export function Navbar() {
             </Button>
             <ModeToggle variant="outline" className="w-full p-4" />
           </div>
-          <SearchFormComponent fullWidthTrigger />
+          <SearchFormComponent fullWidthTrigger variant="outline" />
         </div>
       </div>
     );
@@ -192,7 +192,7 @@ export function Navbar() {
                 <ModeToggle variant="ghost" />
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <SearchFormComponent iconOnly />
+                <SearchFormComponent iconOnly variant="ghost" />
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
