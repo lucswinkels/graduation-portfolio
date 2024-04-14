@@ -118,6 +118,9 @@ export default function Post({
     );
   };
 
+  const accordionTriggerStyles =
+    "p-4 text-base font-semibold border-b border-border/0 data-[state=open]:border-border bg-background hover:bg-accent-subtle hover:no-underline";
+  const accordionContentStyles = "p-4 bg-accent-subtle";
   const AccordionTextComponent = ({ value }: SanityAsset) => {
     return (
       <Accordion
@@ -130,10 +133,10 @@ export default function Post({
             value="list-accordion"
             className="[&>h3]:m-0 border-b-0"
           >
-            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border hover:no-underline">
+            <AccordionTrigger className={accordionTriggerStyles}>
               {value.title}
             </AccordionTrigger>
-            <AccordionContent className="p-4">
+            <AccordionContent className={accordionContentStyles}>
               {value.content.map((item: SanityAsset, i: number) => (
                 <P key={i} className="text-base">
                   {item.children[0].text}
@@ -158,10 +161,10 @@ export default function Post({
             value="list-accordion"
             className="[&>h3]:m-0 border-b-0"
           >
-            <AccordionTrigger className="p-4 text-base font-semibold hover:bg-accent-subtle border-b border-border/0 data-[state=open]:border-border hover:no-underline">
+            <AccordionTrigger className={accordionTriggerStyles}>
               {value.title}
             </AccordionTrigger>
-            <AccordionContent className="p-4">
+            <AccordionContent className={accordionContentStyles}>
               <List className="my-0">
                 {value.content.map((item: SanityAsset, i: number) => (
                   <li key={i} className="text-base">
