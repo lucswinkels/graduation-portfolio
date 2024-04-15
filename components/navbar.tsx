@@ -41,16 +41,16 @@ export function Navbar() {
       title: "Home",
       href: "/",
     },
-    {
-      icon: <User className={mainMenuItemsIconStyles} />,
-      title: "About me",
-      href: "/about-me",
-    },
-    {
-      icon: <Contact className={mainMenuItemsIconStyles} />,
-      title: "Contact",
-      href: "/contact",
-    },
+    // {
+    //   icon: <User className={mainMenuItemsIconStyles} />,
+    //   title: "About me",
+    //   href: "/about-me",
+    // },
+    // {
+    //   icon: <Contact className={mainMenuItemsIconStyles} />,
+    //   title: "Contact",
+    //   href: "/contact",
+    // },
     {
       icon: <Book className={mainMenuItemsIconStyles} />,
       title: "Reading guide",
@@ -132,7 +132,7 @@ export function Navbar() {
         } `}
       >
         <div className="space-y-4 h-full flex items-stretch flex-col">
-          <div className={`grid grid-cols-1 landscape:grid-cols-3 gap-4`}>
+          <div className={`grid grid-cols-1 landscape:grid-cols-2 gap-4`}>
             {mainMenuItems.map((item) =>
               item.external ? (
                 <a href={item.href} key={item.title} target="_blank">
