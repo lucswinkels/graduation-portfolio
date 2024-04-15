@@ -186,11 +186,13 @@ export function Navbar() {
                 {mainMenuItems.map((item) => (
                   <NavigationMenuItem key={item.title}>
                     {item.external ? (
-                      <a href={item.href} target="_blank">
-                        <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
-                          {item.title}
-                        </NavigationMenuLink>
-                      </a>
+                      <NavigationMenuLink
+                        href={item.href}
+                        target="_blank"
+                        className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium"
+                      >
+                        {item.title}
+                      </NavigationMenuLink>
                     ) : (
                       <Link href={item.href} legacyBehavior passHref>
                         <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
