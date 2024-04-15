@@ -121,7 +121,7 @@ export function Navbar() {
       return (
         <Card className="flex landscape:flex-col landscape:space-x-0 landscape:space-y-2 space-x-4 landscape:justify-center items-center h-full p-4 text-center hover:bg-accent transition-colors">
           {props.icon}
-          <span className="text-base font-semibold">{props.title}</span>
+          <span className="text-sm font-medium">{props.title}</span>
         </Card>
       );
     };

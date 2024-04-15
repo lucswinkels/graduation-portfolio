@@ -63,21 +63,20 @@ export default function Post({
     const { width, height } = getImageDimensions(value);
     return (
       <div className="my-8 flex justify-center flex-col w-max max-w-full">
-        <Fancybox>
-          <a
-            data-fancybox="gallery"
-            href={builder.image(value).width(width).height(height).url()}
-          >
-            <Image
-              src={builder.image(value).width(width).height(height).url()}
-              alt={value.alt}
-              width={width}
-              height={height}
-              loading="lazy"
-              className="rounded-lg border mb-2 shadow-lg max-h-[80dvh] max-w-full w-max h-auto"
-            />
-          </a>
-        </Fancybox>
+        <a
+          data-fancybox="gallery"
+          href={builder.image(value).width(width).height(height).url()}
+        >
+          <Image
+            src={builder.image(value).width(width).height(height).url()}
+            alt={value.alt}
+            width={width}
+            height={height}
+            loading="lazy"
+            className="rounded-lg border mb-2 shadow-lg max-h-[80dvh] max-w-full w-max h-auto"
+          />
+        </a>
+
         <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
     );
@@ -90,22 +89,20 @@ export default function Post({
     const assetFileType = assetParts[2];
     return (
       <div className="my-8 flex justify-center flex-col w-max max-w-full">
-        <Fancybox>
-          <a
-            data-fancybox="gallery"
-            href={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
-          >
-            <video
-              className="w-max h-auto max-h-[80dvh] max-w-full rounded-lg border shadow-lg mb-2"
-              autoPlay
-              loop
-              controls
-              playsInline
-              muted
-              src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
-            ></video>
-          </a>
-        </Fancybox>
+        <a
+          data-fancybox="gallery"
+          href={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
+        >
+          <video
+            className="w-max h-auto max-h-[80dvh] max-w-full rounded-lg border shadow-lg mb-2"
+            autoPlay
+            loop
+            controls
+            playsInline
+            muted
+            src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
+          ></video>
+        </a>
 
         <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
@@ -270,11 +267,12 @@ export default function Post({
               className="p-4 lg:p-8"
             >
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
-                <Card>
-                  <CardHeader className="border-b p-4">
+                <Card className="bg-background/95 backdrop:blur supports-[backdrop-filter]:bg-background/80 border-border/40">
+                  {/* <CardHeader className="border-b border-border/40 p-3">
                     <H5>Categories</H5>
-                  </CardHeader>
-                  <CardContent className="p-4 space-y-4">
+                  </CardHeader> */}
+                  <CardContent className="p-3 space-y-2">
+                    <H5>Categories</H5>
                     <div className="flex flex-row gap-2 flex-wrap">
                       {post.categories ? (
                         post.categories.map((category: string) => (
@@ -292,11 +290,12 @@ export default function Post({
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
-                  <CardHeader className="border-b p-4">
+                <Card className="bg-background/95 backdrop:blur supports-[backdrop-filter]:bg-background/80 border-border/40">
+                  {/* <CardHeader className="border-b p-4">
                     <H5>Research methods</H5>
-                  </CardHeader>
-                  <CardContent className="p-4 space-y-4">
+                  </CardHeader> */}
+                  <CardContent className="p-3 space-y-2">
+                    <H5>Research methods</H5>
                     <div className="flex flex-row gap-2 flex-wrap">
                       {post.researchMethods ? (
                         post.researchMethods.map(
@@ -312,11 +311,12 @@ export default function Post({
                     </div>
                   </CardContent>
                 </Card>
-                <Card>
-                  <CardHeader className="border-b p-4">
+                <Card className="bg-background/95 backdrop:blur supports-[backdrop-filter]:bg-background/80 border-border/40">
+                  {/* <CardHeader className="border-b p-4">
                     <H5>Research question</H5>
-                  </CardHeader>
-                  <CardContent className="p-4 space-y-4">
+                  </CardHeader> */}
+                  <CardContent className="p-3 space-y-2">
+                    <H5>Research question</H5>
                     {post.researchQuestion ? (
                       <P>{post.researchQuestion}</P>
                     ) : (
@@ -329,7 +329,9 @@ export default function Post({
           </Card>
         ) : null}
         <Prose>
-          <PortableText value={post.body} components={components} />
+          <Fancybox>
+            <PortableText value={post.body} components={components} />
+          </Fancybox>
         </Prose>
         <NextPreviousPost previousPost={previousPost} nextPost={nextPost} />
       </Container>
