@@ -28,6 +28,8 @@ import Container from "./container";
 import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
 import { SearchFormComponent } from "./search-form";
+import { H3 } from "./typography/h3";
+import { H4 } from "./typography/h4";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 
@@ -108,9 +110,6 @@ export function Navbar() {
   };
 
   const MobileMenu = () => {
-    const gridGap = "gap-4";
-    const mainMenuItemsGridCols = `grid-cols-1 landscape:grid-cols-${mainMenuItems.length}`;
-    const socialsGridCols = `grid-cols-${socials.length}`;
     return (
       <div
         className={`lg:hidden p-6 md:p-[10%] landscape:md:py-6 font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100dvh-4rem)] landscape:overflow-scroll ${
@@ -118,7 +117,7 @@ export function Navbar() {
         } `}
       >
         <div className="space-y-4 h-full flex items-stretch flex-col">
-          <div className={`grid ${mainMenuItemsGridCols} ${gridGap} grow`}>
+          <div className={`grid grid-cols-1 landscape:grid-cols-5 gap-4 grow`}>
             {mainMenuItems.map((item) => (
               <Link
                 href={item.href}
@@ -126,13 +125,14 @@ export function Navbar() {
                 onClick={handleMenuVisibility}
               >
                 <Card className="flex flex-col space-y-1 items-center h-full justify-center p-4 text-center hover:bg-accent transition-colors">
-                  {item.icon}
-                  <span className="text-sm font-semibold">{item.title}</span>
+                  {/* {item.icon} */}
+                  {/* <span className="text-sm font-semibold">{item.title}</span> */}
+                  <H4>{item.title}</H4>
                 </Card>
               </Link>
             ))}
           </div>
-          <div className={`grid ${socialsGridCols} ${gridGap}`}>
+          <div className={`grid grid-cols-3 gap-4`}>
             {socials.map((social) => (
               <Button
                 variant="outline"
