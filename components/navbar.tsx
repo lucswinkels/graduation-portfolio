@@ -63,6 +63,28 @@ export function Navbar() {
   //     href: "/burden-of-proof",
   //   },
   // ];
+  // const mobileMenuItems = [
+  //   {
+  //     icon: <Home className={iconStyles} />,
+  //     title: "Home",
+  //     href: "/",
+  //   },
+  //   {
+  //     icon: <User className={iconStyles} />,
+  //     title: "About me",
+  //     href: "/about-me",
+  //   },
+  //   {
+  //     icon: <Book className={iconStyles} />,
+  //     title: "Reading guide",
+  //     href: "/reading-guide",
+  //   },
+  //   {
+  //     icon: <Grid3X3 className={iconStyles} />,
+  //     title: "Burden of proof",
+  //     href: "/burden-of-proof",
+  //   },
+  // ];
 
   const closeMobileMenu = () => {
     setMobileMenuVisibility(false);
@@ -72,47 +94,30 @@ export function Navbar() {
     setMobileMenuVisibility(!mobileMenuVisibility);
   };
 
-  const MobileMenuToggle = () => {
+  const MobileMenuBarItems = () => {
     return (
-      <Button
-        variant="outline"
-        size="icon"
-        className="lg:hidden flex"
-        onClick={handleMenuVisibility}
-      >
-        {mobileMenuVisibility ? (
-          <X className="size-5" />
-        ) : (
-          <Menu className="size-5" />
-        )}
-      </Button>
+      <div className="flex space-x-2 lg:hidden">
+        <SearchFormComponent iconOnly variant="outline" />
+        <ModeToggle variant="outline" />
+        {/* <Button variant="outline" size="icon" asChild>
+          <a href="https://github.com/lucswinkels/graduation-portfolio">
+            <Github className="size-4" />
+            <span className="sr-only">GitHub</span>
+          </a>
+        </Button> */}
+        <Button variant="outline" size="icon" onClick={handleMenuVisibility}>
+          {mobileMenuVisibility ? (
+            <X className="size-5" />
+          ) : (
+            <Menu className="size-5" />
+          )}
+          <span className="sr-only">Toggle menu</span>
+        </Button>
+      </div>
     );
   };
 
   const MobileMenu = () => {
-    // const iconStyles = "size-6 md:size-8";
-    // const mobileMenuItems = [
-    //   {
-    //     icon: <Home className={iconStyles} />,
-    //     title: "Home",
-    //     href: "/",
-    //   },
-    //   {
-    //     icon: <User className={iconStyles} />,
-    //     title: "About me",
-    //     href: "/about-me",
-    //   },
-    //   {
-    //     icon: <Book className={iconStyles} />,
-    //     title: "Reading guide",
-    //     href: "/reading-guide",
-    //   },
-    //   {
-    //     icon: <Grid3X3 className={iconStyles} />,
-    //     title: "Burden of proof",
-    //     href: "/burden-of-proof",
-    //   },
-    // ];
     return (
       <div
         className={`lg:hidden p-6 md:p-[10%] landscape:md:py-6 font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100dvh-4rem)] ${
@@ -130,7 +135,7 @@ export function Navbar() {
               </Link>
             ))}
           </div>
-          <div className="grid grid-cols-2 gap-4">
+          {/* <div className="grid grid-cols-2 gap-4">
             <Button
               variant="outline"
               size="icon"
@@ -138,12 +143,13 @@ export function Navbar() {
               className="w-full p-4"
             >
               <a href="https://github.com/lucswinkels/graduation-portfolio">
-                <Github className="size-[1.2rem]" />
+                <Github className="size-4" />
+                <span className="sr-only">GitHub</span>
               </a>
             </Button>
             <ModeToggle variant="outline" className="w-full p-4" />
-          </div>
-          <SearchFormComponent fullWidthTrigger variant="outline" />
+          </div> */}
+          {/* <SearchFormComponent fullWidthTrigger variant="outline" /> */}
         </div>
       </div>
     );
@@ -175,19 +181,19 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
           <NavigationMenu>
-            <MobileMenuToggle />
+            <MobileMenuBarItems />
             <NavigationMenuList className="lg:flex hidden">
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <Button variant="ghost" size="icon">
                   <a
                     href="https://github.com/lucswinkels/graduation-portfolio"
                     target="_blank"
                   >
-                    <Github className="size-[1.2rem]" />
+                    <Github className="size-4" />
                     <span className="sr-only">GitHub</span>
                   </a>
                 </Button>
-              </NavigationMenuItem>
+              </NavigationMenuItem> */}
               <NavigationMenuItem>
                 <ModeToggle variant="ghost" />
               </NavigationMenuItem>
