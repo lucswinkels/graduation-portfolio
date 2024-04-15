@@ -60,7 +60,7 @@ export default function NextPreviousPost({
                 />
               </GradientCategoryBackground>
               <div className="flex flex-col gap-1 lg:gap-1 transition-transform">
-                <P className="text-muted-foreground">Previous</P>
+                <P className="text-muted-foreground">Previous post</P>
                 <H3 className="line-clamp-1">{previousPost.title}</H3>
               </div>
             </div>
@@ -96,7 +96,7 @@ export default function NextPreviousPost({
                 />
               </GradientCategoryBackground>
               <div className="flex flex-col gap-1 lg:gap-1 transition-transform">
-                <P className="text-muted-foreground">Next</P>
+                <P className="text-muted-foreground">Next post</P>
                 <H3 className="line-clamp-1">{nextPost.title}</H3>
               </div>
             </div>
