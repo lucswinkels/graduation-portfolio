@@ -9,6 +9,7 @@ import "./globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 
 import BackToTop from "@/components/back-to-top";
@@ -66,7 +67,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={GeistSans.className}>
+      <body className={`${GeistSans.variable} ${GeistMono.variable}`}>
         <SpeedInsights />
         <Analytics />
         <ThemeProvider attribute="class" enableSystem>

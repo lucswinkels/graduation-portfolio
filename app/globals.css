@@ -57,7 +57,7 @@
   }
 
   body {
-    @apply bg-background text-foreground min-w-full;
+    @apply bg-background text-foreground min-w-full font-sans;
   }
 
   body::-webkit-scrollbar {
@@ -97,7 +97,6 @@ html {
 code[class*="language-"],
 pre[class*="language-"] {
   color: #d6deeb;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
