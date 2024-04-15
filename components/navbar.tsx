@@ -28,15 +28,13 @@ import Container from "./container";
 import { Logo } from "./logo";
 import { ModeToggle } from "./mode-toggle";
 import { SearchFormComponent } from "./search-form";
-import { H3 } from "./typography/h3";
-import { H4 } from "./typography/h4";
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 
 export function Navbar() {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
 
-  const mainMenuItemsIconStyles = "size-5";
+  const mainMenuItemsIconStyles = "size-6";
   const mainMenuItems = [
     {
       icon: <Home className={mainMenuItemsIconStyles} />,
@@ -62,6 +60,12 @@ export function Navbar() {
       icon: <Grid3X3 className={mainMenuItemsIconStyles} />,
       title: "Burden of proof",
       href: "/burden-of-proof",
+    },
+    {
+      icon: <Github className={mainMenuItemsIconStyles} />,
+      title: "Source code",
+      href: "https://github.com/lucswinkels/graduation-portfolio",
+      external: true,
     },
   ];
 
@@ -110,6 +114,17 @@ export function Navbar() {
   };
 
   const MobileMenu = () => {
+    const MobileMenuItemCard = (props: {
+      icon: JSX.Element;
+      title: string;
+    }) => {
+      return (
+        <Card className="flex landscape:flex-col landscape:space-x-0 landscape:space-y-2 space-x-4 landscape:justify-center items-center h-full p-4 text-center hover:bg-accent transition-colors">
+          {props.icon}
+          <span className="text-base font-semibold">{props.title}</span>
+        </Card>
+      );
+    };
     return (
       <div
         className={`lg:hidden p-6 md:p-[10%] landscape:md:py-6 font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100dvh-4rem)] landscape:overflow-scroll ${
@@ -117,20 +132,22 @@ export function Navbar() {
         } `}
       >
         <div className="space-y-4 h-full flex items-stretch flex-col">
-          <div className={`grid grid-cols-1 landscape:grid-cols-5 gap-4 grow`}>
-            {mainMenuItems.map((item) => (
-              <Link
-                href={item.href}
-                key={item.title}
-                onClick={handleMenuVisibility}
-              >
-                <Card className="flex flex-col space-y-1 items-center h-full justify-center p-4 text-center hover:bg-accent transition-colors">
-                  {/* {item.icon} */}
-                  {/* <span className="text-sm font-semibold">{item.title}</span> */}
-                  <H4>{item.title}</H4>
-                </Card>
-              </Link>
-            ))}
+          <div className={`grid grid-cols-1 landscape:grid-cols-3 gap-4`}>
+            {mainMenuItems.map((item) =>
+              item.external ? (
+                <a href={item.href} key={item.title} target="_blank">
+                  <MobileMenuItemCard icon={item.icon} title={item.title} />
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  key={item.title}
+                  onClick={handleMenuVisibility}
+                >
+                  <MobileMenuItemCard icon={item.icon} title={item.title} />
+                </Link>
+              )
+            )}
           </div>
           <div className={`grid grid-cols-3 gap-4`}>
             {socials.map((social) => (
@@ -166,13 +183,21 @@ export function Navbar() {
             </NavigationMenuList>
             <NavigationMenuList>
               <div className="lg:flex hidden items-center ml-8 space-x-8">
-                {mainMenuItems.map((item, i) => (
-                  <NavigationMenuItem key={i}>
-                    <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
-                        {item.title}
-                      </NavigationMenuLink>
-                    </Link>
+                {mainMenuItems.map((item) => (
+                  <NavigationMenuItem key={item.title}>
+                    {item.external ? (
+                      <a href={item.href} target="_blank">
+                        <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
+                          {item.title}
+                        </NavigationMenuLink>
+                      </a>
+                    ) : (
+                      <Link href={item.href} legacyBehavior passHref>
+                        <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
+                          {item.title}
+                        </NavigationMenuLink>
+                      </Link>
+                    )}
                   </NavigationMenuItem>
                 ))}
               </div>
@@ -197,17 +222,6 @@ export function Navbar() {
                   </Button>
                 </NavigationMenuItem>
               ))} */}
-              {/* <NavigationMenuItem>
-                <Button variant="ghost" size="icon">
-                  <a
-                    href="https://github.com/lucswinkels/graduation-portfolio"
-                    target="_blank"
-                  >
-                    <Github className="size-4" />
-                    <span className="sr-only">GitHub</span>
-                  </a>
-                </Button>
-              </NavigationMenuItem> */}
             </NavigationMenuList>
           </NavigationMenu>
         </div>
