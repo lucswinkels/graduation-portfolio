@@ -46,6 +46,7 @@ import { Prose } from "./typography/prose";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardHeader } from "./ui/card";
+import Fancybox from "./ui/fancybox";
 
 const builder = imageUrlBuilder(client);
 
@@ -62,14 +63,21 @@ export default function Post({
     const { width, height } = getImageDimensions(value);
     return (
       <div className="my-8 flex justify-center flex-col w-max max-w-full">
-        <Image
-          src={builder.image(value).width(width).height(height).url()}
-          alt={value.alt}
-          width={width}
-          height={height}
-          loading="lazy"
-          className="rounded-lg border mb-2 shadow-lg max-h-[80dvh] max-w-full w-max h-auto"
-        />
+        <Fancybox>
+          <a
+            data-fancybox="gallery"
+            href={builder.image(value).width(width).height(height).url()}
+          >
+            <Image
+              src={builder.image(value).width(width).height(height).url()}
+              alt={value.alt}
+              width={width}
+              height={height}
+              loading="lazy"
+              className="rounded-lg border mb-2 shadow-lg max-h-[80dvh] max-w-full w-max h-auto"
+            />
+          </a>
+        </Fancybox>
         <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
     );
@@ -82,15 +90,23 @@ export default function Post({
     const assetFileType = assetParts[2];
     return (
       <div className="my-8 flex justify-center flex-col w-max max-w-full">
-        <video
-          className="w-max h-auto max-h-[80dvh] max-w-full rounded-lg border shadow-lg mb-2"
-          autoPlay
-          loop
-          controls
-          playsInline
-          muted
-          src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
-        ></video>
+        <Fancybox>
+          <a
+            data-fancybox="gallery"
+            href={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
+          >
+            <video
+              className="w-max h-auto max-h-[80dvh] max-w-full rounded-lg border shadow-lg mb-2"
+              autoPlay
+              loop
+              controls
+              playsInline
+              muted
+              src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
+            ></video>
+          </a>
+        </Fancybox>
+
         <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
     );
