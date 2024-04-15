@@ -3,7 +3,18 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { Book, Github, Grid3X3, Home, Menu, User, X } from "lucide-react";
+import {
+  Book,
+  Contact,
+  Github,
+  Grid3X3,
+  Home,
+  Mail,
+  Menu,
+  User,
+  X,
+} from "lucide-react";
+import { BiLogoLinkedin } from "react-icons/bi";
 
 import { cn } from "@/lib/utils";
 import {
@@ -22,47 +33,60 @@ import { Card } from "./ui/card";
 
 export function Navbar() {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
-  const iconStyles = "size-6 md:size-8";
+
+  const mainMenuItemsIconStyles = "size-6";
   const mainMenuItems = [
     {
-      icon: <Home className={iconStyles} />,
+      icon: <Home className={mainMenuItemsIconStyles} />,
       title: "Home",
       href: "/",
     },
+    // {
+    //   icon: <User className={mainMenuItemsIconStyles} />,
+    //   title: "About me",
+    //   href: "/about-me",
+    // },
+    // {
+    //   icon: <Contact className={mainMenuItemsIconStyles} />,
+    //   title: "Contact",
+    //   href: "/contact",
+    // },
     {
-      icon: <User className={iconStyles} />,
-      title: "About me",
-      href: "/about-me",
-    },
-    {
-      icon: <Book className={iconStyles} />,
+      icon: <Book className={mainMenuItemsIconStyles} />,
       title: "Reading guide",
       href: "/reading-guide",
     },
     {
-      icon: <Grid3X3 className={iconStyles} />,
+      icon: <Grid3X3 className={mainMenuItemsIconStyles} />,
       title: "Burden of proof",
       href: "/burden-of-proof",
     },
+    {
+      icon: <Github className={mainMenuItemsIconStyles} />,
+      title: "Source code",
+      href: "https://github.com/lucswinkels/graduation-portfolio",
+      external: true,
+    },
   ];
-  // const desktopMenuItems = [
-  //   {
-  //     title: "Home",
-  //     href: "/",
-  //   },
-  //   {
-  //     title: "About me",
-  //     href: "/about-me",
-  //   },
-  //   {
-  //     title: "Reading guide",
-  //     href: "/reading-guide",
-  //   },
-  //   {
-  //     title: "Burden of proof",
-  //     href: "/burden-of-proof",
-  //   },
-  // ];
+
+  const socialsIconStyles = "size-5";
+  const socials = [
+    {
+      icon: <Github className={socialsIconStyles} />,
+      title: "GitHub",
+      href: "https://github.com/lucswinkels",
+    },
+    {
+      icon: <BiLogoLinkedin className={socialsIconStyles} />,
+      title: "LinkedIn",
+      href: "https://www.linkedin.com/in/luc-swinkels-42a775157/",
+    },
+    {
+      icon: <Mail className={socialsIconStyles} />,
+      title: "E-mail",
+      href: "mailto:lucswinkelsweb@gmail.com",
+    },
+  ];
 
   const closeMobileMenu = () => {
     setMobileMenuVisibility(false);
@@ -72,78 +96,75 @@ export function Navbar() {
     setMobileMenuVisibility(!mobileMenuVisibility);
   };
 
-  const MobileMenuToggle = () => {
+  const MobileMenuBarItems = () => {
     return (
-      <Button
-        variant="outline"
-        size="icon"
-        className="lg:hidden flex"
-        onClick={handleMenuVisibility}
-      >
-        {mobileMenuVisibility ? (
-          <X className="size-5" />
-        ) : (
-          <Menu className="size-5" />
-        )}
-      </Button>
+      <div className="flex space-x-2 lg:hidden">
+        <SearchFormComponent iconOnly variant="outline" />
+        <ModeToggle variant="outline" />
+        <Button variant="outline" size="icon" onClick={handleMenuVisibility}>
+          {mobileMenuVisibility ? (
+            <X className="size-5" />
+          ) : (
+            <Menu className="size-5" />
+          )}
+          <span className="sr-only">Toggle menu</span>
+        </Button>
+      </div>
     );
   };
 
   const MobileMenu = () => {
-    // const iconStyles = "size-6 md:size-8";
-    // const mobileMenuItems = [
-    //   {
-    //     icon: <Home className={iconStyles} />,
-    //     title: "Home",
-    //     href: "/",
-    //   },
-    //   {
-    //     icon: <User className={iconStyles} />,
-    //     title: "About me",
-    //     href: "/about-me",
-    //   },
-    //   {
-    //     icon: <Book className={iconStyles} />,
-    //     title: "Reading guide",
-    //     href: "/reading-guide",
-    //   },
-    //   {
-    //     icon: <Grid3X3 className={iconStyles} />,
-    //     title: "Burden of proof",
-    //     href: "/burden-of-proof",
-    //   },
-    // ];
+    const MobileMenuItemCard = (props: {
+      icon: JSX.Element;
+      title: string;
+    }) => {
+      return (
+        <Card className="flex landscape:flex-col landscape:space-x-0 landscape:space-y-2 space-x-4 landscape:justify-center items-center h-full p-4 text-center hover:bg-accent transition-colors">
+          {props.icon}
+          <span className="text-base font-semibold">{props.title}</span>
+        </Card>
+      );
+    };
     return (
       <div
-        className={`lg:hidden p-6 md:p-[10%] landscape:md:py-6 font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100dvh-4rem)] ${
+        className={`lg:hidden p-6 md:p-[10%] landscape:md:py-6 font-medium flex-col fixed top-16 left-0 z-40 w-full bg-background h-[calc(100dvh-4rem)] landscape:overflow-scroll ${
           mobileMenuVisibility ? "flex" : "hidden"
         } `}
       >
         <div className="space-y-4 h-full flex items-stretch flex-col">
-          <div className="grid grid-cols-1 landscape:grid-cols-4 gap-4 grow">
-            {mainMenuItems.map((item, i) => (
-              <Link href={item.href} key={i} onClick={handleMenuVisibility}>
-                <Card className="flex flex-col space-y-1 items-center h-full justify-center p-4 text-center hover:bg-accent transition-colors">
-                  {item.icon}
-                  <span className="text-sm font-semibold">{item.title}</span>
-                </Card>
-              </Link>
+          <div className={`grid grid-cols-1 landscape:grid-cols-2 gap-4`}>
+            {mainMenuItems.map((item) =>
+              item.external ? (
+                <a href={item.href} key={item.title} target="_blank">
+                  <MobileMenuItemCard icon={item.icon} title={item.title} />
+                </a>
+              ) : (
+                <Link
+                  href={item.href}
+                  key={item.title}
+                  onClick={handleMenuVisibility}
+                >
+                  <MobileMenuItemCard icon={item.icon} title={item.title} />
+                </Link>
+              )
+            )}
+          </div>
+          <div className={`grid grid-cols-3 gap-4`}>
+            {socials.map((social) => (
+              <Button
+                variant="outline"
+                size="icon"
+                asChild
+                className="w-full p-4"
+                key={social.title}
+              >
+                <a href={social.href} target="_blank">
+                  {social.icon}
+                  <span className="sr-only">{social.title}</span>
+                </a>
+              </Button>
             ))}
           </div>
-          <div className="grid grid-cols-2 gap-4">
-            <Button
-              variant="outline"
-              size="icon"
-              asChild
-              className="w-full p-4"
-            >
-              <a href="https://github.com/lucswinkels/graduation-portfolio">
-                <Github className="size-[1.2rem]" />
-              </a>
-            </Button>
-            <ModeToggle variant="outline" className="w-full p-4" />
-          </div>
-          <SearchFormComponent fullWidthTrigger variant="outline" />
         </div>
       </div>
     );
@@ -162,38 +183,45 @@ export function Navbar() {
             </NavigationMenuList>
             <NavigationMenuList>
               <div className="lg:flex hidden items-center ml-8 space-x-8">
-                {mainMenuItems.map((item, i) => (
-                  <NavigationMenuItem key={i}>
-                    <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
-                        {item.title}
-                      </NavigationMenuLink>
-                    </Link>
+                {mainMenuItems.map((item) => (
+                  <NavigationMenuItem key={item.title}>
+                    {item.external ? (
+                      <a href={item.href} target="_blank">
+                        <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
+                          {item.title}
+                        </NavigationMenuLink>
+                      </a>
+                    ) : (
+                      <Link href={item.href} legacyBehavior passHref>
+                        <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
+                          {item.title}
+                        </NavigationMenuLink>
+                      </Link>
+                    )}
                   </NavigationMenuItem>
                 ))}
               </div>
             </NavigationMenuList>
           </NavigationMenu>
           <NavigationMenu>
-            <MobileMenuToggle />
+            <MobileMenuBarItems />
             <NavigationMenuList className="lg:flex hidden">
               <NavigationMenuItem>
-                <Button variant="ghost" size="icon">
-                  <a
-                    href="https://github.com/lucswinkels/graduation-portfolio"
-                    target="_blank"
-                  >
-                    <Github className="size-[1.2rem]" />
-                    <span className="sr-only">GitHub</span>
-                  </a>
-                </Button>
+                <SearchFormComponent iconOnly variant="ghost" />
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <ModeToggle variant="ghost" />
               </NavigationMenuItem>
-              <NavigationMenuItem>
-                <SearchFormComponent iconOnly variant="ghost" />
-              </NavigationMenuItem>
+              {/* {socials.map((social) => (
+                <NavigationMenuItem key={social.title}>
+                  <Button variant="ghost" size="icon">
+                    <a href={social.href} target="_blank">
+                      {social.icon}
+                      <span className="sr-only">{social.title}</span>
+                    </a>
+                  </Button>
+                </NavigationMenuItem>
+              ))} */}
             </NavigationMenuList>
           </NavigationMenu>
         </div>

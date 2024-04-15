@@ -63,7 +63,7 @@ export function SearchFormComponent(props: Props) {
             </Button>
           ) : (
             <Button
-              variant="outline"
+              variant={props.variant}
               className={`${
                 props.fullWidthTrigger && "w-full flex justify-between"
               }`}
@@ -90,12 +90,12 @@ export function SearchFormComponent(props: Props) {
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         {props.iconOnly ? (
-          <Button variant="ghost" size="icon">
+          <Button variant={props.variant} size="icon">
             <Search className="size-4" />
           </Button>
         ) : (
           <Button
-            variant="outline"
+            variant={props.variant}
             className={`${
               props.fullWidthTrigger && "w-full flex justify-between"
             }`}

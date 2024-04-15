@@ -108,7 +108,7 @@ export function CodeBlock({
       <Refractor
         language={language}
         value={value}
-        className="bg-[color:hsl(240,3.7%,5%)] text-[color:hsl(240,5%,64.9%)]"
+        className="bg-[color:hsl(240,3.7%,5%)] text-[color:hsl(240,5%,64.9%)] font-mono"
       />
     </div>
   );
