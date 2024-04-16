@@ -133,8 +133,8 @@ export default function Post({
   };
 
   const accordionTriggerStyles =
-    "p-4 text-base font-semibold border-b border-border/0 data-[state=open]:border-border bg-background hover:bg-accent-subtle hover:no-underline";
-  const accordionContentStyles = "p-4 bg-accent-subtle";
+    "p-4 text-base font-semibold border-b border-border/0 data-[state=open]:border-border bg-accent-subtle hover:bg-accent hover:no-underline";
+  const accordionContentStyles = "p-4 bg-background";
   const AccordionTextComponent = ({ value }: SanityAsset) => {
     return (
       <Accordion

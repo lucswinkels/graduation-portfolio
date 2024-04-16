@@ -91,7 +91,7 @@ export function CodeBlock({
   };
   return (
     <Card>
-      <div className="text-muted-foreground dark:text-muted-foreground border-b p-3 flex justify-between items-center">
+      <div className="text-muted-foreground dark:text-muted-foreground bg-accent-subtle border-b p-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
           {languageIcons[language]}
           <span className="text-sm">{filename}</span>

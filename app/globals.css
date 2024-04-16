@@ -51,39 +51,37 @@
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
+* {
+  @apply border-border;
+}
 
-  body {
-    @apply bg-background text-foreground min-w-full font-sans;
-  }
+body {
+  @apply bg-background text-foreground min-w-full font-sans;
+}
 
-  body::-webkit-scrollbar {
-    width: 20px;
-    border-left: 1px solid;
-    @apply border-border;
-  }
+body::-webkit-scrollbar {
+  width: 20px;
+  border-left: 1px solid;
+  @apply border-border;
+}
 
-  body::-webkit-scrollbar-thumb {
-    background-clip: padding-box;
-    border-radius: 16px;
-    border: 8px solid transparent;
-    @apply bg-foreground;
-  }
+body::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border-radius: 16px;
+  border: 8px solid transparent;
+  @apply bg-foreground;
+}
 
-  body::-webkit-scrollbar-track {
-    width: 4px;
-    background-clip: padding-box;
-    border-radius: 16px;
-    background-color: transparent;
-    border: 8px solid transparent;
-  }
+body::-webkit-scrollbar-track {
+  width: 4px;
+  background-clip: padding-box;
+  border-radius: 16px;
+  background-color: transparent;
+  border: 8px solid transparent;
+}
 
-  .prose p > a {
-    @apply text-foreground;
-  }
+.prose p > a {
+  @apply text-foreground;
 }
 
 html {
@@ -94,7 +92,7 @@ html {
 code[class*="language-"],
 pre[class*="language-"] {
   @apply font-mono;
-  @apply bg-accent-subtle;
+  @apply bg-background;
   @apply text-foreground;
   @apply text-sm;
   border-radius: 0;
@@ -120,14 +118,9 @@ pre[class*="language-"] {
 }
 
 pre[class*="language-"] {
-  padding: 1em;
+  @apply p-4;
   margin: 0;
   overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  @apply text-foreground;
 }
 
 :not(pre) > code[class*="language-"] {
@@ -135,23 +128,8 @@ pre[class*="language-"] {
   white-space: normal;
 }
 
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic,
-.token.selector,
-.token.doctype,
-.token.attr-name,
-.token.inserted,
-.token.deleted,
-.token.comment,
-.token.prolog,
-.token.cdata {
-  font-style: italic;
-}
-
+:not(pre) > code[class*="language-"],
+pre[class*="language-"],
 .token.punctuation,
 .token.regex,
 .token.important,
@@ -163,7 +141,7 @@ pre[class*="language-"] {
 .token.prolog,
 .token.cdata,
 .namespace {
-  @apply text-muted-foreground;
+  @apply text-muted-foreground/80;
 }
 
 .token.tag,
@@ -226,11 +204,10 @@ pre[class*="language-"] {
   color: oklch(73.1% 0.2158 148.29);
 }
 
-/* Refractor line highlights */
 .refractor-marker {
   width: max-content;
-  padding-left: 6px;
-  margin-left: -8px;
+  @apply -ml-4;
+  padding-left: calc(1rem - 2px); /* 1rem margin left - 2px border */
   background-color: oklch(94.58% 0.0293 249.84870859673202);
   border-left: 2px solid oklch(53.18% 0.2399 256.9900584162342);
 }
