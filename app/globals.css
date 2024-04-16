@@ -90,51 +90,26 @@ html {
   overflow-y: scroll;
 }
 
-/**
- * MIT License
- * Copyright (c) 2018 Sarah Drasner
- * Sarah Drasner's[@sdras] Night Owl
- * Ported by Sara vieria [@SaraVieira]
- * Added by Souvik Mandal [@SimpleIndian]
- */
-
+/* Code block */
 code[class*="language-"],
 pre[class*="language-"] {
   @apply font-mono;
-  color: #d6deeb;
-  background: hsl(240, 3.7%, 5%);
+  @apply bg-accent-subtle;
+  @apply text-foreground;
+  @apply text-sm;
+  border-radius: 0;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.4; /* 1.5 */
-  font-size: 0.9em; /* 1 */
-
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-
   -webkit-hyphens: none;
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
-}
-
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection {
-  text-shadow: none;
-  background: hsl(240, 3.7%, 30%);
-}
-
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
-  text-shadow: none;
-  background: hsl(240, 3.7%, 30%);
 }
 
 @media print {
@@ -152,7 +127,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  color: white;
+  @apply text-foreground;
 }
 
 :not(pre) > code[class*="language-"] {
@@ -160,98 +135,107 @@ pre[class*="language-"] {
   white-space: normal;
 }
 
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic,
+.token.selector,
+.token.doctype,
+.token.attr-name,
+.token.inserted,
+.token.deleted,
 .token.comment,
 .token.prolog,
 .token.cdata {
-  color: rgb(99, 119, 119);
   font-style: italic;
 }
 
-.token.punctuation {
-  color: rgb(199, 146, 234);
+.token.punctuation,
+.token.regex,
+.token.important,
+.token.variable {
+  @apply text-foreground;
 }
 
+.token.comment,
+.token.prolog,
+.token.cdata,
 .namespace {
-  color: rgb(178, 204, 214);
-}
-
-.token.deleted {
-  color: rgba(239, 83, 80, 0.56);
-  font-style: italic;
-}
-
-.token.symbol,
-.token.property {
-  color: rgb(128, 203, 196);
+  @apply text-muted-foreground;
 }
 
 .token.tag,
 .token.operator,
-.token.keyword {
-  color: rgb(127, 219, 202);
-}
-
-.token.boolean {
-  color: rgb(255, 88, 116);
-}
-
+.token.symbol,
+.token.property,
+.token.keyword,
 .token.number {
-  color: rgb(247, 140, 108);
+  color: oklch(53.5% 0.2058 2.84);
+}
+
+.dark .token.tag,
+.dark .token.operator,
+.dark .token.keyword,
+.dark .token.number,
+.dark .token.symbol,
+.dark .token.property {
+  color: oklch(69.36% 0.2223 3.91);
 }
 
 .token.constant,
 .token.function,
 .token.builtin,
-.token.char {
-  color: rgb(130, 170, 255);
-}
-
+.token.char,
 .token.selector,
-.token.doctype {
-  color: rgb(199, 146, 234);
-  font-style: italic;
+.token.doctype,
+.dark .token.attr-name,
+.dark .token.inserted,
+.dark .token.deleted,
+.dark .token.boolean {
+  color: oklch(69.87% 0.2037 309.51);
 }
 
 .token.attr-name,
-.token.inserted {
-  color: rgb(173, 219, 103);
-  font-style: italic;
+.token.inserted,
+.token.deleted,
+.token.boolean {
+  color: oklch(47.18% 0.2579 304);
 }
 
 .token.string,
 .token.url,
 .token.entity,
 .language-css .token.string,
-.style .token.string {
-  color: rgb(173, 219, 103);
-}
-
+.style .token.string,
 .token.class-name,
 .token.atrule,
 .token.attr-value {
-  color: rgb(255, 203, 139);
+  color: oklch(51.75% 0.1453 147.65);
 }
 
-.token.regex,
-.token.important,
-.token.variable {
-  color: rgb(214, 222, 235);
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
+.dark .token.string,
+.dark .token.url,
+.dark .token.entity,
+.dark .language-css .token.string,
+.dark .style .token.string,
+.dark .token.class-name,
+.dark .token.atrule,
+.dark .token.attr-value {
+  color: oklch(73.1% 0.2158 148.29);
 }
 
 /* Refractor line highlights */
 .refractor-marker {
-  background-color: hsl(240, 3.7%, 20%);
   width: max-content;
-  border-left: 4px solid rgb(214, 222, 235);
-  padding-left: 8px;
-  margin-left: -12px;
+  padding-left: 6px;
+  margin-left: -8px;
+  background-color: oklch(94.58% 0.0293 249.84870859673202);
+  border-left: 2px solid oklch(53.18% 0.2399 256.9900584162342);
+}
+
+.dark .refractor-marker {
+  background-color: oklch(30.86% 0.1022 255.21);
+  border-left: 2px solid oklch(71.7% 0.1648 250.79360374054167);
 }
