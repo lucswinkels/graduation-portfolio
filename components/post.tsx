@@ -45,7 +45,7 @@ import { P } from "./typography/p";
 import { Prose } from "./typography/prose";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { Card, CardContent, CardHeader } from "./ui/card";
+import { Card, CardContent } from "./ui/card";
 import Fancybox from "./ui/fancybox";
 
 const builder = imageUrlBuilder(client);
@@ -61,14 +61,12 @@ export default function Post({
 }) {
   const ImageComponent = ({ value }: SanityAsset) => {
     const { width, height } = getImageDimensions(value);
+    const assetUrl = builder.image(value).width(width).height(height).url();
     return (
       <div className="my-8 flex justify-center flex-col w-max max-w-full">
-        <a
-          data-fancybox="gallery"
-          href={builder.image(value).width(width).height(height).url()}
-        >
+        <a data-fancybox="gallery" href={assetUrl}>
           <Image
-            src={builder.image(value).width(width).height(height).url()}
+            src={assetUrl}
             alt={value.alt}
             width={width}
             height={height}
@@ -76,7 +74,6 @@ export default function Post({
             className="rounded-lg border mb-2 shadow-lg max-h-[80dvh] max-w-full w-max h-auto"
           />
         </a>
-
         <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
     );
@@ -87,23 +84,20 @@ export default function Post({
     const assetParts = asset.split("-");
     const assetId = assetParts[1];
     const assetFileType = assetParts[2];
+    const assetUrl = `https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`;
     return (
       <div className="my-8 flex justify-center flex-col w-max max-w-full">
-        <a
-          data-fancybox="gallery"
-          href={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
-        >
+        <a data-fancybox="gallery" href={assetUrl}>
           <video
+            src={assetUrl}
             className="w-max h-auto max-h-[80dvh] max-w-full rounded-lg border shadow-lg mb-2"
             autoPlay
             loop
             controls
             playsInline
             muted
-            src={`https://cdn.sanity.io/files/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/${process.env.NEXT_PUBLIC_SANITY_DATASET}/${assetId}.${assetFileType}`}
           ></video>
         </a>
-
         <MutedText className="mx-auto my-0 italic">{value.alt}</MutedText>
       </div>
     );
@@ -111,7 +105,7 @@ export default function Post({
 
   const CodeComponent = ({ value }: SanityAsset) => {
     return (
-      <div className="my-8 lg:w-max w-full max-w-full min-w-64">
+      <div className="my-8 w-full lg:w-max max-w-full">
         <CodeBlock
           language={value.language}
           value={value.code}
@@ -137,11 +131,7 @@ export default function Post({
   const accordionContentStyles = "p-4 bg-background";
   const AccordionTextComponent = ({ value }: SanityAsset) => {
     return (
-      <Accordion
-        type="single"
-        collapsible
-        className="my-8 xl:my-12 max-w-[75ch]"
-      >
+      <Accordion type="single" collapsible className="my-8 max-w-[75ch]">
         <Card>
           <AccordionItem
             value="list-accordion"
@@ -165,11 +155,7 @@ export default function Post({
 
   const AccordionBulletListComponent = ({ value }: SanityAsset) => {
     return (
-      <Accordion
-        type="single"
-        collapsible
-        className="my-8 xl:my-12 max-w-[75ch]"
-      >
+      <Accordion type="single" collapsible className="my-8 max-w-[75ch]">
         <Card>
           <AccordionItem
             value="list-accordion"
@@ -214,6 +200,9 @@ export default function Post({
     },
   };
 
+  const innerCardStyles =
+    "bg-background/95 backdrop:blur supports-[backdrop-filter]:bg-background/80 border-border/40";
+
   return post ? (
     <FadeUp>
       <Container>
@@ -236,31 +225,6 @@ export default function Post({
         </Breadcrumb>
         <H1 className="mb-4">{post.title}</H1>
         <Lead>{post.description}</Lead>
-        {/* {post.categories || post.researchMethods ? (
-          <div className="flex gap-2 xl:gap-4 flex-wrap mt-8">
-            {post.categories &&
-              post.categories.map((category: string) => (
-                <Badge variant="card" key={category}>
-                  {category}
-                </Badge>
-              ))}
-            {post.researchMethods &&
-              post.researchMethods.map((method: { title: string }) => (
-                <Badge variant="card" key={method.title}>
-                  {method.title}
-                </Badge>
-              ))}
-          </div>
-        ) : null} */}
-        {/* <Image
-          src={builder.image(post.mainImage).width(1024).height(1024).url()}
-          className="rounded-lg my-16 shadow-lg"
-          quality={100}
-          width={512}
-          height={512}
-          alt={post.mainImage.alt}
-          priority
-        /> */}
         {post.categories || post.researchMethods || post.researchQuestion ? (
           <Card className="my-8 lg:my-16">
             <GradientCategoryBackground
@@ -268,10 +232,7 @@ export default function Post({
               className="p-4 lg:p-8"
             >
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
-                <Card className="bg-background/95 backdrop:blur supports-[backdrop-filter]:bg-background/80 border-border/40">
-                  {/* <CardHeader className="border-b border-border/40 p-3">
-                    <H5>Categories</H5>
-                  </CardHeader> */}
+                <Card className={innerCardStyles}>
                   <CardContent className="p-3 space-y-2">
                     <H5>Categories</H5>
                     <div className="flex flex-row gap-2 flex-wrap">
@@ -291,10 +252,7 @@ export default function Post({
                     </div>
                   </CardContent>
                 </Card>
-                <Card className="bg-background/95 backdrop:blur supports-[backdrop-filter]:bg-background/80 border-border/40">
-                  {/* <CardHeader className="border-b p-4">
-                    <H5>Research methods</H5>
-                  </CardHeader> */}
+                <Card className={innerCardStyles}>
                   <CardContent className="p-3 space-y-2">
                     <H5>Research methods</H5>
                     <div className="flex flex-row gap-2 flex-wrap">
@@ -312,10 +270,7 @@ export default function Post({
                     </div>
                   </CardContent>
                 </Card>
-                <Card className="bg-background/95 backdrop:blur supports-[backdrop-filter]:bg-background/80 border-border/40">
-                  {/* <CardHeader className="border-b p-4">
-                    <H5>Research question</H5>
-                  </CardHeader> */}
+                <Card className={innerCardStyles}>
                   <CardContent className="p-3 space-y-2">
                     <H5>Research question</H5>
                     {post.researchQuestion ? (

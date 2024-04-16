@@ -27,7 +27,7 @@ import ts from "refractor/lang/typescript";
 
 import { useToast } from "@/components/ui/use-toast";
 
-import { Card, CardHeader } from "./ui/card";
+import { Card } from "./ui/card";
 import {
   Tooltip,
   TooltipContent,
