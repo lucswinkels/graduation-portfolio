@@ -80,6 +80,9 @@
     background-color: transparent;
     border: 8px solid transparent;
   }
+  .prose p > a {
+    @apply text-foreground;
+  }
 }
 
 html {
