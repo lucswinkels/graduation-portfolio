@@ -146,7 +146,7 @@ export default function ReadingGuide() {
             must be the ability to sell printed shirts, customers must be able
             to manage orders, and it should be possible to sell products through
             external stores. The B2C store should have similar styling to the
-            already in development B2B store, as it is based on Masita’s
+            already in development B2B store, as it is based on Masita&apos;s
             branding. The lay-out, however, can be changed freely to cater
             towards individual customers instead of businesses.
           </P>
