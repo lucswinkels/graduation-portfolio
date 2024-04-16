@@ -100,7 +100,9 @@ html {
 
 code[class*="language-"],
 pre[class*="language-"] {
+  @apply font-mono;
   color: #d6deeb;
+  background: hsl(240, 3.7%, 5%);
   text-align: left;
   white-space: pre;
   word-spacing: normal;
@@ -124,7 +126,7 @@ pre[class*="language-"] ::-moz-selection,
 code[class*="language-"]::-moz-selection,
 code[class*="language-"] ::-moz-selection {
   text-shadow: none;
-  background: rgba(29, 59, 83, 0.99);
+  background: hsl(240, 3.7%, 30%);
 }
 
 pre[class*="language-"]::selection,
@@ -132,7 +134,7 @@ pre[class*="language-"] ::selection,
 code[class*="language-"]::selection,
 code[class*="language-"] ::selection {
   text-shadow: none;
-  background: rgba(29, 59, 83, 0.99);
+  background: hsl(240, 3.7%, 30%);
 }
 
 @media print {
@@ -142,7 +144,6 @@ code[class*="language-"] ::selection {
   }
 }
 
-/* Code blocks */
 pre[class*="language-"] {
   padding: 1em;
   margin: 0;
@@ -247,8 +248,10 @@ pre[class*="language-"] {
 }
 
 /* Refractor line highlights */
-.refractor-marker,
-.dark .refractor-marker {
-  background-color: hsl(240, 3.7%, 30%);
+.refractor-marker {
+  background-color: hsl(240, 3.7%, 20%);
   width: max-content;
+  border-left: 4px solid rgb(214, 222, 235);
+  padding-left: 8px;
+  margin-left: -12px;
 }
