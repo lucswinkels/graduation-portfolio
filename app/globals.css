@@ -245,3 +245,10 @@ pre[class*="language-"] {
 .token.italic {
   font-style: italic;
 }
+
+/* Refractor line highlights */
+.refractor-marker,
+.dark .refractor-marker {
+  background-color: hsl(240, 3.7%, 30%);
+  width: max-content;
+}

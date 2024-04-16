@@ -116,6 +116,7 @@ export default function Post({
           language={value.language}
           value={value.code}
           filename={value.filename}
+          highlightedLines={value.highlightedLines}
         />
       </div>
     );

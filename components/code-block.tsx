@@ -58,10 +58,12 @@ export function CodeBlock({
   language,
   value,
   filename,
+  highlightedLines,
 }: {
   language: string;
   value: string;
   filename: string;
+  highlightedLines?: number[];
 }) {
   const { toast } = useToast();
   const iconSize = "size-4";
@@ -108,6 +110,7 @@ export function CodeBlock({
       <Refractor
         language={language}
         value={value}
+        markers={highlightedLines}
         className="bg-[color:hsl(240,3.7%,5%)] text-[color:hsl(240,5%,64.9%)] font-mono"
       />
     </div>
