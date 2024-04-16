@@ -27,6 +27,7 @@ import ts from "refractor/lang/typescript";
 
 import { useToast } from "@/components/ui/use-toast";
 
+import { Card } from "./ui/card";
 import {
   Tooltip,
   TooltipContent,
@@ -58,10 +59,12 @@ export function CodeBlock({
   language,
   value,
   filename,
+  highlightedLines,
 }: {
   language: string;
   value: string;
   filename: string;
+  highlightedLines?: number[];
 }) {
   const { toast } = useToast();
   const iconSize = "size-4";
@@ -87,8 +90,8 @@ export function CodeBlock({
     });
   };
   return (
-    <div className="border border-[color:hsl(240,3.7%,15.9%)] bg-[color:hsl(240,3.7%,5%)] rounded-lg p-1 pt-0">
-      <div className="bg-[color:hsl(240,10%,3.9%)] border-[color:hsl(240,3.7%,15.9%)] text-[color:hsl(240,5%,64.9%)] border-b px-3 py-4 flex justify-between items-center w-[calc(100%+0.5rem)] rounded-t-lg relative right-1">
+    <Card>
+      <div className="text-muted-foreground dark:text-muted-foreground bg-accent-subtle border-b p-4 flex justify-between items-center">
         <div className="flex items-center gap-2">
           {languageIcons[language]}
           <span className="text-sm">{filename}</span>
@@ -97,7 +100,7 @@ export function CodeBlock({
           <Tooltip>
             <TooltipTrigger asChild>
               <Copy
-                className="size-4 cursor-pointer hover:text-[color:hsl(0,0%,98%)] transition-colors"
+                className="size-4 cursor-pointer hover:text-foreground transition-colors"
                 onClick={handleCopyToClipboard}
               />
             </TooltipTrigger>
@@ -105,11 +108,7 @@ export function CodeBlock({
           </Tooltip>
         </TooltipProvider>
       </div>
-      <Refractor
-        language={language}
-        value={value}
-        className="bg-[color:hsl(240,3.7%,5%)] text-[color:hsl(240,5%,64.9%)] font-mono"
-      />
-    </div>
+      <Refractor language={language} value={value} markers={highlightedLines} />
+    </Card>
   );
 }
