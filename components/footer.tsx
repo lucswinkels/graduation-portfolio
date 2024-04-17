@@ -53,8 +53,8 @@ export default function Footer() {
           </div>
         </Container>
       </div>
-      <div className="bg-accent-subtle w-full border-t h-16 flex justify-center items-center">
-        <Container className="flex justify-between">
+      <div className="bg-accent-subtle w-full border-t h-20 flex justify-center items-center">
+        <Container className="flex flex-col md:flex-row md:justify-between">
           <span className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Luc Swinkels.
           </span>
