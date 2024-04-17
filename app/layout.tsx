@@ -77,7 +77,7 @@ export default function RootLayout({
           </div>
           <BackToTop />
           {/* <Cursor /> */}
-          {/* <Footer /> */}
+          <Footer />
           <Toaster />
         </ThemeProvider>
       </body>

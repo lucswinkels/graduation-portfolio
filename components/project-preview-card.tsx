@@ -7,7 +7,7 @@ import imageUrlBuilder from "@sanity/image-url";
 import { motion } from "framer-motion";
 import { MoveRight } from "lucide-react";
 
-import { FADE_UP_ANIMATION_VARIANTS } from "@/lib/constants";
+import { fadeUpVariants } from "@/lib/constants";
 import { Card, CardContent } from "@/components/ui/card";
 
 const builder = imageUrlBuilder(client);
@@ -20,7 +20,7 @@ export function ProjectPreviewCard({ ...props }) {
         initial="hidden"
         animate="show"
         exit="hidden"
-        variants={FADE_UP_ANIMATION_VARIANTS}
+        variants={fadeUpVariants}
       >
         <Card
           {...props}
