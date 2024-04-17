@@ -3,19 +3,9 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import {
-  Book,
-  Contact,
-  Github,
-  Grid3X3,
-  Home,
-  Mail,
-  Menu,
-  User,
-  X,
-} from "lucide-react";
-import { BiLogoLinkedin } from "react-icons/bi";
+import { Menu, X } from "lucide-react";
 
+import { mainMenuItems, socials } from "@/lib/menuItems";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,
@@ -33,60 +23,6 @@ import { Card } from "./ui/card";
 
 export function Navbar() {
   const [mobileMenuVisibility, setMobileMenuVisibility] = useState(false);
-
-  const mainMenuItemsIconStyles = "size-6";
-  const mainMenuItems = [
-    {
-      icon: <Home className={mainMenuItemsIconStyles} />,
-      title: "Home",
-      href: "/",
-    },
-    // {
-    //   icon: <User className={mainMenuItemsIconStyles} />,
-    //   title: "About me",
-    //   href: "/about-me",
-    // },
-    // {
-    //   icon: <Contact className={mainMenuItemsIconStyles} />,
-    //   title: "Contact",
-    //   href: "/contact",
-    // },
-    {
-      icon: <Book className={mainMenuItemsIconStyles} />,
-      title: "Reading guide",
-      href: "/reading-guide",
-    },
-    {
-      icon: <Grid3X3 className={mainMenuItemsIconStyles} />,
-      title: "Burden of proof",
-      href: "/burden-of-proof",
-    },
-    {
-      icon: <Github className={mainMenuItemsIconStyles} />,
-      title: "Source code",
-      href: "https://github.com/lucswinkels/graduation-portfolio",
-      external: true,
-    },
-  ];
-
-  const socialsIconStyles = "size-5";
-  const socials = [
-    {
-      icon: <Github className={socialsIconStyles} />,
-      title: "GitHub",
-      href: "https://github.com/lucswinkels",
-    },
-    {
-      icon: <BiLogoLinkedin className={socialsIconStyles} />,
-      title: "LinkedIn",
-      href: "https://www.linkedin.com/in/luc-swinkels-42a775157/",
-    },
-    {
-      icon: <Mail className={socialsIconStyles} />,
-      title: "E-mail",
-      href: "mailto:lucswinkelsweb@gmail.com",
-    },
-  ];
 
   const closeMobileMenu = () => {
     setMobileMenuVisibility(false);
