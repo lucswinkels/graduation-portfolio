@@ -23,14 +23,14 @@ export default async function Home() {
   });
   const Content = () => (
     <div className="mb-16 xl:mb-24 flex justify-between items-center">
-      <div>
+      <div className="text-balance">
         <H1 className="w-full md:w-[500px] lg:w-[650px] mb-2">
           Hey! I&apos;m Luc.
         </H1>
         <Lead className="w-full md:w-[500px] lg:w-[650px] mb-8 lg:mb-12">
           Front-end developer and UX/UI designer.
         </Lead>
-        <P className="w-full md:w-[500px] lg:w-[650px] text-lg text-balance">
+        <P className="w-full md:w-[500px] lg:w-[650px] text-lg text-foreground/70 dark:text-foreground/90">
           This is my graduation portfolio that documents the process of my
           graduation internship at Moonly Software, for my IT & Media Design
           study at the Fontys University of Applied Sciences. <br /> <br />
