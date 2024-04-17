@@ -21,9 +21,9 @@ export default function Footer() {
     <>
       <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t">
         <Container>
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
-            <Logo iconSize="size-12 lg:size-14 xl:size-16" />
-            <div className="flex gap-8 md:gap-16 w-full flex-wrap md:flex-nowrap lg:justify-end">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-16 lg:gap-32">
+            <Logo iconSize="w-12 h-12" />
+            <div className="flex gap-8 md:gap-16 w-full flex-wrap md:flex-nowrap">
               {menuItems.map((menu) => (
                 <ul
                   className="flex flex-col gap-2 md:w-max w-full"
@@ -53,8 +53,8 @@ export default function Footer() {
           </div>
         </Container>
       </div>
-      <div className="bg-accent-subtle w-full border-t h-16 flex justify-center items-center">
-        <Container className="flex justify-between">
+      <div className="bg-accent-subtle w-full border-t h-20 flex justify-center items-center">
+        <Container className="flex flex-col gap-1 md:flex-row md:justify-between">
           <span className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Luc Swinkels.
           </span>
