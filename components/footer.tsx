@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 
+import { menuLinkStyles } from "@/lib/constants";
 import { mainMenuItems, projects, socials } from "@/lib/menuItems";
 
 import Container from "./container";
@@ -9,8 +10,6 @@ import { Logo } from "./logo";
 import { H5 } from "./typography/h5";
 
 export default function Footer() {
-  const linkStyles =
-    "hover:border-foreground border-b transition-colors border-transparent pb-0.5";
   const menuItems = [
     { title: "Menu", items: mainMenuItems },
     { title: "Connect", items: socials },
@@ -25,7 +24,7 @@ export default function Footer() {
             <div className="flex gap-8 md:gap-16 w-full flex-wrap md:flex-nowrap lg:justify-end">
               {menuItems.map((menu) => (
                 <ul
-                  className="flex flex-col gap-2 md:w-max text-sm w-full"
+                  className="flex flex-col gap-2 md:w-max w-full"
                   key={menu.title}
                 >
                   <H5>{menu.title}</H5>
@@ -35,12 +34,12 @@ export default function Footer() {
                         <a
                           href={link.href}
                           target="_blank"
-                          className={linkStyles}
+                          className={menuLinkStyles}
                         >
                           {link.title}
                         </a>
                       ) : (
-                        <Link href={link.href} className={linkStyles}>
+                        <Link href={link.href} className={menuLinkStyles}>
                           {link.title}
                         </Link>
                       )}

@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
+import { menuLinkStyles } from "@/lib/constants";
 import { mainMenuItems, socials } from "@/lib/menuItems";
 import { cn } from "@/lib/utils";
 import {
@@ -125,13 +126,13 @@ export function Navbar() {
                       <NavigationMenuLink
                         href={item.href}
                         target="_blank"
-                        className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium"
+                        className={menuLinkStyles}
                       >
                         {item.title}
                       </NavigationMenuLink>
                     ) : (
                       <Link href={item.href} legacyBehavior passHref>
-                        <NavigationMenuLink className="transition-colors text-foreground/80 hover:text-foreground text-sm font-medium">
+                        <NavigationMenuLink className={menuLinkStyles}>
                           {item.title}
                         </NavigationMenuLink>
                       </Link>

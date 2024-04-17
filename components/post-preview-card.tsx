@@ -7,12 +7,11 @@ import imageUrlBuilder from "@sanity/image-url";
 import { motion } from "framer-motion";
 import { MoveRight } from "lucide-react";
 
-import { FADE_UP_ANIMATION_VARIANTS } from "@/lib/constants";
+import { fadeUpVariants } from "@/lib/constants";
 import { Card, CardContent } from "@/components/ui/card";
 
 import { CategoryIcon } from "./category-icon";
 import { GradientCategoryBackground } from "./gradient-category-background";
-import { Logo } from "./logo";
 import { Badge } from "./ui/badge";
 
 const builder = imageUrlBuilder(client);
@@ -25,7 +24,7 @@ export function PostPreviewCard({ ...props }) {
         initial="hidden"
         animate="show"
         exit="hidden"
-        variants={FADE_UP_ANIMATION_VARIANTS}
+        variants={fadeUpVariants}
         className="w-full"
       >
         <Card
