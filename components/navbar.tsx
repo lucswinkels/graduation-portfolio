@@ -5,7 +5,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
-import { menuLinkStyles } from "@/lib/constants";
 import { mainMenuItems, socials } from "@/lib/menuItems";
 import { cn } from "@/lib/utils";
 import {
@@ -106,6 +105,9 @@ export function Navbar() {
       </div>
     );
   };
+
+  const menuLinkStyles =
+    "text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
 
   return (
     <>
