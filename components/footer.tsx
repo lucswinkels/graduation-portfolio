@@ -21,9 +21,9 @@ export default function Footer() {
     <>
       <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t">
         <Container>
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-16 lg:gap-32">
             <Logo iconSize="size-12 lg:size-14 xl:size-16" />
-            <div className="flex gap-8 md:gap-16 w-full flex-wrap md:flex-nowrap lg:justify-end">
+            <div className="flex gap-8 md:gap-16 w-full flex-wrap md:flex-nowrap">
               {menuItems.map((menu) => (
                 <ul
                   className="flex flex-col gap-2 md:w-max w-full"

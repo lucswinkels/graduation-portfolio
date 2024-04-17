@@ -107,7 +107,7 @@ export function Navbar() {
   };
 
   const menuLinkStyles =
-    "text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
+    "font-medium text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
 
   return (
     <>
