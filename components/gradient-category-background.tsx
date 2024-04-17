@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 
-const CATEGORY_GRADIENT_VARIANTS = {
+const categoryGradientVariants = {
   research: "from-green-500 to-teal-500",
   design: "from-violet-500 to-fuchsia-500",
   development: "from-rose-500 to-red-500",
@@ -17,14 +17,14 @@ export function GradientCategoryBackground({
   className,
 }: {
   children: React.ReactNode;
-  category: keyof typeof CATEGORY_GRADIENT_VARIANTS;
+  category: keyof typeof categoryGradientVariants;
   className?: string;
 }) {
   return (
     <div
       className={cn(
         "bg-gradient-to-br w-full h-full",
-        CATEGORY_GRADIENT_VARIANTS[category],
+        categoryGradientVariants[category],
         className
       )}
     >
