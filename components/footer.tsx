@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 
-import { menuLinkStyles } from "@/lib/constants";
 import { mainMenuItems, projects, socials } from "@/lib/menuItems";
 
 import Container from "./container";
@@ -15,6 +14,9 @@ export default function Footer() {
     { title: "Connect", items: socials },
     { title: "Projects", items: projects },
   ];
+  const menuLinkStyles =
+    "text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
+
   return (
     <>
       <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t">
