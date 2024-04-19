@@ -68,7 +68,9 @@ export function Navbar() {
         } `}
       >
         <div className="space-y-4 h-full flex items-stretch flex-col">
-          <div className={`grid grid-cols-1 landscape:grid-cols-2 gap-4`}>
+          <div
+            className={`grid grid-cols-1 landscape:grid-cols-4 gap-4 landscape:h-full`}
+          >
             {mainMenuItems.map((item) =>
               item.external ? (
                 <a href={item.href} key={item.title} target="_blank">
