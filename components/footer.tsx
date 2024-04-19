@@ -15,7 +15,7 @@ export default function Footer() {
     { title: "Projects", items: projects },
   ];
   const menuLinkStyles =
-    "text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
+    "flex gap-2 items-center text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
 
   return (
     <>
@@ -23,30 +23,50 @@ export default function Footer() {
         <Container>
           <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-16 lg:gap-32">
             <Logo iconSize="w-12 h-12" />
-            <div className="flex gap-8 md:gap-16 w-full flex-wrap md:flex-nowrap">
+            <div className="flex gap-8 md:gap-16 lg:gap-24 xl:gap-32 w-full flex-wrap md:flex-nowrap">
               {menuItems.map((menu) => (
                 <ul
                   className="flex flex-col gap-2 md:w-max w-full"
                   key={menu.title}
                 >
                   <H5>{menu.title}</H5>
-                  {menu.items.map((link) => (
-                    <li key={link.href}>
-                      {link.external ? (
-                        <a
-                          href={link.href}
-                          target="_blank"
-                          className={menuLinkStyles}
-                        >
-                          {link.title}
-                        </a>
-                      ) : (
-                        <Link href={link.href} className={menuLinkStyles}>
-                          {link.title}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
+                  {menu.items === socials
+                    ? menu.items.map((link) => (
+                        <li key={link.href}>
+                          {link.external ? (
+                            <a
+                              href={link.href}
+                              target="_blank"
+                              className={menuLinkStyles}
+                            >
+                              {link.title}
+                              {link.icon}
+                            </a>
+                          ) : (
+                            <Link href={link.href} className={menuLinkStyles}>
+                              {link.title}
+                              {link.icon}
+                            </Link>
+                          )}
+                        </li>
+                      ))
+                    : menu.items.map((link) => (
+                        <li key={link.href}>
+                          {link.external ? (
+                            <a
+                              href={link.href}
+                              target="_blank"
+                              className={menuLinkStyles}
+                            >
+                              {link.title}
+                            </a>
+                          ) : (
+                            <Link href={link.href} className={menuLinkStyles}>
+                              {link.title}
+                            </Link>
+                          )}
+                        </li>
+                      ))}
                 </ul>
               ))}
             </div>

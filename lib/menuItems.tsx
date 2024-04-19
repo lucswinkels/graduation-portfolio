@@ -1,37 +1,39 @@
 import { Book, Contact, Github, Grid3X3, Home, Mail, User } from "lucide-react";
 import { BiLogoLinkedin } from "react-icons/bi";
 
+export type menuItem = {
+  icon?: JSX.Element;
+  title: string;
+  href: string;
+  external?: boolean;
+};
+
 const mainMenuItemsIconSize = "size-6";
-export const mainMenuItems = [
+export const mainMenuItems: menuItem[] = [
   {
     icon: <Home className={mainMenuItemsIconSize} />,
     title: "Home",
     href: "/",
-    external: false,
   },
   // {
   //   icon: <User className={mainMenuItemsIconSize} />,
   //   title: "About me",
   //   href: "/about-me",
-  //   external: false,
   // },
   // {
   //   icon: <Contact className={mainMenuItemsIconSize} />,
   //   title: "Contact",
   //   href: "/contact",
-  //   external: false,
   // },
   {
     icon: <Book className={mainMenuItemsIconSize} />,
     title: "Reading guide",
     href: "/reading-guide",
-    external: false,
   },
   {
     icon: <Grid3X3 className={mainMenuItemsIconSize} />,
     title: "Burden of proof",
     href: "/burden-of-proof",
-    external: false,
   },
   {
     icon: <Github className={mainMenuItemsIconSize} />,
@@ -42,7 +44,7 @@ export const mainMenuItems = [
 ];
 
 const socialsIconSize = "size-5";
-export const socials = [
+export const socials: menuItem[] = [
   {
     icon: <Github className={socialsIconSize} />,
     title: "GitHub",
@@ -63,10 +65,9 @@ export const socials = [
   },
 ];
 
-export const projects = [
+export const projects: menuItem[] = [
   {
     title: "Masita",
     href: "/projects/masita",
-    external: false,
   },
 ];
