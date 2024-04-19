@@ -21,7 +21,7 @@ export default function Footer() {
     <>
       <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t">
         <Container>
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-16 lg:gap-32">
+          <div className="flex flex-col gap-8 md:gap-16">
             <Logo iconSize="w-12 h-12" />
             <div className="flex gap-8 md:gap-16 lg:gap-24 xl:gap-32 w-full flex-wrap md:flex-nowrap">
               {menuItems.map((menu) => (
