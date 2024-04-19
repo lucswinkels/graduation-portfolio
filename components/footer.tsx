@@ -15,7 +15,7 @@ export default function Footer() {
     { title: "Projects", items: projects },
   ];
   const menuLinkStyles =
-    "flex gap-2 items-center text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
+    "flex gap-2 w-max items-center text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
 
   return (
     <>
