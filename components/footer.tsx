@@ -7,7 +7,6 @@ import { mainMenuItems, projects, socials } from "@/lib/menuItems";
 import Container from "./container";
 import { Logo } from "./logo";
 import { H5 } from "./typography/h5";
-import { Button } from "./ui/button";
 
 export default function Footer() {
   const menuItems = [
