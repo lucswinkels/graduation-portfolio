@@ -213,7 +213,7 @@ export default function Post({
             </BreadcrumbItem>
             <BreadcrumbSeparator />
             <BreadcrumbItem>
-              <BreadcrumbLink href={`/projects/${slugify(post.project)}`}>
+              <BreadcrumbLink href={`/project/${slugify(post.project)}`}>
                 {post.project}
               </BreadcrumbLink>
             </BreadcrumbItem>

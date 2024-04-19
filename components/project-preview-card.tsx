@@ -14,7 +14,7 @@ const builder = imageUrlBuilder(client);
 
 export function ProjectPreviewCard({ ...props }) {
   return (
-    <Link href={`/projects/${props.href}`} className="group">
+    <Link href={`/project/${props.href}`} className="group">
       <motion.div
         key={props.slug}
         initial="hidden"

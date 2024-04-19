@@ -66,6 +66,6 @@ export const socials: menuItem[] = [
 export const projects: menuItem[] = [
   {
     title: "Masita",
-    href: "/projects/masita",
+    href: "/project/masita",
   },
 ];
