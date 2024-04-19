@@ -51,11 +51,11 @@ export function Navbar() {
 
   const MobileMenu = () => {
     const MobileMenuItemCard = (props: {
-      icon: JSX.Element;
+      icon?: JSX.Element;
       title: string;
     }) => {
       return (
-        <Card className="shadow-none flex landscape:flex-col landscape:space-x-0 landscape:space-y-2 space-x-4 landscape:justify-center items-center h-full p-4 text-center hover:bg-accent transition-colors">
+        <Card className="[&>svg]:size-5 shadow-none flex landscape:flex-col landscape:space-x-0 landscape:space-y-2 space-x-4 landscape:justify-center items-center h-full p-4 text-center hover:bg-accent transition-colors">
           {props.icon}
           <span className="text-sm font-medium">{props.title}</span>
         </Card>
@@ -94,7 +94,11 @@ export function Navbar() {
                 className="w-full p-4"
                 key={social.title}
               >
-                <a href={social.href} target="_blank">
+                <a
+                  href={social.href}
+                  target="_blank"
+                  className="[&>svg]:size-5"
+                >
                   {social.icon}
                   <span className="sr-only">{social.title}</span>
                 </a>

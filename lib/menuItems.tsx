@@ -8,57 +8,55 @@ export type menuItem = {
   external?: boolean;
 };
 
-const mainMenuItemsIconSize = "size-6";
 export const mainMenuItems: menuItem[] = [
   {
-    icon: <Home className={mainMenuItemsIconSize} />,
+    icon: <Home />,
     title: "Home",
     href: "/",
   },
   // {
-  //   icon: <User className={mainMenuItemsIconSize} />,
+  //   icon: <User />,
   //   title: "About me",
   //   href: "/about-me",
   // },
   // {
-  //   icon: <Contact className={mainMenuItemsIconSize} />,
+  //   icon: <Contact />,
   //   title: "Contact",
   //   href: "/contact",
   // },
   {
-    icon: <Book className={mainMenuItemsIconSize} />,
+    icon: <Book />,
     title: "Reading guide",
     href: "/reading-guide",
   },
   {
-    icon: <Grid3X3 className={mainMenuItemsIconSize} />,
+    icon: <Grid3X3 />,
     title: "Burden of proof",
     href: "/burden-of-proof",
   },
   {
-    icon: <Github className={mainMenuItemsIconSize} />,
+    icon: <Github />,
     title: "Source code",
     href: "https://github.com/lucswinkels/graduation-portfolio",
     external: true,
   },
 ];
 
-const socialsIconSize = "size-5";
 export const socials: menuItem[] = [
   {
-    icon: <Github className={socialsIconSize} />,
+    icon: <Github />,
     title: "GitHub",
     href: "https://github.com/lucswinkels",
     external: true,
   },
   {
-    icon: <BiLogoLinkedin className={socialsIconSize} />,
+    icon: <BiLogoLinkedin />,
     title: "LinkedIn",
     href: "https://www.linkedin.com/in/luc-swinkels-42a775157/",
     external: true,
   },
   {
-    icon: <Mail className={socialsIconSize} />,
+    icon: <Mail />,
     title: "E-mail",
     href: "mailto:lucswinkelsweb@gmail.com",
     external: true,

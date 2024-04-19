@@ -7,6 +7,7 @@ import { mainMenuItems, projects, socials } from "@/lib/menuItems";
 import Container from "./container";
 import { Logo } from "./logo";
 import { H5 } from "./typography/h5";
+import { Button } from "./ui/button";
 
 export default function Footer() {
   const menuItems = [
@@ -15,7 +16,7 @@ export default function Footer() {
     { title: "Projects", items: projects },
   ];
   const menuLinkStyles =
-    "flex gap-2 w-max items-center text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
+    "text-sm hover:border-foreground border-b transition-colors border-transparent pb-0.5 hover:text-foreground text-foreground/80";
 
   return (
     <>
@@ -30,43 +31,23 @@ export default function Footer() {
                   key={menu.title}
                 >
                   <H5>{menu.title}</H5>
-                  {menu.items === socials
-                    ? menu.items.map((link) => (
-                        <li key={link.href}>
-                          {link.external ? (
-                            <a
-                              href={link.href}
-                              target="_blank"
-                              className={menuLinkStyles}
-                            >
-                              {link.title}
-                              {link.icon}
-                            </a>
-                          ) : (
-                            <Link href={link.href} className={menuLinkStyles}>
-                              {link.title}
-                              {link.icon}
-                            </Link>
-                          )}
-                        </li>
-                      ))
-                    : menu.items.map((link) => (
-                        <li key={link.href}>
-                          {link.external ? (
-                            <a
-                              href={link.href}
-                              target="_blank"
-                              className={menuLinkStyles}
-                            >
-                              {link.title}
-                            </a>
-                          ) : (
-                            <Link href={link.href} className={menuLinkStyles}>
-                              {link.title}
-                            </Link>
-                          )}
-                        </li>
-                      ))}
+                  {menu.items.map((link) => (
+                    <li key={link.href}>
+                      {link.external ? (
+                        <a
+                          href={link.href}
+                          target="_blank"
+                          className={menuLinkStyles}
+                        >
+                          {link.title}
+                        </a>
+                      ) : (
+                        <Link href={link.href} className={menuLinkStyles}>
+                          {link.title}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
                 </ul>
               ))}
             </div>
