@@ -67,21 +67,20 @@ export function CodeBlock({
   highlightedLines?: number[];
 }) {
   const { toast } = useToast();
-  const iconSize = "size-4";
   const languageIcons: { [key: string]: JSX.Element } = {
-    bash: <Terminal className={iconSize} />,
-    css: <BiLogoCss3 className={iconSize} />,
-    js: <BiLogoJavascript className={iconSize} />,
-    json: <Braces className={iconSize} />,
-    jsx: <BiLogoJavascript className={iconSize} />,
-    markup: <BiLogoHtml5 className={iconSize} />,
-    php: <BiLogoPhp className={iconSize} />,
-    python: <BiLogoPython className={iconSize} />,
-    sass: <BiLogoSass className={iconSize} />,
-    scss: <BiLogoSass className={iconSize} />,
-    sql: <Database className={iconSize} />,
-    tsx: <BiLogoTypescript className={iconSize} />,
-    ts: <BiLogoTypescript className={iconSize} />,
+    bash: <Terminal />,
+    css: <BiLogoCss3 />,
+    js: <BiLogoJavascript />,
+    json: <Braces />,
+    jsx: <BiLogoJavascript />,
+    markup: <BiLogoHtml5 />,
+    php: <BiLogoPhp />,
+    python: <BiLogoPython />,
+    sass: <BiLogoSass />,
+    scss: <BiLogoSass />,
+    sql: <Database />,
+    tsx: <BiLogoTypescript />,
+    ts: <BiLogoTypescript />,
   };
   const handleCopyToClipboard = () => {
     navigator.clipboard.writeText(value);
@@ -92,7 +91,7 @@ export function CodeBlock({
   return (
     <Card>
       <div className="text-muted-foreground dark:text-muted-foreground bg-accent-subtle border-b p-4 flex justify-between items-center">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 [&>svg]:size-4">
           {languageIcons[language]}
           <span className="text-sm">{filename}</span>
         </div>
