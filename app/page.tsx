@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Metadata } from "next";
-import { projectPostsQuery } from "@/sanity/lib/queries";
+import { postsQuery } from "@/sanity/lib/queries";
 import { sanityFetch } from "@/sanity/lib/sanityFetch";
 import { SanityDocument } from "next-sanity";
 
@@ -18,8 +18,7 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const posts = await sanityFetch<SanityDocument[]>({
-    query: projectPostsQuery,
-    params: { projectSlug: "masita" },
+    query: postsQuery,
   });
   const Content = () => (
     <div className="mb-16 xl:mb-24 flex justify-between items-center">

@@ -1,9 +1,17 @@
-import React, { useEffect, useRef } from "react";
+import React, { PropsWithChildren, useEffect, useRef } from "react";
 import { Fancybox as NativeFancybox } from "@fancyapps/ui";
 
 import "@fancyapps/ui/dist/fancybox/fancybox.css";
 
-function Fancybox(props: any) {
+import { OptionsType } from "@fancyapps/ui/types/Fancybox/options";
+
+interface Props {
+  options?: Partial<OptionsType>;
+  delegate?: string;
+  setFancyboxIsActive?: Function;
+}
+
+function Fancybox(props: PropsWithChildren<Props>) {
   const containerRef = useRef(null);
 
   useEffect(() => {

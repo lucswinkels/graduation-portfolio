@@ -11,7 +11,7 @@ export default function NotFoundPage() {
     <FadeUp>
       <Container>
         <H1 className="mb-4">Uh.. I&apos;ve got bad news.</H1>
-        <Lead>This page doesn&apos;t exist!</Lead>
+        <Lead>This page doesn&apos;t exist.</Lead>
         <Button className="mt-8" asChild>
           <Link href="/">Back to home</Link>
         </Button>

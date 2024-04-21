@@ -1,8 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import { MoveUpRight } from "lucide-react";
 
 import { mainMenuItems, projects, socials } from "@/lib/menuItems";
+import { cn } from "@/lib/utils";
 
 import Container from "./container";
 import { Logo } from "./logo";
@@ -21,9 +23,9 @@ export default function Footer() {
     <>
       <div className="w-full py-16 lg:py-24 xl:py-32 bg-accent-subtle border-t">
         <Container>
-          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 md:gap-16 lg:gap-32">
+          <div className="flex flex-col gap-8 md:gap-16">
             <Logo iconSize="w-12 h-12" />
-            <div className="flex gap-8 md:gap-16 w-full flex-wrap md:flex-nowrap">
+            <div className="flex gap-8 md:gap-16 lg:gap-24 xl:gap-32 w-full flex-wrap md:flex-nowrap">
               {menuItems.map((menu) => (
                 <ul
                   className="flex flex-col gap-2 md:w-max w-full"
@@ -31,14 +33,18 @@ export default function Footer() {
                 >
                   <H5>{menu.title}</H5>
                   {menu.items.map((link) => (
-                    <li key={link.href}>
+                    <li key={link.href} className="group">
                       {link.external ? (
                         <a
                           href={link.href}
                           target="_blank"
-                          className={menuLinkStyles}
+                          className={cn(
+                            "flex items-center gap-1 w-max",
+                            menuLinkStyles
+                          )}
                         >
                           {link.title}
+                          <MoveUpRight className="size-3 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                         </a>
                       ) : (
                         <Link href={link.href} className={menuLinkStyles}>

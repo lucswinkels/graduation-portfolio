@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, MoveUpRight, X } from "lucide-react";
 
 import { mainMenuItems, socials } from "@/lib/menuItems";
 import { cn } from "@/lib/utils";
@@ -51,11 +51,11 @@ export function Navbar() {
 
   const MobileMenu = () => {
     const MobileMenuItemCard = (props: {
-      icon: JSX.Element;
+      icon?: JSX.Element;
       title: string;
     }) => {
       return (
-        <Card className="shadow-none flex landscape:flex-col landscape:space-x-0 landscape:space-y-2 space-x-4 landscape:justify-center items-center h-full p-4 text-center hover:bg-accent transition-colors">
+        <Card className="[&>svg]:size-5 shadow-none flex landscape:flex-col landscape:space-x-0 landscape:space-y-2 space-x-4 landscape:justify-center items-center h-full p-4 text-center hover:bg-accent transition-colors">
           {props.icon}
           <span className="text-sm font-medium">{props.title}</span>
         </Card>
@@ -68,7 +68,9 @@ export function Navbar() {
         } `}
       >
         <div className="space-y-4 h-full flex items-stretch flex-col">
-          <div className={`grid grid-cols-1 landscape:grid-cols-2 gap-4`}>
+          <div
+            className={`grid grid-cols-1 landscape:grid-cols-4 gap-4 landscape:h-full`}
+          >
             {mainMenuItems.map((item) =>
               item.external ? (
                 <a href={item.href} key={item.title} target="_blank">
@@ -94,7 +96,11 @@ export function Navbar() {
                 className="w-full p-4"
                 key={social.title}
               >
-                <a href={social.href} target="_blank">
+                <a
+                  href={social.href}
+                  target="_blank"
+                  className="[&>svg]:size-5"
+                >
                   {social.icon}
                   <span className="sr-only">{social.title}</span>
                 </a>
@@ -128,9 +134,13 @@ export function Navbar() {
                       <NavigationMenuLink
                         href={item.href}
                         target="_blank"
-                        className={menuLinkStyles}
+                        className={cn(
+                          "flex items-center gap-1 w-max group/navitem",
+                          menuLinkStyles
+                        )}
                       >
                         {item.title}
+                        <MoveUpRight className="size-3 group-hover/navitem:translate-x-1 group-hover/navitem:-translate-y-1 transition-transform" />
                       </NavigationMenuLink>
                     ) : (
                       <Link href={item.href} legacyBehavior passHref>
