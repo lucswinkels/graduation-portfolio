@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, MoveUpRight, X } from "lucide-react";
 
 import { mainMenuItems, socials } from "@/lib/menuItems";
 import { cn } from "@/lib/utils";
@@ -134,9 +134,13 @@ export function Navbar() {
                       <NavigationMenuLink
                         href={item.href}
                         target="_blank"
-                        className={menuLinkStyles}
+                        className={cn(
+                          "flex items-center gap-1 w-max group/navitem",
+                          menuLinkStyles
+                        )}
                       >
                         {item.title}
+                        <MoveUpRight className="size-3 group-hover/navitem:translate-x-1 group-hover/navitem:-translate-y-1 transition-transform" />
                       </NavigationMenuLink>
                     ) : (
                       <Link href={item.href} legacyBehavior passHref>
