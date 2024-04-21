@@ -139,7 +139,10 @@ export function Navbar() {
             </NavigationMenuItem>
           </NavigationMenuList>
           {menus.map((menu) => (
-            <NavigationMenuList className="p-6 border-b flex flex-col items-start space-y-2 space-x-0">
+            <NavigationMenuList
+              className="p-6 border-b flex flex-col items-start space-y-2 space-x-0"
+              key={menu.title}
+            >
               <H5>{menu.title}</H5>
               {menu.items.map((item) => (
                 <NavigationMenuItem key={item.title}>
