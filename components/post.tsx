@@ -216,7 +216,7 @@ export default function Post({
           </Badge>
         </GradientCategoryBackground>
       </Container>
-      <Container className="border-b pb-16 2xl:pb-32 relative lg:-top-16">
+      <Container className="border-b pb-16 relative lg:-top-16">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -290,7 +290,7 @@ export default function Post({
           ) : null}
         </GradientCategoryBackground>
       </Container>
-      <Container className="pt-16 2xl:pt-32 relative lg:-top-16">
+      <Container className="pt-16 relative lg:-top-16">
         <Prose className="first:[&>div>h2]:mt-0">
           <Fancybox>
             <PortableText value={post.body} components={components} />
