@@ -172,15 +172,13 @@ export function Navbar() {
               ))}
             </NavigationMenuList>
           ))}
-          <NavigationMenuList className="p-4 2xl:p-8 space-x-0 flex-col flex items-start">
-            <div className="flex flex-row space-x-2">
-              <NavigationMenuItem>
-                <SearchFormComponent iconOnly variant="outline" />
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <ModeToggle variant="outline" />
-              </NavigationMenuItem>
-            </div>
+          <NavigationMenuList className="p-4 2xl:p-8 justify-start flex flex-row space-x-2">
+            <NavigationMenuItem>
+              <SearchFormComponent iconOnly variant="outline" />
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <ModeToggle variant="outline" />
+            </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
       </div>
