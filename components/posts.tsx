@@ -66,6 +66,7 @@ export default function Posts({
         >
           <SelectTrigger className="min-w-[200px] w-max">
             <SelectValue placeholder="All Learning Outcomes" />
+            <span className="sr-only">Select learning outcome</span>
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>

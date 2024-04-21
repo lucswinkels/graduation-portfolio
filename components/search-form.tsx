@@ -60,6 +60,7 @@ export function SearchFormComponent(props: Props) {
           {props.iconOnly ? (
             <Button variant={props.variant} size="icon">
               <Search className="size-4" />
+              <span className="sr-only">Search</span>
             </Button>
           ) : (
             <Button
@@ -92,6 +93,7 @@ export function SearchFormComponent(props: Props) {
         {props.iconOnly ? (
           <Button variant={props.variant} size="icon">
             <Search className="size-4" />
+            <span className="sr-only">Search</span>
           </Button>
         ) : (
           <Button

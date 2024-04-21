@@ -27,7 +27,9 @@ export function Logo({
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={cn("w-6 h-6", iconSize)}
+      aria-labelledby="logoTitle"
     >
+      <title id="logoTitle">Logo</title>
       <rect
         x="600"
         y="250"
