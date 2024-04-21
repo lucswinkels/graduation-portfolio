@@ -59,7 +59,6 @@ export default function Footer() {
           </div>
         </Container>
       </div> */}
-
       <div className="bg-background w-full border-t h-20 flex justify-center items-center">
         <Container className="flex flex-col gap-1 md:flex-row md:justify-between">
           <span className="text-sm text-muted-foreground">

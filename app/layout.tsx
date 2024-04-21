@@ -72,7 +72,8 @@ export default function RootLayout({
         <Analytics />
         <ThemeProvider attribute="class" enableSystem>
           <Navbar />
-          <div className="py-32">{children}</div>
+          {/* Min-h = 100dvh - copyright height to push copyright down on empty pages */}
+          <div className="py-32 min-h-[calc(100dvh-5rem)]">{children}</div>
           <BackToTop />
           {/* <Cursor /> */}
           <Footer />

@@ -200,12 +200,23 @@ export default function Post({
     },
   };
 
-  const innerCardStyles =
-    "bg-background/95 backdrop:blur supports-[backdrop-filter]:bg-background/80 border-border/40";
-
   return post ? (
     <FadeUp>
-      <Container>
+      <Container className="border-b bg-accent-subtle py-8 lg:py-32 flex items-center justify-center relative -top-16 lg:-top-32">
+        <GradientCategoryBackground
+          category={post.categories[0].toLowerCase()}
+          className="flex items-center justify-center w-max h-max border rounded-lg p-4 lg:p-16 shadow-lg relative"
+        >
+          <CategoryIcon
+            category={post.categories[0].toLowerCase()}
+            className="lg:w-20 lg:h-20 h-10 w-10 text-white opacity-20"
+          />
+          <Badge className="absolute -bottom-[10px]" variant="card">
+            {post.categories[0]}
+          </Badge>
+        </GradientCategoryBackground>
+      </Container>
+      <Container className="border-b pb-16 lg:pb-32 lg:px-32 xl:px-48 2xl:px-64">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
@@ -225,66 +236,62 @@ export default function Post({
         </Breadcrumb>
         <H1 className="mb-4">{post.title}</H1>
         <Lead>{post.description}</Lead>
-        {post.categories || post.researchMethods || post.researchQuestion ? (
-          <Card className="my-8 lg:my-16">
-            <GradientCategoryBackground
-              category={post.categories[0].toLowerCase()}
-              className="p-4 lg:p-8"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
-                <Card className={innerCardStyles}>
-                  <CardContent className="p-3 space-y-2">
-                    <H5>Categories</H5>
-                    <div className="flex flex-row gap-2 flex-wrap">
-                      {post.categories ? (
-                        post.categories.map((category: string) => (
-                          <Badge key={category}>
-                            <CategoryIcon
-                              category={category.toLowerCase()}
-                              className="w-3 h-3 mr-1"
-                            />
-                            {category}
-                          </Badge>
-                        ))
-                      ) : (
-                        <P>There is no categories for this deliverable.</P>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className={innerCardStyles}>
-                  <CardContent className="p-3 space-y-2">
-                    <H5>Research methods</H5>
-                    <div className="flex flex-row gap-2 flex-wrap">
-                      {post.researchMethods ? (
-                        post.researchMethods.map(
-                          (method: { title: string }) => (
-                            <Badge key={method.title}>{method.title}</Badge>
-                          )
-                        )
-                      ) : (
-                        <P>
-                          There are no research methods for this deliverable.
-                        </P>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-                <Card className={innerCardStyles}>
-                  <CardContent className="p-3 space-y-2">
-                    <H5>Research question</H5>
-                    {post.researchQuestion ? (
-                      <P>{post.researchQuestion}</P>
+        <GradientCategoryBackground
+          category={post.categories[0].toLowerCase()}
+          className="w-full border rounded-lg p-4 lg:p-8 mt-8 lg:mt-16"
+        >
+          {post.categories || post.researchMethods || post.researchQuestion ? (
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8">
+              <Card>
+                <CardContent className="p-4 space-y-2">
+                  <H5>Categories</H5>
+                  <div className="flex flex-row gap-2 flex-wrap">
+                    {post.categories ? (
+                      post.categories.map((category: string) => (
+                        <Badge key={category}>
+                          <CategoryIcon
+                            category={category.toLowerCase()}
+                            className="w-3 h-3 mr-1"
+                          />
+                          {category}
+                        </Badge>
+                      ))
                     ) : (
-                      <P>There is no research question for this deliverable.</P>
+                      <P>There is no categories for this deliverable.</P>
                     )}
-                  </CardContent>
-                </Card>
-              </div>
-            </GradientCategoryBackground>
-          </Card>
-        ) : null}
-        <Prose>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-4 space-y-2">
+                  <H5>Research methods</H5>
+                  <div className="flex flex-row gap-2 flex-wrap">
+                    {post.researchMethods ? (
+                      post.researchMethods.map((method: { title: string }) => (
+                        <Badge key={method.title}>{method.title}</Badge>
+                      ))
+                    ) : (
+                      <P>There are no research methods for this deliverable.</P>
+                    )}
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-4 space-y-2">
+                  <H5>Research question</H5>
+                  {post.researchQuestion ? (
+                    <P>{post.researchQuestion}</P>
+                  ) : (
+                    <P>There is no research question for this deliverable.</P>
+                  )}
+                </CardContent>
+              </Card>
+            </div>
+          ) : null}
+        </GradientCategoryBackground>
+      </Container>
+      <Container className="pt-16 lg:pt-32 lg:px-32 xl:px-48 2xl:px-64">
+        <Prose className="first:[&>div>h2]:mt-0">
           <Fancybox>
             <PortableText value={post.body} components={components} />
           </Fancybox>
