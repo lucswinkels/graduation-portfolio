@@ -133,14 +133,17 @@ export function Navbar() {
       </div>
       <div className="hidden lg:flex w-[220px] xl:w-[240px] h-full flex-col border-r fixed top-0 left-0 z-50 bg-background">
         <NavigationMenu className="flex flex-col w-full max-w-full items-stretch p-0 h-full max-h-full min-h-full">
-          <NavigationMenuList className="p-8 border-b flex flex-col space-x-0 items-start">
+          <NavigationMenuList className="p-4 2xl:p-8 border-b flex flex-col space-x-0 items-start">
             <NavigationMenuItem>
-              <Logo onClick={closeMobileMenu} iconSize="w-10 h-10" />
+              <Logo
+                onClick={closeMobileMenu}
+                iconSize="2xl:w-10 2xl:h-10 h-8 w-8"
+              />
             </NavigationMenuItem>
           </NavigationMenuList>
           {menus.map((menu) => (
             <NavigationMenuList
-              className="p-8 border-b flex flex-col items-start space-y-2 space-x-0"
+              className="p-4 2xl:p-8 border-b flex flex-col items-start space-y-2 space-x-0"
               key={menu.title}
             >
               <H5>{menu.title}</H5>
@@ -169,7 +172,7 @@ export function Navbar() {
               ))}
             </NavigationMenuList>
           ))}
-          <NavigationMenuList className="p-8 space-x-0 flex-col flex items-start">
+          <NavigationMenuList className="p-4 2xl:p-8 space-x-0 flex-col flex items-start">
             <div className="flex flex-row space-x-2">
               <NavigationMenuItem>
                 <SearchFormComponent iconOnly variant="outline" />

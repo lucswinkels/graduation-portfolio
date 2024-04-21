@@ -62,7 +62,6 @@ body {
 body::-webkit-scrollbar {
   width: 20px;
   border-left: 1px solid;
-  @apply border-border;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -75,9 +74,9 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   width: 4px;
   background-clip: padding-box;
-  border-radius: 16px;
-  background-color: transparent;
-  border: 8px solid transparent;
+  border-left: 1px solid;
+  @apply !bg-accent-subtle;
+  @apply !border-border;
 }
 
 .prose p > a {
