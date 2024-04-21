@@ -84,10 +84,6 @@ body::-webkit-scrollbar-track {
   @apply text-foreground;
 }
 
-html {
-  overflow-y: scroll;
-}
-
 /* Code block */
 code[class*="language-"],
 pre[class*="language-"] {

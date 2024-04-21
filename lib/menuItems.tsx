@@ -14,16 +14,16 @@ export const mainMenuItems: menuItem[] = [
     title: "Home",
     href: "/",
   },
-  // {
-  //   icon: <User />,
-  //   title: "About me",
-  //   href: "/about-me",
-  // },
-  // {
-  //   icon: <Contact />,
-  //   title: "Contact",
-  //   href: "/contact",
-  // },
+  {
+    icon: <User />,
+    title: "About me",
+    href: "/about-me",
+  },
+  {
+    icon: <Contact />,
+    title: "Contact",
+    href: "/contact",
+  },
   {
     icon: <Book />,
     title: "Reading guide",
@@ -63,6 +63,7 @@ export const socials: menuItem[] = [
   },
 ];
 
+// TODO: get projects from Sanity
 export const projects: menuItem[] = [
   {
     title: "Masita",

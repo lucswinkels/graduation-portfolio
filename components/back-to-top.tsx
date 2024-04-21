@@ -43,7 +43,7 @@ export default function BackToTop() {
               visible
                 ? "visible opacity-100"
                 : "pointer-events-none invisible opacity-0"
-            }  fixed bottom-5 right-5 transition-all duration-300 z-30`}
+            }  fixed bottom-5 right-4 transition-all duration-300 z-30`}
           >
             <Button size="icon" variant="outline" className="size-10">
               <MoveUp className="size-4" />
