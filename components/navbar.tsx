@@ -118,7 +118,7 @@ export function Navbar() {
 
   const menus = [
     { title: "Menu", items: mainMenuItems },
-    { title: "Projects", items: projects },
+    // { title: "Projects", items: projects },
     { title: "Connect", items: socials },
   ];
 
@@ -131,7 +131,7 @@ export function Navbar() {
           <MobileMenuBarItems />
         </NavigationMenu>
       </div>
-      <div className="hidden lg:flex w-[220px] xl:w-[240px] h-full flex-col border-r fixed top-0 left-0 z-50 bg-background">
+      <div className="hidden lg:flex w-[220px] xl:w-[240px] min-h-full flex-col border-r fixed top-0 left-0 z-50 bg-background">
         <NavigationMenu className="flex flex-col w-full max-w-full items-stretch p-0 h-full max-h-full min-h-full">
           <NavigationMenuList className="p-8 border-b flex flex-col space-x-0 items-start">
             <NavigationMenuItem>
