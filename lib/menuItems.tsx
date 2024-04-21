@@ -14,16 +14,16 @@ export const mainMenuItems: menuItem[] = [
     title: "Home",
     href: "/",
   },
-  {
-    icon: <User />,
-    title: "About me",
-    href: "/about-me",
-  },
-  {
-    icon: <Contact />,
-    title: "Contact",
-    href: "/contact",
-  },
+  // {
+  //   icon: <User />,
+  //   title: "About me",
+  //   href: "/about-me",
+  // },
+  // {
+  //   icon: <Contact />,
+  //   title: "Contact",
+  //   href: "/contact",
+  // },
   {
     icon: <Book />,
     title: "Reading guide",
