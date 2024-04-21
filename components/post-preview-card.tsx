@@ -52,7 +52,7 @@ export function PostPreviewCard({ ...props }) {
                 alt={props.image.alt}
               /> */}
               <GradientCategoryBackground
-                className="min-h-40 p-4"
+                className="min-h-48 p-4"
                 category={props.categories[0].toLowerCase()}
               >
                 <div className="flex flex-row gap-2 flex-wrap absolute">

@@ -21,7 +21,7 @@ export default async function Home() {
     query: postsQuery,
   });
   const Content = () => (
-    <div className="mb-16 xl:mb-24 flex justify-between items-center">
+    <div className="flex justify-between items-center">
       <div className="text-balance">
         <H1 className="w-full md:w-[500px] lg:w-[650px] mb-2">
           Hey! I&apos;m Luc.
@@ -41,12 +41,14 @@ export default async function Home() {
   );
   return (
     <>
-      <Container>
-        <FadeUp>
+      <FadeUp>
+        <Container className="lg:border-b pb-16">
           <Content />
+        </Container>
+        <Container className="lg:pt-16">
           <Posts posts={posts} />
-        </FadeUp>
-      </Container>
+        </Container>
+      </FadeUp>
     </>
   );
 }
