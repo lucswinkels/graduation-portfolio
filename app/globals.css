@@ -75,12 +75,16 @@ body::-webkit-scrollbar-track {
   width: 4px;
   background-clip: padding-box;
   border-left: 1px solid;
-  @apply !bg-accent-subtle;
+  @apply !bg-background;
   @apply !border-border;
 }
 
 .prose p > a {
   @apply text-foreground;
+}
+
+html {
+  overflow-y: auto; /* Prevent scrollbar disappearing on select dropdowns */
 }
 
 /* Code block */

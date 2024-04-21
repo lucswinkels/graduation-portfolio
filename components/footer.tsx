@@ -62,11 +62,14 @@ export default function Footer() {
       <div className="bg-background w-full border-t h-20 flex justify-center items-center">
         <Container className="flex flex-col gap-1 md:flex-row md:justify-between">
           <span className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} Luc Swinkels. All rights reserved.
+          </span>
+          {/* <span className="text-sm text-muted-foreground">
             &copy; {new Date().getFullYear()} Luc Swinkels.
-          </span>
-          <span className="text-sm text-muted-foreground">
+          </span> */}
+          {/* <span className="text-sm text-muted-foreground">
             All rights reserved.
-          </span>
+          </span> */}
         </Container>
       </div>
     </>
