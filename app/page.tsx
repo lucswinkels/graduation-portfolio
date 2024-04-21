@@ -34,7 +34,7 @@ export default async function Home() {
           graduation internship at Moonly Software, for my IT & Media Design
           study at the Fontys University of Applied Sciences. <br /> <br />
           Click on one of the project items below or read the full process of
-          this internship <A href="/reading-guide">here</A>.
+          this internship in my <A href="/reading-guide">reading guide</A>.
         </P>
       </div>
     </div>
