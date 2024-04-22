@@ -5,6 +5,7 @@ import { SanityDocument } from "@sanity/client";
 import { AnimatePresence, motion } from "framer-motion";
 import { RotateCcw } from "lucide-react";
 
+import { categories } from "@/lib/categories";
 import { learningOutcomes } from "@/lib/learningOutcomes";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -42,19 +43,24 @@ export default function Posts({
   const [selectedLearningOutcome, setSelectedLearningOutcome] = React.useState(
     "all-learning-outcomes"
   );
+  const [selectedCategory, setSelectedCategory] =
+    React.useState("all-categories");
 
   const filteredPosts = posts.filter((post) => {
     return (
-      selectedLearningOutcome === "all-learning-outcomes" ||
-      post?.learningOutcomes?.some(
-        (outcome: LearningOutcome) =>
-          outcome.slug.current === selectedLearningOutcome
-      )
+      (selectedLearningOutcome === "all-learning-outcomes" ||
+        post?.learningOutcomes?.some(
+          (outcome: LearningOutcome) =>
+            outcome.slug.current === selectedLearningOutcome
+        )) &&
+      (selectedCategory === "all-categories" ||
+        post?.categories[0]?.toLowerCase() === selectedCategory)
     );
   });
 
-  const handleResetLearningOutcomes = () => {
+  const handleResetFilters = () => {
     setSelectedLearningOutcome("all-learning-outcomes");
+    setSelectedCategory("all-categories");
   };
 
   return (
@@ -65,7 +71,7 @@ export default function Posts({
           onValueChange={setSelectedLearningOutcome}
         >
           <SelectTrigger className="min-w-[200px] w-max">
-            <SelectValue placeholder="All Learning Outcomes" />
+            <SelectValue placeholder="All learning outcomes" />
             <span className="sr-only">Select learning outcome</span>
           </SelectTrigger>
           <SelectContent>
@@ -73,22 +79,42 @@ export default function Posts({
               <SelectItem value="all-learning-outcomes">
                 All learning outcomes
               </SelectItem>
-              {learningOutcomes.map((learningOutcome, i) => (
-                <SelectItem key={i} value={learningOutcome.slug}>
+              {learningOutcomes.map((learningOutcome) => (
+                <SelectItem
+                  key={learningOutcome.slug}
+                  value={learningOutcome.slug}
+                >
                   {learningOutcome.title}
                 </SelectItem>
               ))}
             </SelectGroup>
           </SelectContent>
         </Select>
-        {selectedLearningOutcome !== "all-learning-outcomes" && (
+        <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+          <SelectTrigger className="min-w-[200px] w-max">
+            <SelectValue placeholder="All categories" />
+            <span className="sr-only">Select category</span>
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectItem value="all-categories">All categories</SelectItem>
+              {categories.map((category) => (
+                <SelectItem key={category.slug} value={category.slug}>
+                  {category.title}
+                </SelectItem>
+              ))}
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+        {(selectedLearningOutcome !== "all-learning-outcomes" ||
+          selectedCategory !== "all-categories") && (
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
                 <Button
                   variant="outline"
                   size="icon"
-                  onClick={handleResetLearningOutcomes}
+                  onClick={handleResetFilters}
                 >
                   <RotateCcw className="size-4" />
                 </Button>
