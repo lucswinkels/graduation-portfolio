@@ -200,7 +200,7 @@ export default function Post({
     },
   };
 
-  return post ? (
+  return post.description && post.project && post.title && post.categories ? (
     <FadeUp>
       <Container className="border-b bg-accent-subtle py-8 lg:py-32 flex items-center justify-center relative -top-16 lg:-top-32">
         <GradientCategoryBackground

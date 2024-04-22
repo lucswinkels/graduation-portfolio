@@ -17,6 +17,15 @@ import { Badge } from "./ui/badge";
 const builder = imageUrlBuilder(client);
 
 export function PostPreviewCard({ ...props }) {
+  if (
+    !props.href ||
+    !props.slug ||
+    !props.project ||
+    !props.title ||
+    !props.categories
+  ) {
+    return null;
+  }
   return (
     <Link href={`/${props.href}`} className="group post-preview flex">
       <motion.div
