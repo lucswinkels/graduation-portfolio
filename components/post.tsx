@@ -141,8 +141,8 @@ export default function Post({
               {value.title}
             </AccordionTrigger>
             <AccordionContent className={accordionContentStyles}>
-              {value.content.map((item: SanityAsset, i: number) => (
-                <P key={i} className="text-base">
+              {value.content.map((item: SanityAsset) => (
+                <P key={item._id} className="text-base">
                   {item.children[0].text}
                 </P>
               ))}
@@ -166,8 +166,8 @@ export default function Post({
             </AccordionTrigger>
             <AccordionContent className={accordionContentStyles}>
               <List className="my-0">
-                {value.content.map((item: SanityAsset, i: number) => (
-                  <li key={i} className="text-base">
+                {value.content.map((item: SanityAsset) => (
+                  <li key={item._id} className="text-base">
                     {item.children[0].text}
                   </li>
                 ))}
@@ -200,7 +200,7 @@ export default function Post({
     },
   };
 
-  return post ? (
+  return post.description && post.project && post.title && post.categories ? (
     <FadeUp>
       <Container className="border-b bg-accent-subtle py-8 lg:py-32 flex items-center justify-center relative -top-16 lg:-top-32">
         <GradientCategoryBackground
