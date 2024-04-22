@@ -65,8 +65,8 @@ export function PostPreviewCard({ ...props }) {
                 category={props.categories[0].toLowerCase()}
               >
                 <div className="flex flex-row gap-2 flex-wrap absolute">
-                  {props.categories.map((category: string, i: number) => (
-                    <Badge key={i} variant="card">
+                  {props.categories.map((category: string) => (
+                    <Badge key={category} variant="card">
                       <CategoryIcon
                         category={category.toLowerCase()}
                         className="w-3 h-3 mr-1"
