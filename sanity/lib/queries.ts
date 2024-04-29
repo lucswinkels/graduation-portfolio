@@ -2,7 +2,7 @@ import { groq } from "next-sanity";
 
 // Get all posts
 export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
-  _id, title, slug, description, mainImage,
+  _id, title, slug, description, mainImage, draft,
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},
@@ -10,7 +10,7 @@ export const postsQuery = groq`*[_type == "post" && defined(slug.current)]{
 
 // Get all posts where search query matches title, categories, or project
 export const postsMatchingSearchQuery = groq`*[_type == "post" && defined(slug.current) && (project->slug.current match $query || title match $query || categories[]->title match $query)]{
-  _id, title, slug, description, mainImage,
+  _id, title, slug, description, mainImage, draft,
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},
@@ -18,7 +18,7 @@ export const postsMatchingSearchQuery = groq`*[_type == "post" && defined(slug.c
 
 // Get specific project's posts
 export const projectPostsQuery = groq`*[_type == "post" && defined(slug.current) && project->slug.current == $projectSlug]{
-  _id, title, slug, description, mainImage,
+  _id, title, slug, description, mainImage, draft,
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},
@@ -26,7 +26,7 @@ export const projectPostsQuery = groq`*[_type == "post" && defined(slug.current)
 
 // Get a single post by its slug
 export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{ 
-  _id, title, mainImage, body, description, publishedAt, slug, researchQuestion,
+  _id, title, mainImage, body, description, publishedAt, slug, researchQuestion, draft,
   "categories": categories[]->title, 
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},   
@@ -35,7 +35,7 @@ export const postQuery = groq`*[_type == "post" && slug.current == $slug][0]{
 
 // Get previous (based on publishedAt) post
 export const previousPostQuery = groq`*[_type == "post" && defined(slug.current) && publishedAt < $currentPostPublishedAt] | order(publishedAt desc) [0]{
-  _id, title, mainImage, body, description, publishedAt, slug,
+  _id, title, mainImage, body, description, publishedAt, slug, draft,
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},
@@ -43,7 +43,7 @@ export const previousPostQuery = groq`*[_type == "post" && defined(slug.current)
 
 // Get next (based on publishedAt) post
 export const nextPostQuery = groq`*[_type == "post" && defined(slug.current) && publishedAt > $currentPostPublishedAt] | order(publishedAt asc) [0]{
-  _id, title, mainImage, body, description, publishedAt, slug,
+  _id, title, mainImage, body, description, publishedAt, slug, draft,
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},
@@ -51,7 +51,7 @@ export const nextPostQuery = groq`*[_type == "post" && defined(slug.current) && 
 
 // Get first (based on publishedAt) post
 export const firstPostQuery = groq`*[_type == "post" && defined(slug.current)] | order(publishedAt asc) [0]{
-  _id, title, mainImage, body, description, publishedAt, slug,
+  _id, title, mainImage, body, description, publishedAt, slug, draft,
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},
@@ -59,7 +59,7 @@ export const firstPostQuery = groq`*[_type == "post" && defined(slug.current)] |
 
 // Get last (based on publishedAt) post
 export const lastPostQuery = groq`*[_type == "post" && defined(slug.current)] | order(publishedAt desc) [0]{
-  _id, title, mainImage, body, description, publishedAt, slug,
+  _id, title, mainImage, body, description, publishedAt, slug, draft,
   "categories": categories[]->title,
   "project": project->title,
   "learningOutcomes": learningOutcomes[]->{title, slug},

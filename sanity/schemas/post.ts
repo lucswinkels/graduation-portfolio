@@ -86,6 +86,11 @@ export default defineType({
       validation: (Rule) => Rule.required(),
       initialValue: () => new Date().toISOString(),
     }),
+    defineField({
+      name: "draft",
+      title: "Draft",
+      type: "boolean",
+    }),
   ],
 
   preview: {
