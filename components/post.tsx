@@ -7,7 +7,7 @@ import { getImageDimensions } from "@sanity/asset-utils";
 import { SanityDocument } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 import { SanityAsset } from "@sanity/image-url/lib/types/types";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, LucideAlertTriangle } from "lucide-react";
 
 import { slugify } from "@/lib/utils";
 import {
@@ -59,6 +59,7 @@ export default function Post({
   previousPost: SanityDocument;
   nextPost: SanityDocument;
 }) {
+  // console.log(post.draft);
   const ImageComponent = ({ value }: SanityAsset) => {
     const { width, height } = getImageDimensions(value);
     const assetUrl = builder.image(value).width(width).height(height).url();
@@ -216,6 +217,12 @@ export default function Post({
           </Badge>
         </GradientCategoryBackground>
       </Container>
+      {/* {post.draft && (
+        <Container className="border-b py-4 flex space-x-2 items-center absolute top-16 lg:top-0 bg-amber-50">
+          <LucideAlertTriangle className="size-6 mr-2 text-amber-300" />
+          This post is still being updated and may have placeholder content.
+        </Container>
+      )} */}
       <Container className="border-b pb-16 relative lg:-top-16">
         <Breadcrumb>
           <BreadcrumbList>
