@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   title: "About me",
 };
 
+// TODO: update about me content
 export default function AboutMe() {
   const Content = () => (
     <>

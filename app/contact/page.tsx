@@ -29,6 +29,7 @@ export const metadata: Metadata = {
   title: "Contact",
 };
 
+// TODO: update contact content
 export default function Contact() {
   const Content = () => (
     <>
