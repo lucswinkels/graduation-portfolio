@@ -180,6 +180,7 @@ export default function Post({
     );
   };
 
+  // TODO: fix accordion component to be more flexible allowing all types of content as PortableText
   const components = {
     types: {
       image: ImageComponent,
