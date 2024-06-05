@@ -296,6 +296,16 @@ export default function ReadingGuide() {
             process. I documented the entire development process here:{" "}
             <A href="/store-development">store development</A>.
           </P>
+          <P>
+            I presented my progress during the{" "}
+            <A href="/midterm-review">midterm review</A> and gathered feedback
+            from my teachers and company mentor.
+          </P>
+          <P>
+            Near the end of my internship, I wrote a{" "}
+            <A href="/self-reflection">reflection</A> on the internship period
+            and what went well or could have gone better.
+          </P>
         </div>
       </Prose>
     </>
