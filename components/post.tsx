@@ -218,13 +218,13 @@ export default function Post({
           </Badge>
         </GradientCategoryBackground>
       </Container>
-      {/* {post.draft && (
-        <Container className="border-b py-4 flex space-x-2 items-center absolute top-16 lg:top-0 bg-amber-50">
-          <LucideAlertTriangle className="size-6 mr-2 text-amber-300" />
-          This post is still being updated and may have placeholder content.
-        </Container>
-      )} */}
       <Container className="border-b pb-16 relative lg:-top-16">
+        {post.draft && (
+          <div className="mb-8 lg:mb-16 rounded-lg border p-4 flex space-x-2 w-full items-center bg-amber-50 border-amber-300">
+            <LucideAlertTriangle className="size-6 mr-2 text-amber-300" />
+            This post is still being updated and may have placeholder content.
+          </div>
+        )}
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem>
