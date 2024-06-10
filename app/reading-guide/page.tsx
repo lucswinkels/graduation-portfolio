@@ -356,8 +356,8 @@ export default function ReadingGuide() {
               <li>
                 By researching ways to build custom integrations in specific
                 e-commerce platforms, I looked at which platform had the most
-                freedom of development. I figured out that the Masita&apos;s
-                requirements were fairly reasonable which meant developing these
+                freedom of development. I figured out that Masita&apos;s
+                requirements were fairly standard which meant developing these
                 features such as a custom item builder would be doable as long
                 as I had the freedom to build it within the technology/platform
                 I chose.
