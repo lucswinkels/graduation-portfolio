@@ -306,6 +306,75 @@ export default function ReadingGuide() {
             <A href="/self-reflection">reflection</A> on the internship period
             and what went well or could have gone better.
           </P>
+          <H3>Research conclusions</H3>
+          <List>
+            <li>
+              Which problems did the old magento-based B2C-webshop face and how
+              can I avoid them?
+            </li>
+            <List>
+              <li>
+                By interviewing developers who worked on the old Magento
+                webshop, I found out that the technology is quite limited when
+                it comes to building custom features and there is not a lot of
+                freedom in development. I also found out that there were
+                organisational issues that caused more technical problems such
+                as big feature requests in a small time frame causing hacky,
+                temporary solutions.
+              </li>
+            </List>
+            <li>
+              Which features are needed for the B2C-webshop and with which
+              priority should they be implemented?
+            </li>
+            <List>
+              <li>
+                I made a list of requirements based on the project&apos;s needs
+                and ordered them using the MoSCoW method. I discussed these
+                requirements with my company mentor to see if I was missing
+                anything.
+              </li>
+            </List>
+            <li>
+              Which platforms can and should be used to develop the new webshop?
+            </li>
+            <List>
+              <li>
+                I looked at lots of different e-commerce platforms and their
+                pros and cons. I ranked them on things like integrated tools,
+                freedom of development, development community (and
+                documentation), and ease of development. Ultimately deciding to
+                go for a headless solution with Shopify and their Hydrogen
+                framework due to it being a very popular platform that has all
+                the requirements I need, and because a big part of the project
+                was being able to reuse code for future projects that required a
+                similar solution.
+              </li>
+            </List>
+            <li>How can Masita&apos;s technical requirements be integrated?</li>
+            <List>
+              <li>
+                By researching ways to build custom integrations in specific
+                e-commerce platforms, I looked at which platform had the most
+                freedom of development. I figured out that Masita&apos;s
+                requirements were fairly standard which meant developing these
+                features such as a custom item builder would be doable as long
+                as I had the freedom to build it within the technology/platform
+                I chose.
+              </li>
+            </List>
+            <li>
+              How can I make sure the new webshop is user-friendly and optimised
+              for conversion?
+            </li>
+            <List>
+              <li>
+                By gathering constant feedback from peers and users on my
+                designs, as well as testing a design prototype, I validated my
+                designs and iterated on them with improvements.
+              </li>
+            </List>
+          </List>
         </div>
       </Prose>
     </>
