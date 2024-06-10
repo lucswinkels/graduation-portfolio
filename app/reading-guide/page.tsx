@@ -306,6 +306,10 @@ export default function ReadingGuide() {
             <A href="/self-reflection">reflection</A> on the internship period
             and what went well or could have gone better.
           </P>
+          <P>
+            To finalize the internship and communicate well with my stakeholders
+            I wrote an <A href="/advisory-report">advisory report</A>.
+          </P>
           <H3>Research conclusions</H3>
           <List>
             <li>
