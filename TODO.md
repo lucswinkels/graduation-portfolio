@@ -8,3 +8,7 @@
   - About me
   - Contact
   - Projects/posts (Sanity)
+- Logo animation on hover
+- Page transition animation
+- Link hover animation (?)
+- Remove previous post (?)
