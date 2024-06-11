@@ -36,7 +36,7 @@ export async function generateMetadata() {
 
 export default async function SearchPage() {
   const searchQuery = getSearchQuery();
-  // TODO: Fix search showing previous query results (e.g. search for masita, then search for masita2, it will show masita results after sending the masita2 query)
+  // TODO: fix search showing previous query results (e.g. search for masita, then search for masita2, it will show masita results after sending the masita2 query)
   const results = await sanityFetch<SanityDocument[]>({
     query: postsMatchingSearchQuery,
     params: { query: searchQuery },
