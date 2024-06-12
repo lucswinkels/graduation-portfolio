@@ -1,6 +1,7 @@
 # TODO
 
 - Fix search bug
+- Clean up unused components (card-pattern, background-beams, skeleton, separator?, popover?, command?)
 - Check responsiveness for screens above QHD (4K)
 - Fix accordion component (allow flexible PortableText inside accordion)
 - Get project data from Sanity for menu
@@ -12,3 +13,12 @@
 - Page transition animation
 - Link hover animation (?)
 - Remove previous post (?)
+- Test full browser support
+  - [x] Chrome
+  - [x] Arc
+  - [x] Edge
+  - [x] Firefox
+  - [x] Opera
+  - [x] Opera GX
+  - [x] Brave
+  - [x] Safari
