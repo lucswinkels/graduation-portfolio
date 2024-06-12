@@ -13,3 +13,12 @@
 - Page transition animation
 - Link hover animation (?)
 - Remove previous post (?)
+- Test full browser support
+  - [x] Chrome
+  - [x] Arc
+  - [x] Edge
+  - [x] Firefox
+  - [x] Opera
+  - [x] Opera GX
+  - [x] Brave
+  - [x] Safari
