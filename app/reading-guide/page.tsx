@@ -67,9 +67,15 @@ export default function ReadingGuide() {
             <Link href="#burden-of-proof">Burden of proof</Link>
           </li>
         </List>
-        <div id="assignment" className="scroll-mt-32">
+        <div id="assignment" className="scroll-mt-16">
           <H2>The assignment</H2>
           <H3>Context</H3>
+          <P>
+            The graduation assignment was received from Moonly Software, a
+            software development company located in Best, focusing on app,
+            website, and webshop development.
+          </P>
+          <P>The assignment </P>
           <P>
             Masita, a leading Dutch sportswear brand, had a Magento webshop
             developed a few years ago. However, it turned out that there were a
@@ -182,7 +188,7 @@ export default function ReadingGuide() {
             stakeholder).
           </P>
         </div>
-        <div id="process" className="scroll-mt-32">
+        <div id="process" className="scroll-mt-16">
           <H2>Process</H2>
           <P>
             To start off, I wrote a <A href="/project-plan">project plan</A>{" "}
@@ -390,7 +396,7 @@ export default function ReadingGuide() {
         <Content />
         <div
           id="burden-of-proof"
-          className="mt-16 xl:mt-32 mb-8 xl:mb-16 scroll-mt-32"
+          className="mt-16 xl:mt-32 mb-8 xl:mb-16 scroll-mt-16"
         >
           <H1 className="mb-4">Burden of proof</H1>
           <Lead>A collection of everything I did during this internship.</Lead>
