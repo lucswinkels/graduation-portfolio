@@ -71,19 +71,25 @@ export default function ReadingGuide() {
           <H2>The assignment</H2>
           <H3>Context</H3>
           <P>
-            The graduation assignment was received from Moonly Software, a
-            software development company located in Best, focusing on app,
-            website, and webshop development.
+            The graduation assignment was received from{" "}
+            <A href="https://moonlysoftware.com/" external>
+              Moonly Software
+            </A>
+            , a software development company located in Best, focusing on app,
+            website, and webshop development. They are a relatively small
+            company with roughly ~25 employees with a wide range of full-stack,
+            front-end and back-end developers. Moonly works with all different
+            types of clients, one of them being Masita who this assignment was
+            made for.
           </P>
-          <P>The assignment </P>
           <P>
-            Masita, a leading Dutch sportswear brand, had a Magento webshop
-            developed a few years ago. However, it turned out that there were a
-            lot of different requirements and desires that were built as
-            extensions to Magento by various developers, including Moonly.
-            Additionally, Masita worked with other parties for tasks such as
-            order picking and shipping, the ability to customise items, and
-            selling products on other channels (such as bol.com, etc.). To
+            Masita, a leading Dutch sportswear brand, had a Magento (Adobe
+            Commerce) webshop developed a few years ago. However, it turned out
+            that there were a lot of different requirements and desires that
+            were built as extensions to Magento by various developers, including
+            Moonly. Additionally, Masita worked with other parties for tasks
+            such as order picking and shipping, the ability to customise items,
+            and selling products on other channels (such as bol.com, etc.). To
             integrate these software systems with the Magento webshop, a number
             of connections were written.
           </P>
