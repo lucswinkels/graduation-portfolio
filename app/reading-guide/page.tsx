@@ -339,14 +339,8 @@ export default function ReadingGuide() {
             </li>
             <List>
               <li>
-                By answering all the sub questions, I have a clear view of how
-                to design, develop and validate a new B2C webshop. I have
-                researched the problems of the old Magento-based B2C webshop,
-                which features are needed for the new webshop and with which
-                priority they should be implemented, which platforms can and
-                should be used to develop the new webshop, how Masita&apos;s
-                technical requirements can be integrated, and how to make sure
-                the new webshop is user-friendly and optimised for conversion.
+                By answering all the sub questions, I was able to figure out how
+                to design and develop a new user-friendly webshop.
               </li>
             </List>
             <li>
