@@ -10,7 +10,7 @@ import {
   BiLogoSass,
   BiLogoTypescript,
 } from "react-icons/bi";
-import Refractor from "react-refractor";
+import { Refractor, registerLanguage } from "react-refractor";
 import bash from "refractor/lang/bash";
 import css from "refractor/lang/css";
 import js from "refractor/lang/javascript";
@@ -52,7 +52,7 @@ const languages = [
 ];
 
 for (const language of languages) {
-  Refractor.registerLanguage(language);
+  registerLanguage(language);
 }
 
 export function CodeBlock({
