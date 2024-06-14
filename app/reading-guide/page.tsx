@@ -123,12 +123,16 @@ export default function ReadingGuide() {
           <P>
             The current problem analysis is as follows: Masita is currently
             unable to sell products to B2C customers because all integrations
-            are disabled on the current website (masita.com, which is often
-            inaccessible), and it is not possible to order products.
-            Additionally, this website, having not been updated for over a year,
-            often experiences downtime and has low speed. Since the Magento
-            store is currently unusable, and Masita does want to sell products
-            again, we need to explore how a new B2C store can be realised.
+            are disabled on the current website (
+            <A href="https://masita.com/" external>
+              masita.com
+            </A>
+            , which is often inaccessible), and it is not possible to order
+            products. Additionally, this website, having not been updated for
+            over a year, often experiences downtime and has low speed. Since the
+            Magento store is currently unusable, and Masita does want to sell
+            products again, we need to explore how a new B2C store can be
+            realised.
           </P>
           <H3>Design challenge</H3>
           <Blockquote>
@@ -153,15 +157,20 @@ export default function ReadingGuide() {
             store is currently in development. In the future, a B2C store will
             also need to be developed.
           </P>
-          <P>
-            For the B2C store, Masita has provided several requirements. There
-            must be the ability to sell printed shirts, customers must be able
-            to manage orders, and it should be possible to sell products through
-            external stores. The B2C store should have similar styling to the
-            already in development B2B store, as it is based on Masita&apos;s
-            branding. The lay-out, however, can be changed freely to cater
-            towards individual customers instead of businesses.
-          </P>
+          <P>For the B2C store, Masita has provided several requirements:</P>
+          <List>
+            <li>There must be the ability to sell printed shirts.</li>
+            <li>Customers must be able to manage orders.</li>
+            <li>
+              It should be possible to sell products through external stores.
+            </li>
+            <li>
+              The B2C store should have similar styling to the already in
+              development B2B store as it is based on Masita&apos;s branding.
+              The lay-out, however, can be changed freely to cater towards
+              individual customers instead of businesses.
+            </li>
+          </List>
           <P>
             Since Moonly wants to avoid the same pitfalls and problems
             encountered with the Magento store when developing this new store,
@@ -205,8 +214,8 @@ export default function ReadingGuide() {
           <H3>Main research question</H3>
           <List>
             <li>
-              How can a new, user-friendly B2C webshop be built and validated by
-              research?
+              How can a new, user-friendly B2C webshop be designed, developed
+              and validated?
             </li>
           </List>
           <H3>Sub questions</H3>
@@ -324,6 +333,22 @@ export default function ReadingGuide() {
           </P>
           <H3>Research conclusions</H3>
           <List>
+            <li>
+              How can a new, user-friendly B2C webshop be designed, developed
+              and validated?
+            </li>
+            <List>
+              <li>
+                By answering all the sub questions, I have a clear view of how
+                to design, develop and validate a new B2C webshop. I have
+                researched the problems of the old Magento-based B2C webshop,
+                which features are needed for the new webshop and with which
+                priority they should be implemented, which platforms can and
+                should be used to develop the new webshop, how Masita&apos;s
+                technical requirements can be integrated, and how to make sure
+                the new webshop is user-friendly and optimised for conversion.
+              </li>
+            </List>
             <li>
               Which problems did the old magento-based B2C-webshop face and how
               can I avoid them?
