@@ -14,3 +14,4 @@
 - Link hover animation (?)
 - Remove previous post (?)
 - Make A component automatically recognize external true/false based on link url
+- Upgrade packages (dependabot vulnerabilities)
