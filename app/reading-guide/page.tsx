@@ -64,6 +64,12 @@ export default function ReadingGuide() {
             <Link href="#process">Process</Link>
           </li>
           <li>
+            <Link href="#research-conclusions">Research conclusions</Link>
+          </li>
+          <li>
+            <Link href="#recommendations">Recommendations</Link>
+          </li>
+          <li>
             <Link href="#burden-of-proof">Burden of proof</Link>
           </li>
         </List>
@@ -238,35 +244,14 @@ export default function ReadingGuide() {
             time plan. In this project plan, I also defined the main research
             question and which sub questions are needed to support it.
           </P>
-          {/* <H3>Main research question</H3>
-          <List>
-            <li>
-              How can a new, user-friendly B2C webshop be designed, developed
-              and validated?
-            </li>
-          </List>
-          <H3>Sub questions</H3>
-          <List>
-            <li>
-              Which problems did the old magento-based B2C-webshop face and how
-              can I avoid them?
-            </li>
-            <li>
+          <P>
+            To answer{" "}
+            <em className="text-foreground font-medium">
               Which features are needed for the B2C-webshop and with which
               priority should they be implemented?
-            </li>
-            <li>
-              Which platforms can and should be used to develop the new webshop?
-            </li>
-            <li>How can Masita&apos;s technical requirements be integrated?</li>
-            <li>
-              How can I make sure the new webshop is user-friendly and optimised
-              for conversion?
-            </li>
-          </List> */}
-          <P>
-            To further identify the requirements of the project, I made a list
-            of{" "}
+            </em>{" "}
+            and to further identify the requirements of the project, I made a
+            list of{" "}
             <A href="/requirements-prioritisation">
               requirements and user stories
             </A>{" "}
@@ -278,13 +263,26 @@ export default function ReadingGuide() {
             sprints and holding sprint demo&apos;s and retrospectives.
           </P>
           <P>
-            To find out where it went wrong for the previous Masita B2C store,
+            To answer{" "}
+            <em className="text-foreground font-medium">
+              Which problems did the old magento-based B2C-webshop face and how
+              can I avoid them?
+            </em>{" "}
+            and{" "}
+            <em className="text-foreground font-medium">
+              Which platforms can and should be used to develop the new webshop?
+            </em>{" "}
+            and find out where it went wrong for the previous Masita B2C store,
             and to document possible pitfalls for the project, I conducted a{" "}
             <A href="/previous-issues-research">previous issues research</A>{" "}
             where I interviewed developers who worked on the previous store.
           </P>
           <P>
-            To figure out which platform would be best suited to build the new
+            To answer{" "}
+            <em className="text-foreground font-medium">
+              Which platforms can and should be used to develop the new webshop?
+            </em>{" "}
+            and figure out which platform would be best suited to build the new
             store on, I conducted{" "}
             <A href="/e-commerce-platforms-research">
               e-commerce platforms research
@@ -293,7 +291,11 @@ export default function ReadingGuide() {
             cons.
           </P>
           <P>
-            I also researched how I could implement Masita&apos;s pre-existing
+            To answer{" "}
+            <em className="text-foreground font-medium">
+              How can Masita&apos;s technical requirements be integrated?
+            </em>{" "}
+            I researched how I could implement Masita&apos;s pre-existing
             technical requirements for integrations such as external sales
             platform integrations in this{" "}
             <A href="/technical-requirement-integration-research">
@@ -302,7 +304,12 @@ export default function ReadingGuide() {
             .
           </P>
           <P>
-            To figure out how I could design the new store to be user friendly
+            To answer{" "}
+            <em className="text-foreground font-medium">
+              How can I make sure the new webshop is user-friendly and optimised
+              for conversion?
+            </em>{" "}
+            and figure out how I could design the new store to be user friendly
             with validated designs, I conducted{" "}
             <A href="/webshop-design-pattern-research">
               design pattern research
@@ -312,30 +319,28 @@ export default function ReadingGuide() {
             <A href="/prototype-wireframes">prototype wireframes</A>. To
             validate these designs, I held a{" "}
             <A href="/prototype-peer-review">peer review</A> where I gathered
-            feedback on the wireframes and version 1 of the prototype.
-          </P>
-          <P>
-            After incorporating the feedback I gathered from the peer review
-            into a second version of the prototype, I set up{" "}
+            feedback on the wireframes and version 1 of the prototype. I
+            gathered and incorporated feedback from the peer review into a
+            second version of the prototype, I set up{" "}
             <A href="/prototype-usability-testing">usability tests</A> to
             validate the designs with users. Based on the feedback I gathered
             from the usability tests, I made a final version of the prototype.
           </P>
           <P>
             With my prototype done, I had a good feeling of how the new store
-            would look and what would be required to build it. To figure out how
-            I was going to develop the front-end of the new store and translate
-            my designs into code, I conducted{" "}
+            would look and what would be required to build it. To answer{" "}
+            <em className="text-foreground font-medium">
+              Which platforms can and should be used to develop the new webshop?
+            </em>{" "}
+            and to figure out how I was going to develop the front-end of the
+            new store and translate my designs into code, I conducted{" "}
             <A href="/frontend-frameworks-research">
               front-end frameworks research
             </A>
             , where I analysed different front-end frameworks and their pros and
-            cons.
-          </P>
-          <P>
-            After picking a suitable front-end framework, I looked at different
-            UI libraries to see if and which UI libraries could be used to
-            develop the front-end in this{" "}
+            cons. After picking a suitable front-end framework, I looked at
+            different UI libraries to see if and which UI libraries could be
+            used to develop the front-end in this{" "}
             <A href="/ui-libraries-research">UI libraries research</A>.
           </P>
           <P>
@@ -358,7 +363,9 @@ export default function ReadingGuide() {
             To finalize the internship and communicate with my stakeholders I
             wrote an <A href="/advisory-report">advisory report</A>.
           </P>
-          <H3>Research conclusions</H3>
+        </div>
+        <div id="research-conclusions" className="scroll-mt-16">
+          <H2>Research conclusions</H2>
           <List>
             <li>
               How can a new, user-friendly B2C webshop be designed, developed
@@ -366,8 +373,13 @@ export default function ReadingGuide() {
             </li>
             <List>
               <li>
-                By answering all the sub questions, I was able to figure out how
-                to design and develop a new user-friendly webshop.
+                By answering all the sub questions below, I was able to figure
+                out how to design and develop a new user-friendly webshop by
+                combining modern technologies with relevant tools to develop a
+                store based on a validated design, while taking into account
+                possible issues by researching previously seen issues. It is
+                integral to plan out all the requirements and features, so that
+                the right technology can be chosen for development.
               </li>
             </List>
             <li>
@@ -437,6 +449,39 @@ export default function ReadingGuide() {
               </li>
             </List>
           </List>
+        </div>
+        <div id="recommendations" className="scroll-mt-16">
+          <H2>Recommendations</H2>
+          <H3>Research</H3>
+          <P>
+            In terms of research, no extra research needs to be done to verify
+            certain parts of the design or development, however it could be
+            beneficial to research hosting solutions to see if Oxygen is the
+            best fit to host Hydrogen applications, or if a different solution
+            is preferred. While Oxygen is recommended by Shopify, I have not
+            done any research on this to validate if that recommendation is
+            truly the best solution.
+          </P>
+          <H3>Design</H3>
+          <P>
+            The design is done and validated by reviews and testing. No changes
+            have to be made to the current designs unless there are plans to
+            expand, like adding more designs for account settings. Designs
+            should maintain a similar style and use components as designed in
+            Figma as much as possible.
+          </P>
+          <H3>Development</H3>
+          <P>
+            As for the development of the prototype / store, there are plenty of
+            missing features that should still be developed. When developing
+            these features, the same code structure should be maintained to
+            ensure a consistent codebase.
+          </P>
+          <P>
+            {" "}
+            A full list of recommendations can be found in the{" "}
+            <A href="/advisory-report">advisory report</A>.{" "}
+          </P>
         </div>
       </Prose>
     </>
