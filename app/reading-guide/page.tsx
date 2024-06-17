@@ -202,15 +202,7 @@ export default function ReadingGuide() {
             Masita is not the client in this case (though they may be a
             stakeholder).
           </P>
-        </div>
-        <div id="process" className="scroll-mt-16">
-          <H2>Process</H2>
-          <P>
-            To start off, I wrote a <A href="/project-plan">project plan</A>{" "}
-            documenting the project&apos;s goals, problem statement, scope and
-            time plan. In this project plan, I also defined the main research
-            question and which sub questions are needed to support it:
-          </P>
+          <P>The research will be based on the following research questions:</P>
           <H3>Main research question</H3>
           <List>
             <li>
@@ -237,6 +229,41 @@ export default function ReadingGuide() {
               for conversion?
             </li>
           </List>
+        </div>
+        <div id="process" className="scroll-mt-16">
+          <H2>Process</H2>
+          <P>
+            To start off, I wrote a <A href="/project-plan">project plan</A>{" "}
+            documenting the project&apos;s goals, problem statement, scope and
+            time plan. In this project plan, I also defined the main research
+            question and which sub questions are needed to support it.
+          </P>
+          {/* <H3>Main research question</H3>
+          <List>
+            <li>
+              How can a new, user-friendly B2C webshop be designed, developed
+              and validated?
+            </li>
+          </List>
+          <H3>Sub questions</H3>
+          <List>
+            <li>
+              Which problems did the old magento-based B2C-webshop face and how
+              can I avoid them?
+            </li>
+            <li>
+              Which features are needed for the B2C-webshop and with which
+              priority should they be implemented?
+            </li>
+            <li>
+              Which platforms can and should be used to develop the new webshop?
+            </li>
+            <li>How can Masita&apos;s technical requirements be integrated?</li>
+            <li>
+              How can I make sure the new webshop is user-friendly and optimised
+              for conversion?
+            </li>
+          </List> */}
           <P>
             To further identify the requirements of the project, I made a list
             of{" "}
@@ -328,8 +355,8 @@ export default function ReadingGuide() {
             and what went well or could have gone better.
           </P>
           <P>
-            To finalize the internship and communicate well with my stakeholders
-            I wrote an <A href="/advisory-report">advisory report</A>.
+            To finalize the internship and communicate with my stakeholders I
+            wrote an <A href="/advisory-report">advisory report</A>.
           </P>
           <H3>Research conclusions</H3>
           <List>
