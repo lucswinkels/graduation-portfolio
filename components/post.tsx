@@ -304,7 +304,7 @@ export default function Post({
             <PortableText value={post.body} components={components} />
           </Fancybox>
         </Prose>
-        <NextPreviousPost previousPost={previousPost} nextPost={nextPost} />
+        {/* <NextPreviousPost previousPost={previousPost} nextPost={nextPost} /> */}
       </Container>
     </FadeUp>
   ) : (
