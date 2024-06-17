@@ -67,17 +67,29 @@ export default function ReadingGuide() {
             <Link href="#burden-of-proof">Burden of proof</Link>
           </li>
         </List>
-        <div id="assignment" className="scroll-mt-32">
+        <div id="assignment" className="scroll-mt-16">
           <H2>The assignment</H2>
           <H3>Context</H3>
           <P>
-            Masita, a leading Dutch sportswear brand, had a Magento webshop
-            developed a few years ago. However, it turned out that there were a
-            lot of different requirements and desires that were built as
-            extensions to Magento by various developers, including Moonly.
-            Additionally, Masita worked with other parties for tasks such as
-            order picking and shipping, the ability to customise items, and
-            selling products on other channels (such as bol.com, etc.). To
+            The graduation assignment was received from{" "}
+            <A href="https://moonlysoftware.com/" external>
+              Moonly Software
+            </A>
+            , a software development company located in Best, focusing on app,
+            website, and webshop development. They are a relatively small
+            company with roughly ~25 employees with a wide range of full-stack,
+            front-end and back-end developers. Moonly works with all different
+            types of clients, one of them being Masita who this assignment was
+            made for.
+          </P>
+          <P>
+            Masita, a leading Dutch sportswear brand, had a Magento (Adobe
+            Commerce) webshop developed a few years ago. However, it turned out
+            that there were a lot of different requirements and desires that
+            were built as extensions to Magento by various developers, including
+            Moonly. Additionally, Masita worked with other parties for tasks
+            such as order picking and shipping, the ability to customise items,
+            and selling products on other channels (such as bol.com, etc.). To
             integrate these software systems with the Magento webshop, a number
             of connections were written.
           </P>
@@ -111,12 +123,16 @@ export default function ReadingGuide() {
           <P>
             The current problem analysis is as follows: Masita is currently
             unable to sell products to B2C customers because all integrations
-            are disabled on the current website (masita.com, which is often
-            inaccessible), and it is not possible to order products.
-            Additionally, this website, having not been updated for over a year,
-            often experiences downtime and has low speed. Since the Magento
-            store is currently unusable, and Masita does want to sell products
-            again, we need to explore how a new B2C store can be realised.
+            are disabled on the current website (
+            <A href="https://masita.com/" external>
+              masita.com
+            </A>
+            , which is often inaccessible), and it is not possible to order
+            products. Additionally, this website, having not been updated for
+            over a year, often experiences downtime and has low speed. Since the
+            Magento store is currently unusable, and Masita does want to sell
+            products again, we need to explore how a new B2C store can be
+            realised.
           </P>
           <H3>Design challenge</H3>
           <Blockquote>
@@ -141,15 +157,20 @@ export default function ReadingGuide() {
             store is currently in development. In the future, a B2C store will
             also need to be developed.
           </P>
-          <P>
-            For the B2C store, Masita has provided several requirements. There
-            must be the ability to sell printed shirts, customers must be able
-            to manage orders, and it should be possible to sell products through
-            external stores. The B2C store should have similar styling to the
-            already in development B2B store, as it is based on Masita&apos;s
-            branding. The lay-out, however, can be changed freely to cater
-            towards individual customers instead of businesses.
-          </P>
+          <P>For the B2C store, Masita has provided several requirements:</P>
+          <List>
+            <li>There must be the ability to sell printed shirts.</li>
+            <li>Customers must be able to manage orders.</li>
+            <li>
+              It should be possible to sell products through external stores.
+            </li>
+            <li>
+              The B2C store should have similar styling to the already in
+              development B2B store as it is based on Masita&apos;s branding.
+              The lay-out, however, can be changed freely to cater towards
+              individual customers instead of businesses.
+            </li>
+          </List>
           <P>
             Since Moonly wants to avoid the same pitfalls and problems
             encountered with the Magento store when developing this new store,
@@ -182,7 +203,7 @@ export default function ReadingGuide() {
             stakeholder).
           </P>
         </div>
-        <div id="process" className="scroll-mt-32">
+        <div id="process" className="scroll-mt-16">
           <H2>Process</H2>
           <P>
             To start off, I wrote a <A href="/project-plan">project plan</A>{" "}
@@ -193,8 +214,8 @@ export default function ReadingGuide() {
           <H3>Main research question</H3>
           <List>
             <li>
-              How can a new, user-friendly B2C webshop be built and validated by
-              research?
+              How can a new, user-friendly B2C webshop be designed, developed
+              and validated?
             </li>
           </List>
           <H3>Sub questions</H3>
@@ -313,6 +334,16 @@ export default function ReadingGuide() {
           <H3>Research conclusions</H3>
           <List>
             <li>
+              How can a new, user-friendly B2C webshop be designed, developed
+              and validated?
+            </li>
+            <List>
+              <li>
+                By answering all the sub questions, I was able to figure out how
+                to design and develop a new user-friendly webshop.
+              </li>
+            </List>
+            <li>
               Which problems did the old magento-based B2C-webshop face and how
               can I avoid them?
             </li>
@@ -390,7 +421,7 @@ export default function ReadingGuide() {
         <Content />
         <div
           id="burden-of-proof"
-          className="mt-16 xl:mt-32 mb-8 xl:mb-16 scroll-mt-32"
+          className="mt-16 xl:mt-32 mb-8 xl:mb-16 scroll-mt-16"
         >
           <H1 className="mb-4">Burden of proof</H1>
           <Lead>A collection of everything I did during this internship.</Lead>
