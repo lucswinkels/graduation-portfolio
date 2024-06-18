@@ -71,13 +71,13 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
         <ThemeProvider attribute="class" enableSystem>
-          {/* <Navbar /> */}
+          <Navbar />
           {/* Min-h = 100dvh - copyright height to push copyright down on empty pages */}
           <div className="py-32 min-h-[calc(100dvh-5rem)]">{children}</div>
-          {/* <BackToTop /> */}
+          <BackToTop />
           {/* <Cursor /> */}
-          {/* <Footer />
-          <Toaster /> */}
+          <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
