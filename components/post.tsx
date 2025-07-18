@@ -59,7 +59,6 @@ export default function Post({
   previousPost: SanityDocument;
   nextPost: SanityDocument;
 }) {
-  // console.log(post.draft);
   const ImageComponent = ({ value }: SanityAsset) => {
     const { width, height } = getImageDimensions(value);
     const assetUrl = builder.image(value).width(width).height(height).url();
