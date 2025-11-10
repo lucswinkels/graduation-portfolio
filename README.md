@@ -6,5 +6,5 @@ This portfolio was built with [Next.js](https://nextjs.org/) and [shadcn/ui](htt
 
 Content is maintained using [Sanity CMS](https://www.sanity.io/).
 
-A live demo is available [here](https://graduation.lucswinkels.com). 
+A live demo is currently not available anymore.
 
